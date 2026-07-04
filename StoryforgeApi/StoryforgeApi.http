@@ -1,6 +1,10 @@
 @StoryforgeApi_HostAddress = http://localhost:5124
 
-GET {{StoryforgeApi_HostAddress}}/weatherforecast/
+GET {{StoryforgeApi_HostAddress}}/storyList
+Get {{StoryforgeApi_HostAddress}}/story
+
 Accept: application/json
+
+
 
 ###

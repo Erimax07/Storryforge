@@ -1,0 +1,20 @@
+{
+    "info": [
+        {
+            "title": "The Last Signal",
+            "description": "A lone astronaut drifts through a dying space station.",
+            "creation": "2026-04-01T16:00:00+02:00",
+            "author": "Claude",
+            "genre": 2,
+            "nodes": 0
+        },
+        {
+            "title": "The Hollow King",
+            "description": "A medieval fantasy about a kingdom on the edge of collapse.",
+            "creation": "2026-04-01T16:00:00+02:00",
+            "author": "Claude",
+            "genre": 1,
+            "nodes": 0
+        }
+    ]
+}

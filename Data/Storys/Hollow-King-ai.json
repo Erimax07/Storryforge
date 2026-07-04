@@ -1,0 +1,131 @@
+{
+    "title": "The Hollow King",
+    "description": "A medieval fantasy about a kingdom on the edge of collapse.",
+    "author": "Claude",
+    "creation": "2026-04-01T16:00:00.0000000+02:00",
+    "genre": "Fantasy",
+    "storyElements": {
+        "start": {
+            "content": "You are Aldric, a blacksmith's apprentice in the village of Greymoor. At dawn a royal messenger rides through, nailing a decree to the tavern door: the King is dead. His only heir, Prince Edran, has vanished. The kingdom has three days before the lords go to war over the throne. The messenger looks at you � you once saved his life � and whispers: 'The Prince was last seen near the Ashwood. Someone has to find him.' He hands you a horse and a sealed letter.",
+            "options": [
+                { "displayText": "Ride to the Ashwood", "storryLink": "ashwood_enter" },
+                { "displayText": "Open the sealed letter first", "storryLink": "read_letter" }
+            ]
+        },
+        "read_letter": {
+            "content": "The wax seal bears the royal crest. Inside, in shaking handwriting: 'Edran went willingly. Do not bring him back against his will. But tell him � the people will starve without a king.' You pocket the letter and ride for the Ashwood.",
+            "options": [
+                { "displayText": "Ride to the Ashwood", "storryLink": "ashwood_enter" }
+            ]
+        },
+        "ashwood_enter": {
+            "content": "The Ashwood is silent in a way that feels deliberate. Grey trees press close. After an hour you find a camp � still warm embers, a royal cloak abandoned in the mud. Two paths fork ahead. Footprints lead left toward the old monastery. Hoofprints lead right toward the river crossing.",
+            "options": [
+                { "displayText": "Follow the footprints to the monastery", "storryLink": "monastery" },
+                { "displayText": "Follow the hoofprints to the river", "storryLink": "river" }
+            ]
+        },
+        "river": {
+            "content": "At the river you find a ferryman loading a small boat. A cloaked figure sits in it, hood pulled low. The ferryman shrugs: 'Paid me not to look.' The figure does not turn around.",
+            "options": [
+                { "displayText": "Call out to the figure", "storryLink": "river_call" },
+                { "displayText": "Board the boat quietly", "storryLink": "river_board" }
+            ]
+        },
+        "river_call": {
+            "content": "The figure stiffens. Slowly he turns. Young face, tired eyes, a bruise along his jaw. Prince Edran. He says nothing for a long moment. Then: 'You should not have followed me.'",
+            "options": [
+                { "displayText": "Show him the letter", "storryLink": "edran_letter" },
+                { "displayText": "Tell him about the war coming", "storryLink": "edran_war" },
+                { "displayText": "Ask him why he ran", "storryLink": "edran_why" }
+            ]
+        },
+        "river_board": {
+            "content": "You board without a word. The ferryman pushes off. Halfway across, the figure speaks without turning: 'I know someone is there. I am not going back.' The far bank is foreign soil. Once you cross, you are no longer in the kingdom.",
+            "options": [
+                { "displayText": "Speak now before you cross", "storryLink": "river_call" },
+                { "displayText": "Stay silent and cross with him", "storryLink": "exile_ending" }
+            ]
+        },
+        "edran_why": {
+            "content": "A long pause. 'Because my father ruled with fear and I watched it hollow him out. I do not want to become that. I do not know how to be anything else.' He looks at his hands. 'I am not the king they need.'",
+            "options": [
+                { "displayText": "Tell him he could be different", "storryLink": "edran_convince" },
+                { "displayText": "Show him the letter", "storryLink": "edran_letter" },
+                { "displayText": "Say nothing. Let him decide.", "storryLink": "edran_silence" }
+            ]
+        },
+        "edran_war": {
+            "content": "'I know,' he says flatly. 'Lord Cashen has wanted the throne for twenty years. Lord Maren will not yield. Ten thousand people caught between them.' He closes his eyes. 'And you think I can stop that?'",
+            "options": [
+                { "displayText": "Tell him he is the only one who can", "storryLink": "edran_convince" },
+                { "displayText": "Admit you do not know. But ask him to try.", "storryLink": "edran_silence" }
+            ]
+        },
+        "edran_letter": {
+            "content": "He reads it twice. His jaw tightens. He folds it carefully and holds it in both hands like something fragile. 'He knew,' he whispers. 'He knew I ran and he still...' He does not finish the sentence. He stares at the water for a long time.",
+            "options": [
+                { "displayText": "Wait quietly", "storryLink": "edran_silence" },
+                { "displayText": "Tell him about the war coming", "storryLink": "edran_war" }
+            ]
+        },
+        "edran_convince": {
+            "content": "'Different.' He almost laughs. 'Every king who came before me believed the same thing at the start.' But he does not get off the boat. He is still listening.",
+            "options": [
+                { "displayText": "Tell him doing nothing is also a choice", "storryLink": "edran_return" },
+                { "displayText": "Ask what he would need to go back", "storryLink": "edran_condition" }
+            ]
+        },
+        "edran_condition": {
+            "content": "'If I go back,' he says slowly, 'I will not rule the way my father did. No more lords hoarding grain while villages starve. No more silence bought with fear.' He looks at you. 'Will you stand behind that? Not just today � always?'",
+            "options": [
+                { "displayText": "Swear it", "storryLink": "edran_return" },
+                { "displayText": "Tell him you cannot promise that", "storryLink": "edran_silence" }
+            ]
+        },
+        "edran_silence": {
+            "content": "You say nothing. The river moves beneath you. After a long time Edran stands up, nearly tipping the boat, and steps back onto the bank you came from. He does not look at you. He just starts walking.",
+            "options": [
+                { "displayText": "Follow him", "storryLink": "edran_return" }
+            ]
+        },
+        "edran_return": {
+            "content": "You ride back through the Ashwood together, mostly in silence. Near the tree line Edran stops his horse and looks back at the forest. 'I will probably be a terrible king,' he says. 'I know,' you say. He laughs � real, unexpected. It is the first honest sound you have heard in days.",
+            "options": [
+                { "displayText": "Continue to the capital", "storryLink": "ending_king" }
+            ]
+        },
+        "monastery": {
+            "content": "The monastery is abandoned, roof half-collapsed, ivy swallowing the stones. Inside you find a monk � or someone wearing monk's robes � sitting cross-legged before a cold altar. He does not look up. 'The prince is not here. But you knew that already, or you would not have come inside.'",
+            "options": [
+                { "displayText": "Ask what he means", "storryLink": "monk_talk" },
+                { "displayText": "Turn around and go to the river", "storryLink": "river" }
+            ]
+        },
+        "monk_talk": {
+            "content": "He finally looks up. Old eyes, sharp as a hawk's. 'The boy came here last night. I told him the same thing I will tell you: a crown does not make a king. Absence does not make a coward. He left before dawn.' He pauses. 'He went to the river. He is afraid, not lost. There is a difference.'",
+            "options": [
+                { "displayText": "Thank him and ride to the river", "storryLink": "river" },
+                { "displayText": "Ask if the kingdom is worth saving", "storryLink": "monk_kingdom" }
+            ]
+        },
+        "monk_kingdom": {
+            "content": "'Worth saving?' He tilts his head. 'The kingdom is just people. Cold people, hungry people, frightened people. Whether it is worth saving depends entirely on what you plan to do with it once you have.' He looks at you for a long moment. 'Now go. You are wasting time in ruins.'",
+            "options": [
+                { "displayText": "Ride to the river", "storryLink": "river" }
+            ]
+        },
+        "ending_king": {
+            "content": "Edran is crowned three days later in a half-empty throne room. The lords are not happy. They will never be happy. But the war does not come. That winter, grain stores are opened and no village in Greymoor goes hungry. Years later, when people speak of the Hollow King � the name his enemies gave him � they do not mean it the way they intended. They mean a king who made himself empty of pride, so there was room for something else. You stand at the back of the throne room and say nothing. You do not need to.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "exile_ending": {
+            "content": "You cross the river together. Neither of you speaks. The kingdom shrinks behind you, then disappears. Edran pulls back his hood and breathes in the foreign air. 'Thank you,' he says, 'for not trying to talk me out of it.' Back home, the lords go to war. The war lasts eleven years. You hear about it sometimes, in taverns, in foreign cities, in the pauses between other people's conversations. You never go back.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        }
+    }
+}
