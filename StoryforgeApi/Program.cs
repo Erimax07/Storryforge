@@ -47,11 +47,11 @@ if (app.Environment.IsDevelopment())
 
 //creating the stories
 string storysPath = "../Data/Storys";
-Dictionary<string, Story> storys = new Dictionary<string, Story>();
+Dictionary<int, Story> storys = new Dictionary<int, Story>();
 foreach (string file in Directory.GetFiles(storysPath, "*.json"))
 {
     Story story = System.Text.Json.JsonSerializer.Deserialize<Story>(System.IO.File.ReadAllText(file), options);
-    if (story != null) storys.Add(story.title, story);
+    if (story != null) storys.Add(story.id, story);
 }
 
 
@@ -72,6 +72,25 @@ app.UseCors("AllowFrontend");
 app.MapGet("/storyList", () =>
 {
     return Results.Json(storyList);
+});
+
+app.MapGet("/story/{id}", (string id) =>
+{
+    try
+    {
+        int Intid = int.Parse(id);
+        if(storys.TryGetValue(Intid, out Story retStory))
+        {
+            return retStory;
+        }
+        
+    }
+    catch (System.Exception)
+    {
+        
+        throw;
+    }
+    return null;
 });
 
 app.Run();

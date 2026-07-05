@@ -28,17 +28,28 @@ button{
     justify-content: center;
 }
 
+.nav-bar-wraper{
+    position: absolute;
+        right: 5vw;
+    top: 3vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+
 .page-header{
     font-size: 50px;
     margin: 0.5em;
 }
 
 .nav-bar{
-    position: absolute;
+    /* position: absolute;
     width: 20vw;
     right: 5vw;
     top: 3vh;
-    display: flex;
+    display: flex; */
 }
 
 .nav-bar h2{
@@ -64,4 +75,21 @@ button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home{
+    padding: 0.5em;
+    margin: 1.5em;
+    font-size: larger;
+    background-color: rgb(110, 58, 93);
+    border: 4px black solid;
+    border-radius: 0.5em;
+    width: fit-content;
 }
