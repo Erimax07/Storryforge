@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System;
+using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +10,30 @@ var options = new JsonSerializerOptions
     Converters = { new JsonStringEnumConverter() }
 };
 
+
+
+
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins(
+                "http://127.0.0.1:5500",
+                "http://localhost:5500"
+              )
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -31,7 +51,7 @@ Dictionary<string, Story> storys = new Dictionary<string, Story>();
 foreach (string file in Directory.GetFiles(storysPath, "*.json"))
 {
     Story story = System.Text.Json.JsonSerializer.Deserialize<Story>(System.IO.File.ReadAllText(file), options);
-    if(story != null) storys.Add(story.title, story);
+    if (story != null) storys.Add(story.title, story);
 }
 
 
@@ -44,23 +64,15 @@ StoryInfoList storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoL
 
 
 
-app.MapGet("/storyList", () =>
-{
-    return storyListString;
-})
-.WithName("storyList");
 
-app.MapGet("/getStory", () =>
-{
-    return storyListString;
-})
-.WithName("storyList");
+
+
+app.UseCors("AllowFrontend");
 
 app.MapGet("/storyList", () =>
 {
-    return storyListString;
-})
-.WithName("storyList");
+    return Results.Json(storyList);
+});
 
 app.Run();
 
@@ -92,6 +104,7 @@ public enum Genre
 }
 public class StoryInfo
 {
+    public int id { get; set; } = -1;
     public string title { get; set; } = "";
     public string description { get; set; } = "";
     public DateTime creation { get; set; } = new();
@@ -101,8 +114,9 @@ public class StoryInfo
 
     public StoryInfo() { }
 
-    public StoryInfo(string title, string description, DateTime creation, string author, Genre genre, int nodes)
+    public StoryInfo(int id, string title, string description, DateTime creation, string author, Genre genre, int nodes)
     {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.creation = creation;
@@ -114,11 +128,11 @@ public class StoryInfo
 
 class StoryInfoList
 {
-    public List<StoryInfo> info {get; set; } = new();
-    public StoryInfoList(){}
+    public List<StoryInfo> info { get; set; } = new();
+    public StoryInfoList() { }
 }
 
-class Story:StoryInfo
+class Story : StoryInfo
 {
     public Dictionary<string, StoryNode> storyElements { get; set; } = new();
     public List<string> state { get; set; } = new();
@@ -130,7 +144,7 @@ class Story:StoryInfo
     }
     public StoryNode getStoryElement(string key)
     {
-        if(storyElements.TryGetValue(key, out StoryNode node))
+        if (storyElements.TryGetValue(key, out StoryNode node))
         {
             return node;
         }
@@ -168,7 +182,7 @@ class StoryNode
         content = _content;
         options = _options;
     }
- 
+
 }
 class Selection
 {

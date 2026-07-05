@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background-color: rgb(122, 122, 122);
+
+}
+
+header{
+    background-color: rgb(68, 67, 67);
+
+}
+
+button{
+    background-color: rgb(109, 109, 109);
+    color: white;
+}
+
+.page-wraper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header{
+    font-size: 50px;
+    margin: 0.5em;
+}
+
+.nav-bar{
+    position: absolute;
+    width: 20vw;
+    right: 5vw;
+    top: 3vh;
+    display: flex;
+}
+
+.nav-bar h2{
+    margin: 0.5em;
+}
+
+.nav-bar h2:hover{
+    margin: 0.5em;
+    
+}
+
+.story{
+    padding: 0.5em;
+    margin: 1.5em;
+    font-size: larger;
+    background-color: rgb(110, 58, 93);
+    border: 4px black solid;
+    border-radius: 0.5em;
+}
+
+.storyList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
