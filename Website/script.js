@@ -1,6 +1,9 @@
 const api = "http://localhost:5124"
 
 let story;
+let currentElement;
+
+
 document.addEventListener("DOMContentLoaded", () => {
     loadHome();
 });
@@ -51,7 +54,7 @@ async function loadStory(id){
 
         let html =  
             `
-            <div class="story">
+            <button onclick="updateStory(null)" class="story">
                 <p>${element.id}</p>
                 <p>${element.title}</p>
                 <p>${element.description}</p>
@@ -59,12 +62,43 @@ async function loadStory(id){
                 <p>${element.author}</p>
                 <p>${element.genre}</p>
                 <p>${element.nodes}</p>
-            </div>
+            </button>
             `
         document.getElementById("content").innerHTML = html;
 
     } catch (error) {
          document.getElementById("content").innerHTML =
+                    "Error: " + error.message;
+    }
+}
+
+function updateStory(next){
+
+    if(next == null) next = "start";
+    
+    try {
+        console.log(story)
+        currentElement = story.storyElements[next]
+        let options = "";
+        currentElement.options.forEach(element => {
+            options += 
+            `
+                <button class="option" onclick="updateStory('${element.storryLink}')"><p>${element.displayText}</p></button>
+            `
+        });
+
+        let html = 
+        `
+        <div class="storyElement">
+            <h2>${currentElement.content}</h2>
+            ${options}
+        </div>
+        `;
+        document.getElementById("content").innerHTML = html;
+
+        
+    } catch (error) {
+        document.getElementById("content").innerHTML =
                     "Error: " + error.message;
     }
 }

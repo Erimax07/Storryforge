@@ -30,7 +30,7 @@ button{
 
 .nav-bar-wraper{
     position: absolute;
-        right: 5vw;
+    right: 5vw;
     top: 3vh;
     width: 100%;
     display: flex;
@@ -86,6 +86,20 @@ button{
 
 .home{
     padding: 0.5em;
+    margin: 1.5em;
+    font-size: larger;
+    background-color: rgb(110, 58, 93);
+    border: 4px black solid;
+    border-radius: 0.5em;
+    width: fit-content;
+}
+
+.option{
+
+}
+
+.storyElement{
+        padding: 0.5em;
     margin: 1.5em;
     font-size: larger;
     background-color: rgb(110, 58, 93);
