@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,28 @@
     </title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    
+
 </head>
+
 <body>
-    <header>
-        <div class="page-wraper">
-            <h1 class="page-header">Storyforge</h1>
-        </div>
-        <div class="nav-bar-wraper">
-            <search class="nav-bar">
-                <button onclick="loadHome()"><h2>Home</h2></button>
-                <button onclick="loadData()"><h2>Storys</h2></button>
-        </div>
-        </search>
-    </header>
-    
-    <div id="content">
 
+<header class="header">
+    <div class="container">
+        <h1 class="logo">StoryForge</h1>
+
+        <nav class="nav">
+            <button onclick="loadHome()">Home</button>
+            <button onclick="loadData()">Stories</button>
+        </nav>
     </div>
+</header>
 
-    <footer>
+<main id="content"></main>
 
-    </footer>    
+<footer class="footer">
+    <p>© 2026 StoryForge — Build your story.</p>
+</footer>
+
 </body>
+
 </html>
