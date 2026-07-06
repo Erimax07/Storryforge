@@ -25,7 +25,9 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "http://127.0.0.1:5500",
-                "http://localhost:5500"
+                "http://localhost:5500",
+                "http://storyforge.erik-matschke.de",
+                "https://storyforge.erik-matschke.de"
               )
               .AllowAnyHeader()
               .AllowAnyMethod();
@@ -71,25 +73,15 @@ app.MapGet("/storyList", () =>
     return Results.Json(storyList);
 });
 
-app.MapGet("/story/{id}", (string id) =>
+app.MapGet("/story/{id:int}", (int id) =>
 {
-    try
+    if (storys.TryGetValue(id, out Story retStory))
     {
-        int Intid = int.Parse(id);
-        if(storys.TryGetValue(Intid, out Story retStory))
-        {
-            return retStory;
-        }
-        
+        return Results.Ok(retStory);
     }
-    catch (System.Exception)
-    {
-        
-        throw;
-    }
-    return null;
-});
 
+    return Results.NotFound();
+});
 app.Run();
 
 
