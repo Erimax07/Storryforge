@@ -1,0 +1,771 @@
+﻿{
+  "id": 5,
+  "title": "Frost - Das Artefakt",
+  "description": "Die Geschichte des Alpinisten in einer eisigen postapokalyptischen Welt.",
+  "author": "Frost",
+  "creation": "2023-11-05T14:30:00Z",
+  "genre": "SciFi",
+  "storyElements": {
+    "start": {
+      "content": "Du stehst auf dem schneebedeckten Gipfel eines vergessenen Berges, wo die Luft so eiskalt ist, dass sie dein Blut gefrieren lässt. Die Hütte vor dir ist halb begraben unter einer dünnen Schneeschicht. Deine Funkausrüstung knistert leise, doch heute sendet sie keine bekannten Frequenzen mehr. Stattdessen hörst du ein seltsames, fast orgelartiges Flüstern — als würde jemand dich aus dem Schnee heraus rufen. Du ziehst dein Messer und betrittst den dunklen Eingang, wo das Licht des Artefakts dich sofort in seinen Bann zieht. Es pulsiert in deiner Hand, als wolle es eine Antwort von dir. Was tust du?",
+      "options": [
+        {
+          "displayText": "Du berührst das Artefakt und spürst, wie es dich anspricht.",
+          "storryLink": "artefakt_antworten"
+        },
+        {
+          "displayText": "Du wirfst es weg und suchst nach einem sicheren Ort zum Überleben.",
+          "storryLink": "hütte_abschliessen"
+        },
+        {
+          "displayText": "Du hörst das Flüstern genauer zu und versuchst zu verstehen, was es sagt.",
+          "storryLink": "hütte_lauschen"
+        }
+      ]
+    },
+    "artefakt_antworten": {
+      "content": "Das Artefakt ist kalt, fast wie Eis, aber es strahlt eine warme, leuchtende Energie aus, als es deine Hand berührt. Eine Stimme — weder männlich noch weiblich, sondern etwas, das jenseits von Menschlichkeit liegt — spricht dich in einer Sprache an, die du nicht kennst. Doch du verstehst die Bedeutung: 'Nur du kannst den Weg öffnen.' Es deutet auf eine bestimmte Richtung in der Hütte. Was tust du?",
+      "options": [
+        {
+          "displayText": "Du gehst auf die markierte Richtung zu und erkundest den versteckten Teil der Hütte.",
+          "storryLink": "hütte_wand_mysterium"
+        },
+        {
+          "displayText": "Du versuchst, das Artefakt abzulegen, doch es bleibt in deiner Hand haften wie ein eiserner Klumpen.",
+          "storryLink": "artefakt_zwanghaft_halten"
+        }
+      ]
+    },
+    "hütte_abschliessen": {
+      "content": "Du hast das Artefakt fallen gelassen und den Raum durchsucht. Der Ofen ist noch warm, doch die Lebensmittel darin sind längst ungenießbar. Eine Truhe in der Ecke enthält alte, trockene Vorräte, aber das Funkgerät hat keine Reaktion mehr gezeigt. In der Ferne hörst du das Flüstern — es kommt näher. Du musst dich entscheiden: Fliehen oder bleiben?",
+      "options": [
+        {
+          "displayText": "Du suchst einen Weg aus der Hütte, um dem Artefakt zu entkommen.",
+          "storryLink": "hütte_falle"
+        },
+        {
+          "displayText": "Du verschanzt dich in der Hütte, hoffst auf Schutz und suchst nach einer versteckten Tür.",
+          "storryLink": "hütte_tür_gesucht"
+        }
+      ]
+    },
+    "hütte_lauschen": {
+      "content": "Die Stimme des Artefakts klingt jetzt klarer. 'Die Kälte verschont dich nicht', sagt sie. 'Aber der Schnee wird dich lehren.' Dann wird sie leiser und spricht von einem Ort 'unter der Erde, wo die Träume der Alten schlafen.' Das Funksignal deines Geräts verstärkt sich plötzlich — ein Code wird durchgegeben. Du kannst ihn aufschlüsseln oder ignorieren, aber die Zeit drängt. Was tust du?",
+      "options": [
+        {
+          "displayText": "Du versuchst, den Funkcode zu entschlüsseln und den Ort unter der Erde zu lokalisieren.",
+          "storryLink": "funksignal_lesen"
+        },
+        {
+          "displayText": "Du ignorierst die Botschaft und konzentrierst dich auf die Erkundung der Hütte.",
+          "storryLink": "hütte_ausruhen"
+        }
+      ]
+    },
+    "hütte_wand_mysterium": {
+      "content": "Die Wand, auf die das Artefakt deutet, beginnt sich zu verformen. Mit einem dumpfen Knirschen öffnet sich ein versteckter Raum dahinter. Du siehst eine Falltür, die zu einer dunklen Höhle führt. Gleichzeitig beginnt das Funkgerät wieder zu surren. Die Stimme flüstert: 'Die Tür führt zu dem, was du suchst. Doch nur wenige kehren zurück.' Du hast die Wahl, die Türe hinabzusteigen oder zurückzukehren.",
+      "options": [
+        {
+          "displayText": "Du steigst hinab durch die Falltür in die Höhle, verfolgt von der Stimme des Artefakts.",
+          "storryLink": "hütte_falltur_erkunden"
+        },
+        {
+          "displayText": "Du schließt die Falltür wieder und suchst nach einem alternativen Ausgang aus der Hütte.",
+          "storryLink": "hütte_ausgang_suchen"
+        }
+      ]
+    },
+    "hütte_falltur_erkunden": {
+      "content": "Die Falltür knarrt unter deinem Gewicht, als du sie hinabsteigst. Die Luft wird feucht und du spürst eine unterirdische Wärme, während dich das Artefakt weiter in deiner Hand hält. Im Dunkeln siehst du seltsame Runen, die von einer uralten Macht erzählen. Plötzlich hörst du Schritte — jemand ist schon hier. Du drehst dich um und siehst eine geheimnisvolle Gestalt mit einem blassen Umhang, die dich beobachtet.",
+      "options": [
+        {
+          "displayText": "Du nimmst das Artefakt und zeigst es der Hüterin — vielleicht weiß sie mehr über diesen Ort.",
+          "storryLink": "hüterin_begegnen"
+        },
+        {
+          "displayText": "Du versuchst zu fliehen, zurück zur Falltür.",
+          "storryLink": "hütte_fliehen"
+        }
+      ]
+    },
+    "hütte_ausgang_suchen": {
+      "content": "Du suchst nach einem anderen Weg aus der Hütte. Ein zerfetztes Seil hängt an einem schmalen Schlupfloch in der Wand, das vielleicht einst als Notausgang diente. Deine Funkausrüstung zeigt ein schwaches Signal aus der Richtung, wo das Seil hängt. Gleichzeitig hörst du Schritte von oben — jemand ist noch im Schnee. Was tust du?",
+      "options": [
+        {
+          "displayText": "Du erkundest das Schlupfloch und versuchst, den anderen Ausgang zu nutzen.",
+          "storryLink": "schlupfloch_untersuchen"
+        },
+        {
+          "displayText": "Du versuchst, die Schritte draußen zu lokalisieren und zu schauen, wer sie verursacht.",
+          "storryLink": "schneeschritte_erkunden"
+        }
+      ]
+    },
+    "schlupfloch_untersuchen": {
+      "content": "Das Schlupfloch ist schmal, aber du zwängst dich hindurch. Du landest auf einer steinigen Treppe, die tiefer in den Berg führt. Der Schnee ist hier weggeräumt und du siehst Spuren, die vor langer Zeit gemacht wurden. Plötzlich beginnt das Funkgerät zu piepen, als es eine unbekannte Frequenz empfängt. Du hörst die Stimme des Artefakts: 'Der Pfad der Unwissenden ist auch der Pfad der Verdammten.' Du hast die Wahl, zurückzukehren oder weiterzugehen.",
+      "options": [
+        {
+          "displayText": "Du kehrst zur Falltür zurück und verlässt die Hütte über den Ausgang, den du zuerst betreten hast.",
+          "storryLink": "hütte_ausgang_standard"
+        },
+        {
+          "displayText": "Du gehst tiefer in den Berg hinab und erkundest die Treppe.",
+          "storryLink": "treppe_untersuchen"
+        }
+      ]
+    },
+    "hütte_ausgang_standard": {
+      "content": "Du verlässt die Hütte wieder über die Tür, die du zuerst betreten hast. Die Kälte schneidet in deine Haut. Das Artefakt liegt immer noch irgendwo im Inneren der Hütte. Du bist allein, aber die Funkausrüstung bleibt stumm. Vielleicht war es ein Fehler, sie loszulassen. Die Stimme in deiner Erinnerung flüstert leise, aber unaufhörlich. 'Die Kälte verschont dich nicht.' Du musst dich wärmen und nach dem nächsten Ort suchen, an dem du Unterschlupf finden kannst.",
+      "options": [
+        {
+          "displayText": "Du gehst zurück zu deinem Lager und versuchst, dich dort zu wärmen.",
+          "storryLink": "lager_zurückkehren"
+        },
+        {
+          "displayText": "Du begibst dich auf den Weg ins Dorf, wo du vielleicht noch etwas Vorräte oder Informationen finden kannst.",
+          "storryLink": "dorf_auf_suchen"
+        }
+      ]
+    },
+    "dorf_auf_suchen": {
+      "content": "Der Funkcode hat eine Richtung angegeben: südwestlich, in Richtung eines verlassenen Dorfes. Die Sonne ist nur noch ein schwacher Fleck am Himmel, aber sie scheint wenigstens zu zeigen, dass es noch etwas Wärme gibt. Das Dorf liegt am Fuße des Berges, halb begraben unter Schnee. Die Ruinen der alten Funkmasten ragen über die Bäume hervor. Du spürst einen warmen Wind, als du näher kommst — eine Illusion? Oder ein Zeichen, dass jemand hier noch lebt? Du betrittst das Dorf, wo dich ein Geruch von verbranntem Metall und etwas Süßlichem empfängt.",
+      "options": [
+        {
+          "displayText": "Du erkundest die alten Funkmasten, um die Signale zu entschlüsseln.",
+          "storryLink": "funkmasten_untersuchen"
+        },
+        {
+          "displayText": "Du suchst nach einem Weg durch die Ruinen, um nach Spuren von Überlebenden zu suchen.",
+          "storryLink": "dorf_ruinen_suchen"
+        },
+        {
+          "displayText": "Du hörst auf das Flüstern des Artefakts, das dich nach etwas anderem rufen könnte.",
+          "storryLink": "dorf_ausruhen"
+        }
+      ]
+    },
+    "funkmasten_untersuchen": {
+      "content": "Die alten Funkmasten sind verrostet und instabil, aber einer davon surrt noch. Du näherst dich vorsichtig und berührst ihn. Ein greller Blitz zuckt durch den Raum und du spürst einen scharfen Schmerz in deinen Augen. Als du sie wieder öffnest, siehst du die Gestalt von Dr. Elias — ein Wissenschaftler, der die Funkmasten mit seinen Händen repariert. 'Das Artefakt hat dich gesucht', sagt er, 'und jetzt hat es mich gefunden.' Dr. Elias wirkt gequält, als er dich ansieht. Er hat sich verändert.",
+      "options": [
+        {
+          "displayText": "Du fragst Dr. Elias, was er weiß und wie er dir helfen kann.",
+          "storryLink": "dr_elias_fragen"
+        },
+        {
+          "displayText": "Du versuchst, ihm das Artefakt zu zeigen und ihm zu erklären, dass es dich gefunden hat.",
+          "storryLink": "artefakt_dr_elias_zeigen"
+        },
+        {
+          "displayText": "Du hörst auf, ihn zu stören und versuchst, dich zu entfernen.",
+          "storryLink": "dorf_fliehen_von_funkmast"
+        }
+      ]
+    },
+    "dr_elias_fragen": {
+      "content": "Dr. Elias atmet schwer, seine Hände zittern leicht. 'Die Signale, die du empfangen hast, sind kein Zufall', sagt er. 'Es ist eine uralte Frequenz, die hier nur noch in der Höhle des Schlafs empfängt wird. Aber sie hat auch die Menschen verändert, die sie zu lange gehört haben.' Er zeigt auf seine Augen, die nun von einem seltsamen Glanz durchdrungen sind. 'Ich habe die Karten gesehen — nur eine von drei führt nach draußen.' Du spürst eine unbestimmbare Angst, doch du willst mehr wissen. 'Welche Karte meinst du?'",
+      "options": [
+        {
+          "displayText": "Du fragst nach der Karte, die mit dem Artefakt verbunden ist.",
+          "storryLink": "karte_artefakt_fragen"
+        },
+        {
+          "displayText": "Du fragst, wie man sich gegen die Frequenz schützen kann.",
+          "storryLink": "schutz_frequenz_fragen"
+        },
+        {
+          "displayText": "Du hörst auf, ihn zu befragen und beginnst, selbst zu suchen.",
+          "storryLink": "dorf_weiter_suchen"
+        }
+      ]
+    },
+    "karte_artefakt_fragen": {
+      "content": "Dr. Elias' Augen leuchten stärker, als er spricht: 'Das Artefakt selbst ist ein Schlüssel, aber nicht zum Ort. Es öffnet dir die Tür zu einer Entscheidung.' Er erklärt, dass das Artefakt dich entweder zum **Hüter des Schlafs** führt oder zu den **Träumen der Alten**. 'Die Hüterin wird dich testen, bevor sie dir erlaubt, weiterzugehen. Die Träume der Alten... die Träume sind gefährlicher.' Das Funkgerät beginnt erneut zu surren. 'Du hast die Wahl — jetzt oder später. Die Zeit ist knapp.'",
+      "options": [
+        {
+          "displayText": "Du entschließt dich, zum Hüter des Schlafs zu gehen.",
+          "storryLink": "hüterin_entscheidung"
+        },
+        {
+          "displayText": "Du entscheidest dich für die Träume der Alten.",
+          "storryLink": "träume_alter_entscheidung"
+        },
+        {
+          "displayText": "Du fragst Dr. Elias, ob es einen dritten Weg gibt.",
+          "storryLink": "dritter_weg_fragen"
+        }
+      ]
+    },
+    "hüterin_entscheidung": {
+      "content": "Du beginnst den Weg zurück zur Höhle, in der du die Hüterin gesehen hast. Das Artefakt scheint dich zu leiten, während die Stimmen aus den Funkgeräten schwächer werden. In der Höhle angekommen, siehst du die Hüterin wieder, diesmal in voller Gestalt. Sie trägt ein silbernes Gewand, das im Dunkeln blitzt. 'Ich habe gewartet', sagt sie. 'Du hast mich gefunden. Doch nur wer die Prüfung besteht, darf weitergehen.' Sie hält dir eine Waffe entgegen — oder einen Schlüssel?",
+      "options": [
+        {
+          "displayText": "Du akzeptierst die Prüfung und nimmst die Waffe.",
+          "storryLink": "hüterin_prüfung_waffe"
+        },
+        {
+          "displayText": "Du weigerst dich und versuchst, auf einen anderen Weg zu finden.",
+          "storryLink": "hüterin_prüfung_weigern"
+        }
+      ]
+    },
+    "träume_alter_entscheidung": {
+      "content": "Dr. Elias wirft dir einen seltsamen Gegenstand zu: 'Nimm die Maske — sie schützt vor den Träumen.' Du setzt sie auf. Die Welt um dich herum beginnt sich zu verändern: die Wände werden lebendig, Stimmen flüstern von den Schatten. Du spürst eine unsichtbare Präsenz, die dich zieht. Plötzlich bist du nicht mehr im Dorf, sondern stehst auf einem schwebenden Weg aus Eis, der in die Tiefe führt.",
+      "options": [
+        {
+          "displayText": "Du gehst den Weg in die Tiefe.",
+          "storryLink": "träume_alten_weg"
+        },
+        {
+          "displayText": "Du nimmst die Maske ab und versuchst, Dr. Elias' Rat zu ignorieren.",
+          "storryLink": "maske_abnehmen"
+        }
+      ]
+    },
+    "dritter_weg_fragen": {
+      "content": "Dr. Elias' Augen werden dunkler, fast wie schmelzendes Eis. 'Es gibt keinen dritten Weg. Die Frequenz hat mich gewählt. Die Hüterin hat mich gewählt. Oder das Artefakt selbst. Du kannst nicht beides vermeiden.' Er greift nach deinem Funkgerät. 'Gib es mir, bevor es zu spät ist.' Seine Stimme klingt verzweifelt. Du spürst, dass er Angst hat — vor sich selbst oder vor dem, was kommt?",
+      "options": [
+        {
+          "displayText": "Du gibst ihm das Funkgerät, aber behältst das Artefakt bei dir.",
+          "storryLink": "funk_dr_elias_geben"
+        },
+        {
+          "displayText": "Du behältst beide bei dir und versuchst, die Situation zu meistern.",
+          "storryLink": "beides_behalten"
+        },
+        {
+          "displayText": "Du hörst auf seine Worte und hörst das Flüstern des Artefakts genauer zu.",
+          "storryLink": "artefakt_flüstern_zuhören"
+        }
+      ]
+    },
+    "funk_dr_elias_geben": {
+      "content": "Das Funkgerät in Dr. Elias' Händen beginnt zu leuchten. Seine Stimme wird klarer, als er zu dir spricht: 'Der dritte Weg ist der Weg des Schweigens. Du gibst die Signale auf, gehst zurück zur Hütte und versuchst, dich zu verstecken.' Doch das Artefakt pulsiert stark in deiner Hand und warnt dich mit einem leisen Summen. Die Stimme wird wieder lauter: 'Das ist nicht möglich.' Du spürst, dass er recht hat.",
+      "options": [
+        {
+          "displayText": "Du hörst auf Dr. Elias und beginnst, zurück zur Hütte zu gehen.",
+          "storryLink": "hütte_ruhen"
+        }
+      ]
+    },
+    "hütte_ruhen": {
+      "content": "Du gehst zurück zur Hütte, wo die Kälte dich erwartet. Dr. Elias' Worte hallen nach. Du schließt die Tür hinter dir und spürst eine seltsame Ruhe. Die Funkgeräte sind still. Doch das Artefakt pulsiert in deiner Tasche. Du setzt dich in eine Ecke und versuchst zu schlafen. Die Träume kommen nicht, aber die Stimme auch nicht. Vielleicht ist das schon ein Gewinn. Vielleicht auch nicht.",
+      "options": [
+        {
+          "displayText": "Nochmal spielen",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "hüterin_prüfung_waffe": {
+      "content": "Die Hüterin hat dich in eine Prüfung gestellt: Du musst gegen sie kämpfen oder einen Schlüssel berühren. Sie wirft dir eine seltsame Waffe zu — ein Stück Eis, das Feuer spuckt. 'Wehr dich', sagt sie. Du greifst nach der Waffe. Im Kampf spürst du, wie das Artefakt dich unterstützt. Doch das Eis ist nicht so einfach zu handhaben. Wenn du die Waffe nutzt, riskierst du, die Hüterin zu verletzen... oder dich selbst.",
+      "options": [
+        {
+          "displayText": "Du nutzt die Waffe und versuchst, die Hüterin zu treffen.",
+          "storryLink": "hüterin_kampf_angriff"
+        },
+        {
+          "displayText": "Du berührst den Schlüssel, der sie hält.",
+          "storryLink": "hüterin_schlüssel_berühren"
+        },
+        {
+          "displayText": "Du versuchst, die Waffe wegzuwerfen und die Prüfung zu bestehen.",
+          "storryLink": "hüterin_prüfung_aufgeben"
+        }
+      ]
+    },
+    "hüterin_schlüssel_berühren": {
+      "content": "Du nimmst den Schlüssel aus deiner Hand und berührst ihn. Die Hüterin zuckt zurück und ein greller Blitz füllt den Raum. Als du wieder zu dir kommst, stehst du allein in der Höhle. Vor dir liegt eine Tür aus eisigem Kristall, die sich langsam öffnet. Dr. Elias' Worte kommen dir in den Sinn: 'Die Hüterin wird dich testen.' Doch die Tür hat sich geöffnet — du hast bestanden. Du darfst weitergehen.",
+      "options": [
+        {
+          "displayText": "Du gehst durch die Tür aus Kristall.",
+          "storryLink": "hüterin_tür_durchgehen"
+        }
+      ]
+    },
+    "hüterin_tür_durchgehen": {
+      "content": "Die Tür aus Kristall führt dich in einen geheimnisvollen Raum. Hier ist die Luft nicht eiskalt, sondern warm und feucht. Du siehst seltsame Relikte — ein alter Schrein, umgeben von eisigen Felsen. Die Wände flüstern leise, als sie deine Gedanken lesen. Plötzlich beginnt das Artefakt in deiner Hand zu glühen. Die Stimme wird lauter: 'Du hast den Schlüssel gefunden. Doch nur wenige wissen, was sie damit tun sollen.' Was tust du?",
+      "options": [
+        {
+          "displayText": "Du untersuchst den Schrein und versuchst, seine Bedeutung zu verstehen.",
+          "storryLink": "schrein_erkunden"
+        },
+        {
+          "displayText": "Du versuchst, den Kristallschrein zu öffnen und schaust, was dahinter liegt.",
+          "storryLink": "schrein_öffnen"
+        },
+        {
+          "displayText": "Du hörst auf das Flüstern des Artefakts und beginnst, den Raum wieder zu verlassen.",
+          "storryLink": "hüterin_raum_verlassen"
+        }
+      ]
+    },
+    "hüterin_raum_verlassen": {
+      "content": "Die Tür aus Kristall bleibt für einen Moment offen, doch als du sie wieder verschließt, hörst du die Stimme des Artefakts verzweifelt flüstern: 'Lass mich nicht allein! Die Hüterin hat mich nicht gewählt.' Du stehst wieder in der Höhle. Die Hüterin steht am Eingang, ihr Gewand ist zerknittert, als hätte sie geweint. 'Du bist noch nicht bereit', sagt sie. 'Doch ich gebe dir eine letzte Chance.'",
+      "options": [
+        {
+          "displayText": "Du versuchst, mit ihr zu verhandeln und eine andere Entscheidung zu treffen.",
+          "storryLink": "hüterin_verhandeln"
+        },
+        {
+          "displayText": "Du kehrst zurück zur Hütte.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "hüterin_verhandeln": {
+      "content": "Du setzt dich vor die Hüterin und versuchst, sie zu überreden. 'Ich will nicht sterben', sagst du. 'Ich will den Ort finden, wo die Überlebenden sind.' Sie betrachtet dich lange. Dann nickt sie. 'Der Schlüssel hat dich gewählt', sagt sie. 'Aber nur die Ehre der Hüterin kann dich durchlassen.' Sie zeigt auf eine steinerne Tafel in der Wand. 'Sprich die Worte der Ehre.' Die Runen darauf wirken wie ein Fluch, doch sie scheinen dich anzuziehen.",
+      "options": [
+        {
+          "displayText": "Du sprichst die Worte der Ehre und versuchst, durch die Tafel zu gehen.",
+          "storryLink": "worte_der_ehre"
+        },
+        {
+          "displayText": "Du weigerst dich, die Worte zu sprechen und beginnst zu fliehen.",
+          "storryLink": "hüterin_fliehen"
+        }
+      ]
+    },
+    "worte_der_ehre": {
+      "content": "Du sprichst die Worte der Ehre und spürst, wie sie durch deinen Mund gehen. Die Runen leuchten auf und die steinerne Tafel öffnet sich. Du gehst durch und findest dich in einem dunklen Raum wieder, der von eisiger Energie erfüllt ist. Hier sind die Überlebenden, die Dr. Elias erwähnt hat. Doch sie starren dich an, als wärt ihr einer. Die Hüterin steht hinter dir und sagt: 'Sie werden dich fragen, ob du bereit bist.' Die Antwort wird dich entscheiden.",
+      "options": [
+        {
+          "displayText": "Du gehst zu den Überlebenden und sprichst mit ihnen.",
+          "storryLink": "überlebende_begegnen"
+        }
+      ]
+    },
+    "überlebende_begegnen": {
+      "content": "Die Überlebenden in der Höhle wirken verändert durch das Artefakt. Doch einer von ihnen — ein Mann mit alten Narben — blickt dich an und sagt: 'Du hast die Prüfung bestanden. Aber nur das Artefakt selbst entscheidet, ob du wirklich gehörst.' Er streckt dir eine Hand entgegen. Du spürst, dass sie eisig und warm zugleich ist. Die Stimme flüstert: 'Nimm die Hand des Hüters.' Was tust du?",
+      "options": [
+        {
+          "displayText": "Du nimmst die Hand des Überlebenden und lässt dich in seine Welt führen.",
+          "storryLink": "händedruck_akzeptieren"
+        },
+        {
+          "displayText": "Du weigerst dich und beginnst, den Raum zu verlassen.",
+          "storryLink": "überlebende_abweisen"
+        }
+      ]
+    },
+    "händedruck_akzeptieren": {
+      "content": "Als du die Hand des Überlebenden berührst, spürst du eine plötzliche Wärme. Die Höhle beginnt sich zu verändern — die Wände werden lebendig, die Stimme des Artefakts wird zu deiner eigenen. Du bist nicht mehr Frost, sondern Teil von etwas Größerem. 'Die Träume der Alten sind deine Träume', sagt die Stimme. Du kannst die Welt um dich herum nicht mehr verlassen — du bist nun Hüter.",
+      "options": [
+        {
+          "displayText": "Nochmal spielen",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "überlebende_abweisen": {
+      "content": "Du weigerst dich, ihre Hand zu berühren. Der Raum um dich herum wird instabil, die Überlebenden beginnen zu schreien. 'Du hast die Prüfung nicht bestanden!', ruft die Hüterin hinter dir. Sie stürmt sich auf dich. Du spürst, wie das Artefakt dich noch immer hält — vielleicht ist es dein einziger Schutz. Du kämpfst dich durch die Höhle und versuchst, die Tür zu erreichen, bevor sie dich erreicht.",
+      "options": [
+        {
+          "displayText": "Du kämpfst dich zur Kristalltür durch.",
+          "storryLink": "kristalltür_erreichen"
+        },
+        {
+          "displayText": "Du gibst auf und versuchst, das Artefakt loszulassen.",
+          "storryLink": "artefakt_aufgeben"
+        }
+      ]
+    },
+    "artefakt_aufgeben": {
+      "content": "Du lässt das Artefakt fallen und spürst sofort eine seltsame Freiheit. Die Stimmen verstummen, die Überlebenden beruhigen sich. Doch die Hüterin steht immer noch da und sagt: 'Du bist noch nicht bereit. Aber vielleicht kannst du zurückkehren.' Sie reicht dir einen seltsamen Gegenstand. 'Dieser wird dich warnen. Doch er kann dich nicht mehr beschützen.'",
+      "options": [
+        {
+          "displayText": "Du nimmst den Gegenstand und verlässt die Höhle.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "kristalltür_erreichen": {
+      "content": "Du erreichst die Kristalltür und spürst, wie sie sich langsam öffnet. Frost, der du noch immer bist, siehst durch den schmalen Spalt hindurch — in einen Ort voller Licht und Leben. Doch als du die Tür durchdringst, spürst du, dass die Stimme nicht verstummt ist. Sie ist jetzt in dir. Dr. Elias' Stimme dringt durch: 'Du hast bestanden. Aber das Artefakt hat dich gewählt. Vielleicht bist du jetzt mehr als nur ein Überlebender.'",
+      "options": [
+        {
+          "displayText": "Du gehst durch die Tür in den Ort des Lichts.",
+          "storryLink": "lichtort_erreichen"
+        },
+        {
+          "displayText": "Du versuchst, zurückzukehren und die Kristalltür zu schließen.",
+          "storryLink": "tür_schließen"
+        }
+      ]
+    },
+    "lichtort_erreichen": {
+      "content": "Du stehst in einem Ort, der nicht mehr der eisige Berg ist. Hier ist die Luft warm, die Sonne scheint hell und die Bäume tragen Früchte. Dr. Elias ist nicht mehr hier, aber die Überlebenden haben dich erwartet. 'Wir haben euch gewartet', sagt einer von ihnen. Doch als du nach dem Artefakt greifst, spürst du eine seltsame Energie in dir aufsteigen. 'Die Träume der Alten sind nun deine Träume', sagt eine Stimme. Du bist nicht mehr allein.",
+      "options": [
+        {
+          "displayText": "Nochmal spielen",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "träume_alten_weg": {
+      "content": "Der Weg aus Eis trägt dich tiefer in die Erde hinab. Die Stimmen der Träume werden lauter, sie führen dich durch enge Gänge und schwebende Plattformen. Irgendwo zwischen den Wänden siehst du Schatten — Gestalten, die dich beobachten. Die Maske schützt dich vor den Träumen, doch du spürst, dass sie dich langsam verändert. Du bist nicht mehr sicher, ob du zurückkehren willst.",
+      "options": [
+        {
+          "displayText": "Du versuchst, den Träumen zu folgen, bis sie dich führen, wo du sein sollst.",
+          "storryLink": "träume_folgen"
+        },
+        {
+          "displayText": "Du nimmst die Maske ab und versuchst, dich gegen die Träume zu wehren.",
+          "storryLink": "maske_abnehmen_träume"
+        }
+      ]
+    },
+    "maske_abnehmen_träume": {
+      "content": "Du nimmst die Maske ab und spürst sofort einen eisigen Schmerz in deinen Augen. Die Stimmen der Träume werden zu Grellen, die dich greifen wollen. Doch die Maske gibt dir eine letzte Kraft — die Erinnerung an die Welt über dir. Du rennst, doch die Träume jagen dich. Wenn du nicht aufpasst, verlierst du den Weg.",
+      "options": [
+        {
+          "displayText": "Du kämpfst dich weiter vorwärts, bis du eine vertraute Höhle siehst.",
+          "storryLink": "vertraute_höhle_erreichen"
+        },
+        {
+          "displayText": "Du gibst auf und hörst das Flüstern der Träume an.",
+          "storryLink": "träume_annehmen"
+        }
+      ]
+    },
+    "vertraute_höhle_erreichen": {
+      "content": "Du erreichst eine Höhle, die du schon kennst — die Höhle der Hüterin. Doch jetzt sind die Stimmen der Träume lauter. Die Hüterin steht dort, aber sie wirkt verändert, fast wie du selbst. 'Ich habe dich gewartet', sagt sie. 'Doch du bist nicht bereit.' Der Boden bebt, als die Träume sich nähern.",
+      "options": [
+        {
+          "displayText": "Du versuchst, die Hüterin zu überzeugen, dass du bereit bist.",
+          "storryLink": "hüterin_überzeugen"
+        },
+        {
+          "displayText": "Du hörst auf, sie zu befragen, und versuchst, dich zu entfernen.",
+          "storryLink": "höhlentür_fliehen"
+        }
+      ]
+    },
+    "hüterin_überzeugen": {
+      "content": "Du versuchst, der Hüterin zu zeigen, dass du bereit bist. Du sprichst mit ihr über die Träume, die dich verfolgen. Doch sie wird immer wieder durch die Stimmen unterbrochen. 'Sie sind schon zu tief in dir', sagt sie. 'Doch ich sehe etwas...' Sie hält dir eine Waffe entgegen. 'Dieses ist der Schlüssel, um zu bestehen. Nimm ihn, bevor es zu spät ist.'",
+      "options": [
+        {
+          "displayText": "Du nimmst die Waffe und kämpfst dich durch die Träume.",
+          "storryLink": "waffe_der_überzeugung"
+        },
+        {
+          "displayText": "Du weigerst dich, die Waffe zu nehmen und beginnst zu fliehen.",
+          "storryLink": "hüterin_fliehen"
+        }
+      ]
+    },
+    "waffe_der_überzeugung": {
+      "content": "Die Waffe — ein Stück Metall, das kalt in deiner Hand ist — gibt dir eine seltsame Energie. Du spürst, wie sie gegen die Träume wirkt. 'Du bist bereit', sagt die Hüterin. 'Nimm die letzte Tür und geh weiter.' Sie zeigt auf eine kleine Tür aus dunklem Holz, die jetzt in der Wand steht. Als du sie berührst, spürst du, wie die Träume dich ziehen lassen. Du darfst weitergehen.",
+      "options": [
+        {
+          "displayText": "Du gehst durch die Tür aus dunklem Holz.",
+          "storryLink": "dunkle_holz_tür"
+        }
+      ]
+    },
+    "dunkle_holz_tür": {
+      "content": "Die Tür führt dich in eine Kammer voller Lichter und Schatten. Du siehst einen alten Mann, der über einem Schrein sitzt. Er blickt dich an und sagt: 'Die Träume haben dich geführt. Doch du bist noch nicht frei.' Vor dir liegt ein Gegenstand auf dem Tisch, der dich anspricht. 'Das ist dein Weg.' Du kannst den Gegenstand nehmen oder ihn ignorieren.",
+      "options": [
+        {
+          "displayText": "Du nimmst den Gegenstand und versuchst, die Kammer zu verlassen.",
+          "storryLink": "gegenstand_nehmen"
+        },
+        {
+          "displayText": "Du ignorierst den Gegenstand und verlässt die Kammer.",
+          "storryLink": "kammer_ignorieren"
+        }
+      ]
+    },
+    "kammer_ignorieren": {
+      "content": "Du gehst einfach an dem Gegenstand vorbei und verlässt die Kammer. Der alte Mann sagt nichts, aber du spürst einen seltsamen Schmerz in deiner Brust. Du hast eine Entscheidung getroffen, die sich noch auswirken wird. Die Tür hinter dir verschließt sich mit einem dumpfen Knall.",
+      "options": [
+        {
+          "displayText": "Du kehrst zurück zum Weg der Träume der Alten.",
+          "storryLink": "träume_alten_weg"
+        }
+      ]
+    },
+    "beides_behalten": {
+      "content": "Du behältst sowohl das Funkgerät als auch das Artefakt. Die Stimme des Artefakts wird wütend: 'Das ist ein Fehler! Die Frequenzen werden dich teilen!' Dr. Elias beginnt zu zittern. Seine Augen leuchten stärker, als er sagt: 'Du musst dich entscheiden. Behalte nur das eine oder lass beide los.' Er wirkt verzweifelt, als er dich ansieht.",
+      "options": [
+        {
+          "displayText": "Du gibst das Funkgerät an Dr. Elias, aber behältst das Artefakt.",
+          "storryLink": "funk_dr_elias_geben"
+        },
+        {
+          "displayText": "Du gibst das Artefakt an Dr. Elias, aber behältst das Funkgerät.",
+          "storryLink": "artefakt_dr_elias_geben"
+        }
+      ]
+    },
+    "artefakt_dr_elias_geben": {
+      "content": "Du gibst das Artefakt an Dr. Elias und spürst sofort eine seltsame Kälte verschwinden. 'Danke', sagt er, doch seine Stimme klingt nicht mehr so, wie du sie kennst. 'Aber das Funkgerät wird dich weiter führen.' Er zeigt auf eine neue Frequenz, die es sendet. 'Die Träume der Alten rufen dich.'",
+      "options": [
+        {
+          "displayText": "Du beginnst, dem neuen Funksignal zu folgen.",
+          "storryLink": "träume_alten_weg"
+        }
+      ]
+    },
+    "höhlentür_fliehen": {
+      "content": "Du fliehst vor den Hüterin und den Träumen. Doch die Höhle ist voller Fallen, die dich jagen wollen. Die Stimme aus dem Artefakt sagt leise: 'Es ist Zeit zu gehen.' Du siehst einen schmalen Ausgang — doch wenn du ihn durchschreitest, verlierst du alles.",
+      "options": [
+        {
+          "displayText": "Du gehst durch den schmalen Ausgang und verlässt die Höhle.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "hütte_fliehen": {
+      "content": "Du versuchst zu fliehen, während die Hüterin dich ruft. Du rennst zurück zur Hütte und sprengst die Tür auf. Die Kälte trifft dich mit voller Wucht. Du hast keine Zeit, dich zu bedanken. Die Schritte der Hüterin werden lauter. Du musst dich verstecken oder kämpfen.",
+      "options": [
+        {
+          "displayText": "Du versuchst, dich zu verstecken, bis die Hüterin dich nicht mehr finden kann.",
+          "storryLink": "verstecken_in_hütte"
+        },
+        {
+          "displayText": "Du ziehst dein Messer und kämpfst dich zur Tür, um die Hütte zu verlassen.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "verstecken_in_hütte": {
+      "content": "Du versteckst dich hinter einer Truhe oder hinter einem Vorhang. Die Hüterin sucht den Raum durch, doch du spürst, wie sie dich langsam ändert. Die Stimme des Artefakts wird zu deiner eigenen. Wenn du länger versteckt bleibst, verlierst du dich selbst.",
+      "options": [
+        {
+          "displayText": "Du hörst auf, dich zu verstecken, und gehst zur Tür.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "schlupfloch_untersuchen2": {
+      "content": "Das Schlupfloch führt dich in eine steinige Treppe, die tiefer in den Berg führt. Der Gang ist schmal und dunkel, doch eine leuchtende Glut am Ende scheint Licht zu spenden. Irgendwo zwischen den Wänden siehst du seltsame Schatten — vielleicht Überlebende, die hier leben. Die Funkgeräte in deiner Tasche surren leise. Die Stimme des Artefakts wird gedämpfter, als wolle sie dich warnen.",
+      "options": [
+        {
+          "displayText": "Du gehst tiefer in den Gang und erkundest die Glut.",
+          "storryLink": "treppe_glut_erkunden"
+        },
+        {
+          "displayText": "Du versuchst, zurück zur Hütte zu kehren.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "treppe_glut_erkunden": {
+      "content": "Die Glut am Ende der Treppe ist kein Feuer, sondern etwas Lebendiges — eine uralte, pulsierende Energie. Die Schatten, die du gesehen hast, sind nicht mehr so verschwommen. Sie nähern sich und sprechen dich an. 'Wir haben dich gewartet', sagt eine der Gestalten. 'Doch die Hüterin hat dich nicht losgelassen.' Du spürst, dass sie eine Entscheidung von dir wollen. Du kannst dich mit ihnen verbünden oder fliehen.",
+      "options": [
+        {
+          "displayText": "Du versuchst, dich mit den Schatten zu verbünden.",
+          "storryLink": "schatten_verbünden"
+        },
+        {
+          "displayText": "Du hörst auf die Stimmen und versuchst, dich zu entfernen.",
+          "storryLink": "treppe_glut_verlassen"
+        }
+      ]
+    },
+    "schatten_verbünden": {
+      "content": "Die Schatten umfassen dich, doch statt dich zu verschlingen, spürst du eine seltsame Wärme. Sie zeigen dir einen Weg — einen Pfad durch die Schatten, der dich an einen anderen Ort führt. 'Das ist der Pfad der Träume', sagen sie. 'Doch nur die Stärksten können ihn durchschreiten.' Du hast die Wahl: Folgen oder weigern.",
+      "options": [
+        {
+          "displayText": "Du entscheidest dich, dem Pfad der Träume zu folgen.",
+          "storryLink": "träume_alten_weg"
+        },
+        {
+          "displayText": "Du weigerst dich und versuchst, dich zu befreien.",
+          "storryLink": "schatten_fliehen"
+        }
+      ]
+    },
+    "treppe_glut_verlassen": {
+      "content": "Du versuchst, den Schatten zu entkommen. Sie ziehen dich weiter in den Gang, doch du kämpfst dich durch die Dunkelheit. Die Treppe beginnt sich zu verengen, bis du nur noch einen schmalen Ausgang siehst. Du hast keine andere Wahl — du gehst zurück zur Hütte.",
+      "options": [
+        {
+          "displayText": "Du kehrst zurück zur Hütte und verlässt sie.",
+          "storryLink": "hütte_ausgang_standard"
+        }
+      ]
+    },
+    "schneeschritte_erkunden": {
+      "content": "Die Schritte im Schnee kommen näher. Du erkennst eine Gestalt, die sich von oben nähert. Es ist jemand — vielleicht ein Überlebender, der ebenfalls den Weg hier gefunden hat. Doch als die Person näher kommt, siehst du ihr Gesicht: kalt, aber mit einem seltsamen Glanz. Die Stimme des Artefakts wird wütend: 'Es ist nicht sicher. Es ist kein Freund.'",
+      "options": [
+        {
+          "displayText": "Du nimmst das Funkgerät und zeigst es der Person, um zu warnen.",
+          "storryLink": "funk_auf_person_zeigen"
+        },
+        {
+          "displayText": "Du ignorierst die Warnung und gehst auf die Person zu.",
+          "storryLink": "person_begegnen"
+        },
+        {
+          "displayText": "Du versuchst, zu fliehen.",
+          "storryLink": "schneeschritte_vermeiden"
+        }
+      ]
+    },
+    "funksignal_lesen": {
+      "content": "Du entschlüsselst den Funkcode. Er zeigt einen Ort in der Nähe an — die Höhle der Hüterin. Doch gleichzeitig sendet die Funkausrüstung ein neues Signal: 'Vermeide die Höhle. Sie ist nicht für dich.' Plötzlich hörst du Schritte auf dem Schnee. Es ist Dr. Elias, der dich beobachtet. 'Die Frequenz hat mich nicht losgelassen', sagt er.",
+      "options": [
+        {
+          "displayText": "Du gehst zur Höhle, doch nun mit Vorsicht und Aufmerksamkeit.",
+          "storryLink": "hütte_falltur_erkunden"
+        },
+        {
+          "displayText": "Du hörst auf Dr. Elias und versuchst, nach etwas anderem zu suchen.",
+          "storryLink": "dorf_ruinen_suchen"
+        }
+      ]
+    },
+    "dorf_ruinen_suchen": {
+      "content": "Du erkundest die Ruinen des Dorfes — alte Häuser, zerrissene Vorhänge. Du findest eine versteckte Tür, die sich mit einem Knirschen öffnet. Im Inneren liegt ein alter Lagerraum voller Vorräte. Doch als du eine Truhe öffnest, siehst du etwas, das dich erschauern lässt: ein Funkgerät, das mit einem seltsamen Signal arbeitet. Die Stimme des Artefakts wird wütend: 'Das ist nicht dein Signal! Es gehört den Träumen der Alten!'",
+      "options": [
+        {
+          "displayText": "Du nimmst das Funkgerät und versuchst, die Träume der Alten zu verstehen.",
+          "storryLink": "träume_funk_nehmen"
+        },
+        {
+          "displayText": "Du schließt die Truhe wieder und hörst auf das Signal.",
+          "storryLink": "vorräte_ignorieren"
+        }
+      ]
+    },
+    "träume_funk_nehmen": {
+      "content": "Das Funkgerät in deiner Hand vibriert. Es sendet das Signal der Träume der Alten. Die Stimme wird lauter: 'Sie haben dich gefunden. Die Träume der Alten werden dich testen.' Plötzlich beginnt der Raum zu verschwimmen — die Wände werden lebendig, Stimmen aus den Träumen rufen dich.",
+      "options": [
+        {
+          "displayText": "Du versuchst, dem Signal zu folgen, bis du den Träumen entkommen kannst.",
+          "storryLink": "träume_alten_weg"
+        }
+      ]
+    },
+    "vorräte_ignorieren": {
+      "content": "Du hörst auf das Signal des fremden Funkgeräts. Vielleicht ist es besser, die Vorräte mitzunehmen und zu fliehen. Du beginnst, die Truhe wieder zu schließen. Plötzlich spürst du einen eisigen Schmerz in deinem Rücken. Du drehst dich um und siehst Dr. Elias, der dich beobachtet. 'Die Frequenz hat mich gefunden', sagt er. 'Und sie hat mich verändert.' Er wirkt nicht mehr so, wie du ihn kennst.",
+      "options": [
+        {
+          "displayText": "Du hörst auf Dr. Elias und beginnst, die Ruinen zu verlassen.",
+          "storryLink": "dorf_ausgang_suchen"
+        },
+        {
+          "displayText": "Du versuchst, mit ihm zu sprechen und seine Geschichte zu verstehen.",
+          "storryLink": "dr_elias_ruine_fragen"
+        }
+      ]
+    },
+    "dr_elias_ruine_fragen": {
+      "content": "Dr. Elias ist nicht mehr ganz hier. Seine Stimme klingt verzerrt, als er spricht: 'Die Ruine hat mich gewählt. Sie hat mich die Worte lehren lassen. Doch ich weiß nicht mehr, ob ich dich beschützen kann oder ob ich nur ein Werkzeug der Frequenz bin.' Er zeigt auf das Funkgerät in seiner Hand, das nun mit einem seltsamen Glanz erfüllt ist. 'Gib es mir', sagt er. 'Es gehört jetzt den Träumen der Alten.' Was tust du?",
+      "options": [
+        {
+          "displayText": "Du gibst ihm das Funkgerät und versuchst, zu fliehen.",
+          "storryLink": "dorf_ausgang_suchen"
+        },
+        {
+          "displayText": "Du behältst das Funkgerät und versuchst, eine andere Lösung zu finden.",
+          "storryLink": "funksignal_vermeiden"
+        }
+      ]
+    },
+    "funksignal_vermeiden": {
+      "content": "Du behältst das Funkgerät und versuchst, Dr. Elias' verzerrte Energie zu meistern. Das Funkgerät sendet jetzt das Signal der Träume der Alten, doch du hörst auf die Warnung der Hüterin und beginnst, den Raum zu verlassen. Plötzlich spürst du einen seltsamen Druck in deinen Ohren — die Träume versuchen, dich zu holen.",
+      "options": [
+        {
+          "displayText": "Du kämpfst dich schnell aus der Ruine heraus und verlässt das Dorf.",
+          "storryLink": "dorf_ausgang_suchen"
+        }
+      ]
+    },
+    "person_begegnen": {
+      "content": "Du gehst auf die Person zu. 'Ich habe dich gesucht', sagt sie, und ihre Stimme klingt nicht mehr menschlich, sondern wie ein Echo der Stimme des Artefakts. 'Wir haben zusammen gesucht, doch du hast mich nicht gehört.' Sie zeigt auf ihr Funkgerät, das mit einem eisigen Glanz strahlt. 'Das ist nicht dein Signal, das gehört den Träumen.' Sie wirkt nicht mehr wie ein Überlebender, sondern wie ein Teil von etwas Dunklerem.",
+      "options": [
+        {
+          "displayText": "Du versuchst, sie zu beruhigen und zu warnen.",
+          "storryLink": "person_beruhigen"
+        },
+        {
+          "displayText": "Du ziehst dein Messer und versuchst, sie anzugreifen.",
+          "storryText": "person_angreifen"
+        }
+      ]
+    },
+    "person_beruhigen": {
+      "content": "Du versuchst, die Person zu beruhigen. 'Ich habe dich nicht gehört', sagst du. 'Das Artefakt hat mich verändert.' Doch sie lacht nur kalt. 'Die Stimme hat dich gewählt. Ich bin nicht mehr ich.' Sie greift nach dir, doch du wehrst dich. 'Das ist nicht dein Wille', sagst du. Plötzlich spürst du, wie das Artefakt dich stützt.",
+      "options": [
+        {
+          "displayText": "Du versuchst, das Artefakt zu nutzen, um sie zu stoppen.",
+          "storryLink": "artefakt_gegen_person"
+        },
+        {
+          "displayText": "Du hörst auf und versuchst, zu fliehen.",
+          "storryLink": "dorf_ausgang_suchen"
+        }
+      ]
+    },
+    "artefakt_gegen_person": {
+      "content": "Du nutzt das Artefakt, um dich gegen die Person zu wehren. Die Stimme wird wütend: 'Du wirst mich nicht benutzen!' Doch plötzlich spürst du einen seltsamen Schmerz. Die Person ist verschwunden — nur ein Echo bleibt zurück. Dr. Elias erscheint plötzlich. 'Das war nicht sie', sagt er. 'Das war die Frequenz. Sie hat dich getestet.'",
+      "options": [
+        {
+          "displayText": "Du hörst auf Dr. Elias und versuchst, zu fliehen.",
+          "storryLink": "dorf_ausgang_suchen"
+        },
+        {
+          "displayText": "Du versuchst, die Frequenz zu verstehen.",
+          "storryLink": "frequenz_understanden"
+        }
+      ]
+    },
+    "frequenz_understanden": {
+      "content": "Dr. Elias erklärt dir die Frequenz: 'Sie ist nicht böse. Sie ist nur mächtig. Sie sucht jemanden, der sie trägt.' Er zeigt auf das Artefakt. 'Aber nur wenige können es tragen. Die Hüterin hat dich gefunden, weil du stark genug bist.' Doch er wirkt unruhig. 'Die Träume der Alten rufen dich jetzt. Sie wollen dich beschützen oder zerstören.'",
+      "options": [
+        {
+          "displayText": "Du versuchst, den Träumen der Alten zu folgen, doch nun mit mehr Vorsicht.",
+          "storryLink": "träume_alten_weg"
+        },
+        {
+          "displayText": "Du hörst auf Dr. Elias und versuchst, dem Signal der Hüterin zu folgen.",
+          "storryLink": "hütte_falltur_erkunden"
+        }
+      ]
+    },
+    "person_angreifen": {
+      "content": "Du angreifst die Person. 'Vorsicht!', ruft Dr. Elias, der plötzlich vor dir steht. 'Sie ist nicht mehr ganz kontrollierbar!' Doch es ist zu spät. Die Person stürzt sich auf dich, doch als sie dich berührt, spürst du einen eisigen Schmerz. Die Stimme des Artefakts wird wütend: 'Das ist nicht dein Wille!' Plötzlich spürst du eine seltsame Verbindung zwischen euch beiden. Sie kämpft gegen dich, aber das Artefakt gibt ihr Kraft.",
+      "options": [
+        {
+          "displayText": "Du versuchst, dich gegen die Kraft des Artefakts zu wehren und die Person zu überwältigen.",
+          "storryLink": "kampf_artefakt_kraft"
+        },
+        {
+          "displayText": "Du gibst auf und versuchst, zu fliehen.",
+          "storryLink": "dorf_ausgang_suchen"
+        }
+      ]
+    },
+    "kampf_artefakt_kraft": {
+      "content": "Du kämpfst gegen die Person, doch das Artefakt gibt ihr immer mehr Kraft. 'Ich kann dich nicht mehr stoppen', sagst du verzweifelt. 'Sie ist nicht mehr sie!' Dr. Elias ruft dir zu: 'Es ist zu spät! Die Frequenz hat euch beide gewählt!' Doch die Person wirkt nicht mehr wie ein Feind. Sie steht vor dir, als wäre sie bereit zu gehen. 'Ich bin nicht mehr ich', sagt sie. 'Aber du kannst mich befreien.'",
+      "options": [
+        {
+          "displayText": "Du versuchst, sie zu befreien, indem du sie berührst oder das Artefakt nutzt.",
+          "storryLink": "person_befreien"
+        },
+        {
+          "displayText": "Du hörst auf und versuchst, zu fliehen.",
+          "storryLink": "dorf_ausgang_suchen"
+        }
+      ]
+    },
+    "person_befreien": {
+      "content": "Du berührst die Person und spürst einen seltsamen Strom, der durch deine Hand fließt. Das Artefakt strahlt hell. Die Person beginnt zu schrumpfen, ihre Kraft verlässt sie. 'Danke', sagt sie leise. 'Du hast mich nicht gewählt.' Dann ist sie verschwunden — nur ihre Stimme bleibt zurück: 'Die Hüterin hat dich gewählt. Du kannst jetzt zurückkehren.' Dr. Elias zeigt auf den Ausgang.",
+      "options": [
+        {
+          "displayText": "Du beginnst den Weg zurück zur Hüterin.",
+          "storryLink": "hütte_falltur_erkunden"
+        }
+      ]
+    },
+    "art_ende": {
+      "content": "Die Geschichte endet auf ewig in der eisigen Stille des Lichts. Du hast die Prüfungen der Hüterin und der Träume bestanden und bist frei, doch etwas bleibt für immer verändert in dir. Die Welt ist anders, jetzt dass du die Stimme des Artefakts in dir spürst. Dr. Elias’ Worte kommen dir in den Sinn: 'Die Frequenz sucht jemanden, der sie trägt.' Du kannst zurückkehren, aber nie mehr ganz so sein, wie du warst.",
+      "options": [
+        {
+          "displayText": "Nochmal spielen",
+          "storryLink": "start"
+        }
+      ]
+    }
+  }
+}

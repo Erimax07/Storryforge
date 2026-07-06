@@ -1,0 +1,191 @@
+﻿{
+    "id": 6,
+    "title": "The Forgotten Horcrux",
+    "description": "A hidden threat surfaces during Harry's fourth year at Hogwarts.",
+    "author": "Claude",
+    "creation": "2026-04-01T16:00:00.0000000+02:00",
+    "genre": "Fantasy",
+    "storyElements": {
+        "start": {
+            "content": "It is the night before the first task of the Triwizard Tournament. Harry cannot sleep. His scar burns faintly — not the sharp pain of Voldemort's rage, but something older, slower. Under his pillow he finds a note written in green ink he does not recognise: 'The lake. Midnight. Come alone. — A friend.' Ron is snoring. Hermione's owl arrived an hour ago with a book she ordered: 'Horcruxes and the Architecture of the Soul.' Harry stares at the ceiling.",
+            "options": [
+                { "displayText": "Go to the lake alone", "storryLink": "lake_alone" },
+                { "displayText": "Wake Ron", "storryLink": "wake_ron" },
+                { "displayText": "Read Hermione's book", "storryLink": "read_book" }
+            ]
+        },
+        "wake_ron": {
+            "content": "'Wha— dragons?' Ron sits up immediately, then looks embarrassed. Harry shows him the note. Ron squints at it for a long time. 'Sounds like a trap.' He pauses. 'Obviously we're going though, right?' He is already pulling on his robes.",
+            "options": [
+                { "displayText": "Go to the lake together", "storryLink": "lake_together" },
+                { "displayText": "Wake Hermione too", "storryLink": "wake_hermione" }
+            ]
+        },
+        "wake_hermione": {
+            "content": "Hermione reads the note, then the title of her own book, then the note again. Her face goes pale. 'Harry. A Horcrux is an object a Dark wizard hides a piece of their soul inside. If Voldemort made one — and this book suggests he did — destroying it is the only way to truly defeat him.' She grabs her wand. 'We are all going.'",
+            "options": [
+                { "displayText": "Go to the lake together", "storryLink": "lake_together" }
+            ]
+        },
+        "read_book": {
+            "content": "You open to a page Hermione has dog-eared. The word Horcrux is circled three times in red ink. A Horcrux, the book explains, is an object containing a fragment of a wizard's soul, split through the act of murder. The book lists signs of one nearby: unexplained cold, animals fleeing, a persistent burning sensation in those marked by Dark magic. Harry's scar pulses. He wakes Ron.",
+            "options": [
+                { "displayText": "Wake Ron", "storryLink": "wake_ron" }
+            ]
+        },
+        "lake_alone": {
+            "content": "The lake is black and perfectly still. A figure waits at the water's edge — small, cloaked, face hidden. 'You came alone. Good.' The voice is a girl's. She lowers her hood. Cho Chang. Her eyes are red. 'Cedric found something in the lake during our practice dive. He would not tell me what. But he has not slept since and last night he was talking in his sleep — in Parseltongue. Cedric does not speak Parseltongue, Harry.'",
+            "options": [
+                { "displayText": "Ask what Cedric found", "storryLink": "cho_cedric" },
+                { "displayText": "Go find Cedric now", "storryLink": "find_cedric_alone" },
+                { "displayText": "Go back for Ron and Hermione", "storryLink": "lake_get_friends" }
+            ]
+        },
+        "lake_together": {
+            "content": "The lake is black and perfectly still. A cloaked figure waits at the water's edge. It lowers its hood — Cho Chang, eyes red from crying. She looks at Ron and Hermione, then seems to decide it does not matter. 'Cedric found something in the lake. He will not say what. But last night he spoke in his sleep — in Parseltongue.' Ron goes very still. 'Cedric does not speak Parseltongue,' Hermione whispers.",
+            "options": [
+                { "displayText": "Ask what Cedric found exactly", "storryLink": "cho_cedric" },
+                { "displayText": "Go find Cedric immediately", "storryLink": "find_cedric_together" }
+            ]
+        },
+        "lake_get_friends": {
+            "content": "You tell Cho to wait and run back to the castle. Five minutes later you return with Ron and Hermione, both only half dressed and fully awake. Cho looks relieved rather than annoyed. She repeats everything. Hermione grips her book so hard the spine cracks.",
+            "options": [
+                { "displayText": "Ask what Cedric found", "storryLink": "cho_cedric" },
+                { "displayText": "Go find Cedric immediately", "storryLink": "find_cedric_together" }
+            ]
+        },
+        "cho_cedric": {
+            "content": "'He described it as a locket. Old, gold, with a serpent on the front. He said it called to him underwater — he heard a voice.' Hermione makes a sharp noise. 'Slytherin's locket,' she breathes. 'It was never destroyed. It is a Horcrux.' The lake shifts behind her. Something beneath the surface catches the moonlight.",
+            "options": [
+                { "displayText": "Dive into the lake", "storryLink": "dive" },
+                { "displayText": "Find Cedric first", "storryLink": "find_cedric_together" },
+                { "displayText": "Tell Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "find_cedric_alone": {
+            "content": "Cedric's tent is empty. His bed has not been slept in. On his pillow sits a single gold locket, serpent coiled on the front. It is warm to the touch. The moment your fingers close around it your scar explodes in pain and a voice that is not a voice fills your skull: 'Another one comes. Good.'",
+            "options": [
+                { "displayText": "Drop the locket and run", "storryLink": "drop_locket" },
+                { "displayText": "Hold on and fight through the pain", "storryLink": "hold_locket" }
+            ]
+        },
+        "find_cedric_together": {
+            "content": "Cedric's tent is empty, bed unslept in. On his pillow sits a gold locket with a serpent on the front. Harry reaches for it. Hermione grabs his wrist. 'Do not touch it with your bare hand.' She conjures a cloth, wraps the locket, and lifts it carefully. It rattles inside the cloth as though something inside is trying to get out.",
+            "options": [
+                { "displayText": "Try to open the locket", "storryLink": "open_locket" },
+                { "displayText": "Find Cedric first", "storryLink": "find_cedric_lake" },
+                { "displayText": "Take it to Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "tell_dumbledore": {
+            "content": "Dumbledore's office is lit when you arrive, as though he was already awake. He listens without interrupting. When you finish he is quiet for a very long time. 'I have suspected for some time,' he says finally, 'that Tom left more of himself behind than anyone knew.' He stands. 'Show me where it is.' His voice is utterly calm, but his hands are shaking.",
+            "options": [
+                { "displayText": "Lead him to the lake", "storryLink": "dumbledore_lake" },
+                { "displayText": "Lead him to Cedric's tent", "storryLink": "dumbledore_tent" }
+            ]
+        },
+        "dive": {
+            "content": "The water is black and freezing. Twenty feet down, wedged in the roots of a sunken tree, the locket pulses with a sickly golden light. Around it, three merpeople hang motionless in the water, watching you. They do not move. They do not blink. Your lungs begin to burn.",
+            "options": [
+                { "displayText": "Grab the locket and surface", "storryLink": "surface_with_locket" },
+                { "displayText": "Try to communicate with the merpeople", "storryLink": "merpeople" }
+            ]
+        },
+        "merpeople": {
+            "content": "You open your mouth — and Parseltongue comes out, unbidden. The merpeople flinch back. One speaks in their own language, urgent, pointing at the locket, then at the surface, then drawing a finger across their throat. Harry does not speak Mermish, but some meanings are universal. He grabs the locket.",
+            "options": [
+                { "displayText": "Surface as fast as you can", "storryLink": "surface_with_locket" }
+            ]
+        },
+        "surface_with_locket": {
+            "content": "You break the surface gasping. Hermione and Ron haul you out. The locket writhes in your grip — physically writhes, like something alive inside it is furious. Hermione dries it with a spell. The serpent on the front opens its tiny engraved mouth and hisses: 'You cannot destroy what was never alive.'",
+            "options": [
+                { "displayText": "Try to open it", "storryLink": "open_locket" },
+                { "displayText": "Take it to Dumbledore immediately", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "open_locket": {
+            "content": "It will not open. Hermione tries Alohomora, Diffindo, a Unlocking Charm from a book three years above her level. Nothing. Ron examines the hinge. 'It has not been opened in centuries. Whatever is inside does not want to come out.' A long pause. 'Or does not want us to be the ones to open it.'",
+            "options": [
+                { "displayText": "Speak Parseltongue at it", "storryLink": "parseltongue_locket" },
+                { "displayText": "Take it to Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "parseltongue_locket": {
+            "content": "Harry stares at the serpent. Opens his mouth. The word comes: 'Open.' The locket snaps wide. A wave of cold rolls outward. Inside, where a portrait should be, is nothing — just darkness that moves. From somewhere inside it a whisper finds each of them in turn: Ron hears his brothers laughing at him. Hermione hears her parents saying they never understood her. Harry hears Voldemort's voice saying: 'You were never enough.'",
+            "options": [
+                { "displayText": "Slam it shut", "storryLink": "slam_shut" },
+                { "displayText": "Resist and hold it open", "storryLink": "resist_locket" }
+            ]
+        },
+        "slam_shut": {
+            "content": "Harry slams it shut. They stand there breathing hard in the dark. Ron looks like he might be sick. Hermione's hands are shaking. 'It is feeding on us,' she says quietly. 'It uses what we are afraid of. Classic Dark object defence.' She straightens up. 'We need Dumbledore. Tonight. Now.'",
+            "options": [
+                { "displayText": "Go to Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "resist_locket": {
+            "content": "Harry keeps it open. The cold deepens. But then something shifts — he thinks of his parents, of Sirius, of Ron and Hermione standing beside him right now. The darkness inside the locket recoils. For a moment there is a shape inside it — a shadow of a young man, thin-faced, hollow-eyed. Then it screams, soundless, and the locket goes cold and still. It is not destroyed. But something has changed.",
+            "options": [
+                { "displayText": "Take it to Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "drop_locket": {
+            "content": "You drop it and stagger backward out of the tent. The burning fades slowly. You stand in the dark for a full minute, just breathing. Then you go back in, use your robes as a barrier, pick it up, and go find Ron and Hermione.",
+            "options": [
+                { "displayText": "Wake Ron and Hermione", "storryLink": "wake_hermione" }
+            ]
+        },
+        "hold_locket": {
+            "content": "You hold on. The voice fills your head — cold, amused, ancient. 'The boy who lived. Still alive. Still so small.' Your knees hit the ground. Somewhere far away you hear yourself speaking Parseltongue. Then Cedric's voice cuts through everything, sharp and frightened: 'Harry! Let go!' A hand wrenches the locket away. The world comes back.",
+            "options": [
+                { "displayText": "Look up at Cedric", "storryLink": "cedric_saves" }
+            ]
+        },
+        "cedric_saves": {
+            "content": "Cedric stands over you, holding the locket in a bundled cloak, his face white. 'I heard it calling me back. I could not sleep.' He looks at the locket with something between fear and recognition. 'It spoke to me underwater. It said it had been waiting.' He sits down heavily on his trunk. 'What is it?' Harry tells him everything.",
+            "options": [
+                { "displayText": "Go to Dumbledore together", "storryLink": "tell_dumbledore" },
+                { "displayText": "Try to open the locket", "storryLink": "open_locket" }
+            ]
+        },
+        "find_cedric_lake": {
+            "content": "You find Cedric at the lake's edge, standing in the water up to his knees fully clothed, staring at the surface. Cho is beside him, holding his arm with both hands. He turns when he hears you. His eyes are wrong — too wide, the pupils too large. 'It is still down there,' he says. 'I can feel it.' Hermione moves between him and the water.",
+            "options": [
+                { "displayText": "Pull Cedric back from the water", "storryLink": "pull_cedric" },
+                { "displayText": "Ask what he feels", "storryLink": "cedric_feels" }
+            ]
+        },
+        "cedric_feels": {
+            "content": "'Like something that knows me,' Cedric says slowly. 'Like it found something I did not know I had lost and is holding it.' Hermione grabs his arm. 'That is what it does. It finds the thing you want most and uses it as a hook. Cedric — look at me. What do you want most?' He blinks. 'To make my father proud.' Ron puts his hand on Cedric's shoulder. 'That is yours,' he says firmly. 'Not its.'",
+            "options": [
+                { "displayText": "Pull Cedric back from the water", "storryLink": "pull_cedric" }
+            ]
+        },
+        "pull_cedric": {
+            "content": "It takes all three of you. Cedric fights without meaning to — his body leaning toward the water even as his face shows he does not want to go. Then he stumbles back onto the bank and collapses on the grass, gasping. The lake goes still. He looks up at Harry. 'Tell me what that thing is. Tell me everything.'",
+            "options": [
+                { "displayText": "Tell him and go to Dumbledore", "storryLink": "tell_dumbledore" }
+            ]
+        },
+        "dumbledore_lake": {
+            "content": "Dumbledore stands at the lake's edge for a long time. He conjures a light and holds it over the water. Slowly, the locket rises from the deep on its own — called up by magic old and quiet that none of you have words for. He wraps it in his handkerchief and holds it carefully. 'It has been here a very long time,' he says softly, 'waiting for someone to care enough to find it.'",
+            "options": [
+                { "displayText": "Ask if it can be destroyed", "storryLink": "ending_hope" }
+            ]
+        },
+        "dumbledore_tent": {
+            "content": "Dumbledore looks at the locket for a long time without touching it. Then he looks at Harry. 'You did the right thing bringing it here and not the wrong thing trying to open it alone.' He levitates it with his wand. 'This will take time to deal with safely. But the fact that you found it — that matters more than you know.' He looks tired and something else. Relieved.",
+            "options": [
+                { "displayText": "Ask what happens next", "storryLink": "ending_hope" }
+            ]
+        },
+        "ending_hope": {
+            "content": "The first task happens three hours later. Harry faces the dragon exhausted, scar still faintly aching. He wins anyway. That evening Dumbledore calls him to the office and places the locket on the desk between them. 'There are others like this,' he says. 'And we will find them. Together, I think, this time.' Outside, Ron and Hermione wait in the corridor. They do not go to bed until nearly dawn, talking through everything. It is the first night of a very long search. None of them say it out loud, but they all feel it: something has shifted. They are no longer just students. They are, all of them, part of something that matters.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        }
+    }
+}
