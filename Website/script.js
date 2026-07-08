@@ -224,7 +224,7 @@ function submitStory(){
         })
         const key = element.querySelector(".story-name").value;
         const el = {
-            content: element.querySelector(".selectionElement").value,
+            content: element.querySelector(".story-content").value,
             options: options
             }
         
