@@ -10,12 +10,12 @@ let elementIdCounter = 0;
 let selectionIDCounter = [];
 
 
-document.addEventListener("submit", function (event) {
-    if (event.target.id === "storyForm") {
-        event.preventDefault();
-        submitStory(event);
-    }
-});
+// document.addEventListener("submit", function (event) {
+//     if (event.target.id === "storyForm") {
+//         event.preventDefault();
+//         submitStory(event);
+//     }
+// });
 
 document.addEventListener("DOMContentLoaded", loadHome);
 
@@ -152,6 +152,19 @@ function createStory() {
         </form>
     `
     document.getElementById("content").innerHTML = html;
+    document.getElementById("content").innerHTML = html;
+
+    const form = document.getElementById("storyForm");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitStory(event).catch(err => {
+            console.error("submitStory failed:", err);
+            document.getElementById("content").insertAdjacentHTML(
+                "beforeend",
+                `<div class="error">Error: ${err.message}</div>`
+            );
+        });
+    });
 }
 
 function addStoryelement() {
