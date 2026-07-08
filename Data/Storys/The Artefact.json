@@ -1,1 +1,96 @@
-{"storyElements":{"start":{"content":"The fight was exhausting you thing while you search for a resting place. After the bossfight you realy can get a cup of sleep.","options":[{"displayText":"go to the ominous statue","storryLink":"statue","stateAdd":"","requiredState":""},{"displayText":"go to the small door across the arena","storryLink":"door","stateAdd":"","requiredState":""}]},"statue":{"content":"You look at the statue and see a green briken statue. You can identify an old Men in its state. It was Probably a King you thing while you see a stine tablet nearby.","options":[{"displayText":"read the stine tablet","storryLink":"tablet","stateAdd":"","requiredState":""},{"displayText":"go to the small door across the arena","storryLink":"door","stateAdd":"","requiredState":""}]},"tablet":{"content":"You can identify some letters but cannot make any sense on the meaning","options":[{"displayText":"go to the small door across the arena","storryLink":"door","stateAdd":"","requiredState":""}]},"door":{"content":"You open the door and see a treasure Chest in the other site of the small room you strped into.","options":[{"displayText":"Take a rest","storryLink":"rest","stateAdd":"","requiredState":""},{"displayText":"open the chest","storryLink":"chest","stateAdd":"","requiredState":""}]},"rest":{"content":"you lay in the corner and close your eyes. In the meantime the room teleports you back to the entrence of the Labyrinth you were several days in.","options":[{"displayText":"Play again","storryLink":"start","stateAdd":"","requiredState":""}]},"chest":{"content":"You Open the chest and you find a notebook. You takeit with you. In the meantime the room teleports you back to the entrence of the Labyrinth you were several days in.","options":[{"displayText":"Play again","storryLink":"start","stateAdd":"","requiredState":""}]}},"state":[],"id":7,"title":"The Artefact","description":"A short story about the end of a Jorney","creation":"2026-07-08T19:45:13.66Z","author":"Erik Matschke","genre":"Horror","nodes":0}
+{
+    "storyElements": {
+        "start": {
+            "content": "The fight was exhausting you thing while you search for a resting place. After the bossfight you realy can get a cup of sleep.",
+            "options": [
+                {
+                    "displayText": "go to the ominous statue",
+                    "storryLink": "statue",
+                    "stateAdd": "",
+                    "requiredState": ""
+                },
+                {
+                    "displayText": "go to the small door across the arena",
+                    "storryLink": "door",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        },
+        "statue": {
+            "content": "You look at the statue and see a green briken statue. You can identify an old Men in its state. It was Probably a King you thing while you see a stine tablet nearby.",
+            "options": [
+                {
+                    "displayText": "read the stine tablet",
+                    "storryLink": "tablet",
+                    "stateAdd": "",
+                    "requiredState": ""
+                },
+                {
+                    "displayText": "go to the small door across the arena",
+                    "storryLink": "door",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        },
+        "tablet": {
+            "content": "You can identify some letters but cannot make any sense on the meaning",
+            "options": [
+                {
+                    "displayText": "go to the small door across the arena",
+                    "storryLink": "door",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        },
+        "door": {
+            "content": "You open the door and see a treasure Chest in the other site of the small room you strped into.",
+            "options": [
+                {
+                    "displayText": "Take a rest",
+                    "storryLink": "rest",
+                    "stateAdd": "",
+                    "requiredState": ""
+                },
+                {
+                    "displayText": "open the chest",
+                    "storryLink": "chest",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        },
+        "rest": {
+            "content": "you lay in the corner and close your eyes. In the meantime the room teleports you back to the entrence of the Labyrinth you were several days in.",
+            "options": [
+                {
+                    "displayText": "Play again",
+                    "storryLink": "start",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        },
+        "chest": {
+            "content": "You Open the chest and you find a notebook. You takeit with you. In the meantime the room teleports you back to the entrence of the Labyrinth you were several days in.",
+            "options": [
+                {
+                    "displayText": "Play again",
+                    "storryLink": "start",
+                    "stateAdd": "",
+                    "requiredState": ""
+                }
+            ]
+        }
+    },
+    "state": [],
+    "id": 7,
+    "title": "The Artefact",
+    "description": "A short story about the end of a Jorney",
+    "creation": "2026-07-08T19:45:13.66Z",
+    "author": "Erik Matschke",
+    "genre": "Horror",
+    "nodes": 6
+}

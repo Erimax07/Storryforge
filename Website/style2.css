@@ -1,22 +1,22 @@
 /* ==========================================================================
-   StoryForge — "Night Edition"
-   An ink-well & gold-leaf theme: dark manuscript pages, branching paths
-   drawn like a table-of-contents tree, gilded accents on every choice.
+   StoryForge — "Day Edition"
+   The same manuscript, read by window light: warm paper, ink-brown text,
+   the same gold-leaf and ribbon-crimson accents against a bright page.
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   /* Palette */
-  --ink:        #17162a;   /* page background, deep indigo-black */
-  --ink-raised: #221f3b;   /* card / header surface */
-  --ink-line:   #38345a;   /* hairlines & borders */
-  --parchment:  #e9dfc6;   /* primary text, aged paper */
-  --parchment-dim: #b7ae95;/* secondary text */
-  --gold:       #c9a227;   /* gilded accent — links, choices, focus */
-  --gold-bright:#e6c65b;
+  --ink:        #efe6cf;   /* page background, sunlit paper */
+  --ink-raised: #fbf6e8;   /* card / header surface */
+  --ink-line:   #d8c9a3;   /* hairlines & borders */
+  --parchment:  #2c2413;   /* primary text, dark ink-brown */
+  --parchment-dim: #6b5f42;/* secondary text */
+  --gold:       #a5780f;   /* gilded accent — links, choices, focus */
+  --gold-bright:#8a6109;
   --crimson:    #9a2f3e;   /* ribbon-bookmark accent — danger/cancel */
-  --crimson-bright:#c04456;
+  --crimson-bright:#7a212d;
 
   /* Type */
   --font-display: "Fraunces", Georgia, serif;
@@ -25,7 +25,7 @@
 
   /* Layout */
   --radius: 6px;
-  --shadow: 0 12px 30px rgba(0,0,0,0.45);
+  --shadow: 0 12px 24px rgba(90,70,30,0.16);
   --spine-width: 3px;
 }
 
@@ -36,7 +36,7 @@ html, body {
   padding: 0;
   min-height: 100%;
   background:
-    radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(201,162,39,0.07), transparent 60%),
+    radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(165,120,15,0.08), transparent 60%),
     var(--ink);
   color: var(--parchment);
   font-family: var(--font-body);
@@ -49,7 +49,7 @@ body {
   min-height: 100vh;
 }
 
-::selection { background: var(--gold); color: var(--ink); }
+::selection { background: var(--gold); color: var(--ink-raised); }
 
 /* ---- Header ---- */
 .header {
@@ -110,7 +110,7 @@ body {
 .nav button:hover {
   border-color: var(--gold);
   color: var(--gold-bright);
-  background: rgba(201,162,39,0.08);
+  background: rgba(165,120,15,0.08);
 }
 
 .nav button:focus-visible,
@@ -153,7 +153,7 @@ main#content {
 .error {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  background: rgba(154,47,62,0.12);
+  background: rgba(154,47,62,0.08);
   border: 1px solid var(--crimson);
   color: var(--crimson-bright);
   padding: 1rem 1.25rem;
@@ -221,7 +221,6 @@ button.story p {
   font-size: 0.92rem;
 }
 
-/* single-story detail view text (raw text nodes, not wrapped in <p>) */
 button.story br + * { margin-top: 0.2rem; }
 
 /* ---- Story reading mode (.storyElement inside #content directly) ---- */
@@ -242,7 +241,6 @@ main#content > .storyElement h2 {
   color: var(--parchment);
 }
 
-/* Options rendered as a branching spine of choices */
 main#content > .storyElement {
   position: relative;
 }
@@ -278,7 +276,7 @@ button.option:hover { border-left-color: var(--gold); }
 
 button.option:hover::before {
   background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(201,162,39,0.18);
+  box-shadow: 0 0 0 4px rgba(165,120,15,0.16);
 }
 
 button.option p {
@@ -347,8 +345,6 @@ button.option:hover p { color: var(--gold-bright); }
   margin-top: 1.5rem;
 }
 
-/* .storyElement reused as a form row inside the builder — higher
-   specificity via #storyWrapper overrides the reading-mode card look */
 #storyWrapper .storyElement {
   background: var(--ink);
   border: 1px solid var(--ink-line);
@@ -430,7 +426,7 @@ button.remove-selection {
   transition: background 0.15s ease;
 }
 
-button.remove-selection:hover { background: rgba(154,47,62,0.15); }
+button.remove-selection:hover { background: rgba(154,47,62,0.1); }
 
 .storyActions {
   display: flex;
@@ -486,7 +482,7 @@ button.remove-selection:hover { background: rgba(154,47,62,0.15); }
 .storyButtonWropper .storyButton:first-child {
   background: var(--gold);
   border-color: var(--gold);
-  color: var(--ink);
+  color: var(--ink-raised);
   font-weight: 600;
 }
 .storyButtonWropper .storyButton:first-child:hover { background: var(--gold-bright); }
@@ -497,7 +493,7 @@ button.remove-selection:hover { background: rgba(154,47,62,0.15); }
   color: var(--gold-bright);
   margin-left: auto;
 }
-.storyButtonWropper .storyButton[type="submit"]:hover { background: rgba(201,162,39,0.1); }
+.storyButtonWropper .storyButton[type="submit"]:hover { background: rgba(165,120,15,0.08); }
 
 .storyButtonWropper .storyButton:not(:first-child):not([type="submit"]):hover {
   border-color: var(--crimson);

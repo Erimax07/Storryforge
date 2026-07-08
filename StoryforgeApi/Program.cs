@@ -94,6 +94,9 @@ app.MapPost("/submitStory", async (Story story) =>
 {
     try
     {
+    
+        int nodes = story.storyElements.Count();
+        story.nodes = nodes;
         string json = System.Text.Json.JsonSerializer.Serialize<Story>(story, options);
         if (story != null)
         {
@@ -112,8 +115,7 @@ app.MapPost("/submitStory", async (Story story) =>
 
             fileName += ".json";
 
-            int nodes = story.storyElements.Count();
-            story.nodes = nodes;
+
 
 
             if (!isRecivedStoryGood(story))
@@ -124,7 +126,7 @@ app.MapPost("/submitStory", async (Story story) =>
             {
                 
                 storys.Add(story.id, story);
-                await File.WriteAllTextAsync(path + fileName, json);
+                File.WriteAllText(path + fileName, json);
                 calculateStorylist();
                 storyListString = File.ReadAllText(storyListJsonPath);
                 storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoList>(storyListString, options);

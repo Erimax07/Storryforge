@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0f1115;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    background: #171a21;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #2a2f3a;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* NAV */
+.nav button {
+    background: #2b2f3a;
+    border: 1px solid #3a3f4b;
+    color: white;
+    padding: 10px 16px;
+    margin-left: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav button:hover {
+    background: #3a4150;
+    transform: translateY(-2px);
+}
+
+/* MAIN */
+#content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: fit-content;
+}
+
+/* HOME */
+.home {
+    background: #1b1f2a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2a2f3a;
+    line-height: 1.6;
+}
+
+/* STORY LIST */
+.storyList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.story {
+    background: #1b1f2a;
+    border: 1px solid #2a2f3a;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+    color: white;
+}
+
+.story:hover {
+    transform: scale(1.02);
+    border-color: #5b6cff;
+}
+
+/* STORY VIEW */
+.storyElement {
+    background: #1b1f2a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2a2f3a;
+}
+
+.storyElement h2 {
+    margin-bottom: 20px;
+}
+
+/* OPTIONS */
+.option {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: #2b2f3a;
+    border: 1px solid #3a3f4b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: left;
+}
+
+.option:hover {
+    background: #3a4150;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #888;
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: #e6e6e6;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #2a2f3a;
+    background: #1b1f2a;
+    color: white;
+    outline: none;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #5b6cff;
+}
+
+/* WRAPPER FOR STORY BUILDER */
+.storyWrapper {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* STORY EDITOR ELEMENT (creation mode) */
+.storyElement {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* SELECTION AREA */
+.selection {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #3a3f4b;
+    border-radius: 10px;
+    background: #151822;
+}
+
+.selectionElement {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.selectionElement input {
+    flex: 1;
+}
+
+/* STORY ACTION BUTTON BAR */
+.storyActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* BUTTON BASE STYLE EXTENSION */
+.storyActions button,
+.storyButton,
+.remove-selection {
+    background: #2b2f3a;
+    border: 1px solid #3a3f4b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.storyActions button:hover,
+.storyButton:hover,
+.remove-selection:hover {
+    background: #3a4150;
+    transform: translateY(-2px);
+}
+
+/* SPECIAL BUTTON COLORS */
+.delete {
+    border-color: #ff4d4d;
+}
+
+.delete:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+.add-selection {
+    border-color: #5b6cff;
+}
+
+.add-selection:hover {
+    background: #5b6cff;
+}
+
+/* STORY BUTTON WRAPPER (bottom controls) */
+.storyButtonWropper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #2a2f3a;
+}
+
+/* INPUT GROUP ALIGNMENT */
+label {
+    font-size: 14px;
+    color: #b5b5b5;
+    margin-top: 5px;
+}

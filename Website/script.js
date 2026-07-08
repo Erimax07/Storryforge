@@ -154,7 +154,6 @@ function createStory() {
         </form>
     `
     document.getElementById("content").innerHTML = html;
-    document.getElementById("content").innerHTML = html;
 
     const form = document.getElementById("storyForm");
     form.addEventListener("submit", function (event) {
@@ -292,6 +291,7 @@ async function submitStory(event) {
     }
     else {
         loadStory(id);
+        return
     }
 }
 
@@ -333,6 +333,9 @@ function convertGenre(key) {
         ]
     return enumVal[key]
 }
+
+
+
 
 
 
