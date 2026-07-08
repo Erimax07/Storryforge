@@ -92,7 +92,6 @@ app.MapGet("/story/{id:int}", (int id) =>
 
 app.MapGet("/getFreeId", () =>
 {
-    Console.WriteLine("called");
     int max = 0;
     foreach (var story in storys)
     {
@@ -125,7 +124,9 @@ app.MapPost("/submitStory", async (Story story) =>
             fileName += ".json";
 
             await File.WriteAllTextAsync(path + fileName, json);
-            Console.WriteLine("new Story");
+            calculateStorylist();
+            storyListString = File.ReadAllText(storyListJsonPath);
+            storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoList>(storyListString, options);
             return story.id;
         }    
         else
@@ -154,6 +155,8 @@ void calculateStorylist()
     }
     string json = System.Text.Json.JsonSerializer.Serialize<StoryInfoList>(content);
     File.WriteAllText(storyListJsonPath, json);
+    storyListString = json;
+    
 }
 
 
