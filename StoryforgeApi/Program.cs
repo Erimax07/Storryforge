@@ -10,18 +10,11 @@ var options = new JsonSerializerOptions
     Converters = { new JsonStringEnumConverter() }
 };
 
+
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
     options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
-
-
-
-
-
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-
 
 
 builder.Services.AddCors(options =>
@@ -69,14 +62,13 @@ StoryInfoList storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoL
 
 
 
-
-
 app.UseCors("AllowFrontend");
 
 app.MapGet("/storyList", () =>
 {
     return Results.Json(storyList);
 });
+
 
 app.MapGet("/story/{id:int}", (int id) =>
 {
@@ -99,6 +91,7 @@ app.MapGet("/getFreeId", () =>
     }
     return max + 1;
 });
+
 
 app.MapPost("/submitStory", async (Story story) =>
 {
@@ -137,9 +130,7 @@ app.MapPost("/submitStory", async (Story story) =>
     catch (System.Exception err)
     {
         throw err;
-        return -1;   
     }
-    return -1;
 });
 
 
@@ -156,9 +147,29 @@ void calculateStorylist()
     string json = System.Text.Json.JsonSerializer.Serialize<StoryInfoList>(content);
     File.WriteAllText(storyListJsonPath, json);
     storyListString = json;
-    
 }
 
+bool checkRecivedStory(Story story)
+{
+    bool check = false;
+
+
+    // check for start
+    bool startExists = false;
+    foreach (var element in story.storyElements)
+    {
+        if(element.Key == "start") startExists = true;
+    }
+
+    // final check
+    if (startExists)
+    {
+        check = true;
+    }
+    return check;
+}
+
+//----------Classes---------
 
 public enum Genre
 {

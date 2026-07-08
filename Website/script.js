@@ -2,7 +2,7 @@
 //api Endpoint CHANGE!
 const api = "http://localhost:5124"
 
-
+// variables
 let story;
 let currentElement;
 
@@ -10,46 +10,48 @@ let elementIdCounter = 0;
 let selectionIDCounter = [];
 
 
-// document.addEventListener("DOMContentLoaded", loadHome);
+document.addEventListener("submit", function (event) {
+    if (event.target.id === "storyForm") {
+        event.preventDefault();
+        submitStory(event);
+    }
+});
 
-
+document.addEventListener("DOMContentLoaded", loadHome);
 
 
 
 async function loadData() {
     try {
-        console.log(await fetch(api + '/getFreeId'));
-        
         const response = await fetch(api + "/storyList");
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
         let html = '<div class="storyList">';
 
         data.info.forEach(element => {
-            html += 
-            `
+            html +=
+                `
             <button onclick="loadStory(${element.id})" class="story">
                 <span>Title: ${element.title}     Author: ${element.author}</span><br>
                 Desctiption: ${element.description}
             </button>
             `
         });
-
         html += "</div>";
         document.getElementById("content").innerHTML = html;
 
     } catch (error) {
-         document.getElementById("content").innerHTML =
-                    '<div class="error">Error: ' + error.message + "</div>";
+        document.getElementById("content").innerHTML =
+            '<div class="error">Error: ' + error.message + "</div>";
     }
 }
 
 
 function loadHome() {
-    let html = 
-    `
+    let html =
+        `
     <div class="home">
     <p>Storyforge is a dynamic Story Engine developed by Erik Matschke wich allows you to create dynamic storys. The unser can choose the paph.</p>
     </div>
@@ -59,17 +61,17 @@ function loadHome() {
 }
 
 
-async function loadStory(id){
-     try {
+async function loadStory(id) {
+    try {
         const response = await fetch(api + `/story/${id}`);
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const element = await response.json();
         story = element;
 
-        let html =  
+        let html =
             `
             <button onclick="updateStory(null)" class="story">
                 <h2>${element.title}</h2>
@@ -82,45 +84,29 @@ async function loadStory(id){
         document.getElementById("content").innerHTML = html;
 
     } catch (error) {
-         document.getElementById("content").innerHTML =
-                    '<div class="error">Error: ' + error.message + "</div>";
+        document.getElementById("content").innerHTML =
+            '<div class="error">Error: ' + error.message + "</div>";
     }
 }
 
-function convertGenre(key){
-    let enumVal = 
-    [
-    "Horror",
-    "Fantasy",
-    "SciFi",
-    "Mystery",
-    "Romance",
-    "Thriller",
-    "Adventure",
-    "Drama",
-    "Comedy",
-    "Historical"
-    ]
-    return enumVal[key]
-}
 
-function updateStory(next){
+function updateStory(next) {
 
-    if(next == null) next = "start";
-    
+    if (next == null) next = "start";
+
     try {
         console.log(story)
         currentElement = story.storyElements[next]
         let options = "";
         currentElement.options.forEach(element => {
-            options += 
-            `
+            options +=
+                `
                 <button class="option" onclick="updateStory('${element.storryLink}')"><p>${element.displayText}</p></button>
             `
         });
 
-        let html = 
-        `
+        let html =
+            `
         <div class="storyElement">
             <h2>${currentElement.content}</h2>
             ${options}
@@ -128,17 +114,17 @@ function updateStory(next){
         `;
         document.getElementById("content").innerHTML = html;
 
-        
+
     } catch (error) {
-         document.getElementById("content").innerHTML =
-                    '<div class="error">Error: ' + error.message + "</div>";
+        document.getElementById("content").innerHTML =
+            '<div class="error">Error: ' + error.message + "</div>";
     }
 }
 
-function createStory(){
+function createStory() {
     counter = 0;
-    html = 
-    `
+    html =
+        `
     <form id="storyForm">
     <h2>Create Your Story</h2>
         <h3>storyname</h3><input type="text" name="storyname" id="storyname" placeholder="myStory" required>
@@ -168,10 +154,10 @@ function createStory(){
     document.getElementById("content").innerHTML = html;
 }
 
-function addStoryelement(){
+function addStoryelement() {
     selectionIDCounter[elementIdCounter] = 0;
-    html = 
-    `
+    html =
+        `
         <div class="storyElement" id="${elementIdCounter}">
 
                 <label for="story">Name:</label>
@@ -196,10 +182,10 @@ function addStoryelement(){
 }
 
 
-function addSelectionElement(elementIdCounter){
+function addSelectionElement(elementIdCounter) {
     let selectionId = selectionIDCounter[elementIdCounter];
-    html = 
-    `
+    html =
+        `
         <div class="selectionElement" id="${elementIdCounter}/${selectionId}">
             <input type="text" class="display-text" placeholder="Choice text" required>
             <input type="text" class="next-element" placeholder="Next node ID" required>
@@ -210,15 +196,11 @@ function addSelectionElement(elementIdCounter){
     document.getElementById(elementIdCounter).querySelector(".selection").insertAdjacentHTML("beforeend", html);
 }
 
-document.addEventListener("submit", function(event) {
-    if (event.target.id === "storyForm") {
-        submitStory(event);
-    }
-});
 
 
-async function submitStory(event){
-    event.preventDefault();
+
+async function submitStory(event) {
+
 
     const form = event.target;
 
@@ -229,68 +211,76 @@ async function submitStory(event){
 
     const idResponse = await fetch(api + "/getFreeId");
     const id = await idResponse.json();
-        
-    
-
-
     const title = document.getElementById("storyname").value;
     const describtion = document.getElementById("describtion").value;
     const author = document.getElementById("author").value;
     const creation = new Date().toISOString();
     const genre = convertGenre(document.getElementById('genre').value);
     let storyElements = {};
-    document.querySelectorAll(".storyElement").forEach((element)=>{
+
+    document.querySelectorAll(".storyElement").forEach((element) => {
         let options = []
-        element.querySelectorAll(".selectionElement").forEach((selection)=>{
+
+        element.querySelectorAll(".selectionElement").forEach((selection) => {
+
             const op = {
                 displayText: selection.querySelector(".display-text").value,
                 storryLink: selection.querySelector(".next-element").value
             }
             options.push(op);
         })
+
         const key = element.querySelector(".story-name").value;
         const el = {
             content: element.querySelector(".story-content").value,
             options: options
-            }
-        
+        }
+
         storyElements[key] = el;
     })
-    
-const story = {
-    id: id,
-    title: title,
-    description: describtion,
-    author: author,
-    creation: creation,
-    genre: genre,
-    storyElements: storyElements
-}
+
+
+    const story = {
+        id: id,
+        title: title,
+        description: describtion,
+        author: author,
+        creation: creation,
+        genre: genre,
+        storyElements: storyElements
+    }
+
     const json = JSON.stringify(story);
     console.log(json);
+
     const response = await fetch(api + "/submitStory", {
         method: "POST",
-        headers:{
+        headers: {
             "Content-Type": "application/json"
         },
         body: json
     });
 
-    if(!response.ok){
+    if (!response.ok) {
         document.getElementById("content").innerHTML = "We had a Problem - story not added to server";
         return
     }
+
     const result = await response.json();
-    if(result == -1){
+    if (result == -1) {
         document.getElementById("content").innerHTML = "Data Invalid - story not added to server";
         return
     }
-    else{
+    else if(result == -2){
+        document.getElementById("content").innerHTML = "Story Invalid - story not added to server";
+        return
+    }
+    else {
         loadStory(id);
     }
 }
 
-function calcelStory(){
+function calcelStory() {
     loadHome();
     elementIdCounter = 0;
     selectionIDCounter = [];
@@ -298,25 +288,35 @@ function calcelStory(){
 
 
 function moveUp(id) {
-    // const elements = document.querySelectorAll(".storyElement");
 
-    // elements.forEach((element, index) => {
-    //     if (element.id === id && index > 0) {
-    //         const previous = elements[index - 1];
-    //         element.parentNode.insertBefore(element, previous);
-    //     }
-    // });
 }
-function moveDown(id){
-    
+function moveDown(id) {
+
 }
-function deleteStoryelement(id){
+function deleteStoryelement(id) {
     document.getElementById(id).outerHTML = '';
 }
 
 
-function removeSelection(id){
+function removeSelection(id) {
     document.getElementById(id).outerHTML = '';
+}
+
+function convertGenre(key) {
+    let enumVal =
+        [
+            "Horror",
+            "Fantasy",
+            "SciFi",
+            "Mystery",
+            "Romance",
+            "Thriller",
+            "Adventure",
+            "Drama",
+            "Comedy",
+            "Historical"
+        ]
+    return enumVal[key]
 }
 
 
