@@ -136,11 +136,12 @@ function createStory(){
     counter = 0;
     html = 
     `
+    <form>
     <h2>Create Your Story</h2>
-        <h3>storyname</h3><input type="text" name="storyname" id="storyname" placeholder="myStory">
-        <h3>describtion</h3><input type="text" name="describtion" id="describtion" placeholder="This is my story">
-        <h3>author</h3><input type="text" name="author" id="author" placeholder="Max Mustermann">
-        <h3>gnere</h3><select name="genre" id="genre">
+        <h3>storyname</h3><input type="text" name="storyname" id="storyname" placeholder="myStory" required>
+        <h3>describtion</h3><input type="text" name="describtion" id="describtion" placeholder="This is my story" required>
+        <h3>author</h3><input type="text" name="author" id="author" placeholder="Max Mustermann" required>
+        <h3>gnere</h3><select name="genre" id="genre" required>
             <option value="0">Horror</option>
             <option value="1">Fantasy</option>
             <option value="2">SciFi</option>
@@ -157,8 +158,9 @@ function createStory(){
         <div class="storyButtonWropper">
             <button class="storyButton" onclick="addStoryelement()">add storyelement</button>
             <button class="storyButton" onclick="calcelStory()">cancel</button>
-            <button class="storyButton" onclick="submitStory()">submit</button>
+            <button type="submit" class="storyButton" onclick="submitStory()">submit</button>
         </div>
+        </form>
     `
     document.getElementById("content").innerHTML = html;
 }
@@ -170,9 +172,9 @@ function addStoryelement(){
         <div class="storyElement" id="${elementIdCounter}">
 
                 <label for="story">Name:</label>
-                <input type="text" class="story-name" placeholder="Enter name">
+                <input type="text" class="story-name" placeholder="Enter name" required>
                 <label for="story">Content:</label>
-                <input type="text" class="story-content" placeholder="Enter content">
+                <input type="text" class="story-content" placeholder="Enter content" required>
                 <div class="selection">
                     
                 </div>
@@ -196,8 +198,8 @@ function addSelectionElement(elementIdCounter){
     html = 
     `
         <div class="selectionElement" id="${elementIdCounter}/${selectionId}">
-            <input type="text" class="display-text" placeholder="Choice text">
-            <input type="text" class="next-element" placeholder="Next node ID">
+            <input type="text" class="display-text" placeholder="Choice text" required>
+            <input type="text" class="next-element" placeholder="Next node ID" required>
             <button type="button" onclick="removeSelection('${elementIdCounter}/${selectionId}')" class="remove-selection">Remove</button>
         </div>
     `
