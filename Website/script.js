@@ -72,7 +72,7 @@ async function loadStory(id){
                 <h2>${element.title}</h2>
                 <p>${element.description}</p>
                 <p>Author: ${element.author}</p>
-                <p>Genre: ${genre(element.genre)}</p>
+                <p>Genre: ${convertGenre(element.genre)}</p>
                 <p>Length: ${element.nodes}</p>
             </button>
             `
@@ -84,7 +84,7 @@ async function loadStory(id){
     }
 }
 
-function genre(key){
+function convertGenre(key){
     let enumVal = 
     [
     "Horror",
@@ -169,6 +169,8 @@ function addStoryelement(){
     `
         <div class="storyElement" id="${elementIdCounter}">
 
+                <label for="story">Name:</label>
+                <input type="text" class="story-name" placeholder="Enter name">
                 <label for="story">Content:</label>
                 <input type="text" class="story-content" placeholder="Enter content">
                 <div class="selection">
@@ -194,11 +196,9 @@ function addSelectionElement(elementIdCounter){
     html = 
     `
         <div class="selectionElement" id="${elementIdCounter}/${selectionId}">
-
             <input type="text" class="display-text" placeholder="Choice text">
             <input type="text" class="next-element" placeholder="Next node ID">
             <button type="button" onclick="removeSelection('${elementIdCounter}/${selectionId}')" class="remove-selection">Remove</button>
-
         </div>
     `
     selectionIDCounter[elementIdCounter]++;
@@ -206,7 +206,43 @@ function addSelectionElement(elementIdCounter){
 }
 
 function submitStory(){
+    // const id = await fetch(api + '/getFreeId');
+    const title = document.getElementById("storyname").value;
+    const describtion = document.getElementById("describtion").value;
+    const author = document.getElementById("author").value;
+    const creation = new Date().toISOString();
+    const genre = convertGenre(document.getElementById('genre').value);
+    let storyElements = {};
+    document.querySelectorAll(".storyElement").forEach((element)=>{
+        let options = []
+        element.querySelectorAll(".selectionElement").forEach((selection)=>{
+            const op = {
+                displayText: selection.querySelector(".display-text").value,
+                storryLink: selection.querySelector(".next-element").value
+            }
+            options.push(op);
+        })
+        const key = element.querySelector(".story-name").value;
+        const el = {
+            content: element.querySelector(".selectionElement").value,
+            options: options
+            }
+        
+        storyElements[key] = el;
+    })
+    
+    const story = {
+        id: 10,
+        title: title,
+        describtion: describtion,
+        author: author,
+        creation: creation,
+        genre, genre,
+        storyElements: storyElements
+    }
 
+    const json = JSON.stringify(story);
+    console.log(json);
 }
 
 function calcelStory(){
@@ -215,14 +251,14 @@ function calcelStory(){
     selectionIDCounter = [];
 }
 function moveUp(id) {
-    const elements = document.querySelectorAll(".storyElement");
+    // const elements = document.querySelectorAll(".storyElement");
 
-    elements.forEach((element, index) => {
-        if (element.id === id && index > 0) {
-            const previous = elements[index - 1];
-            element.parentNode.insertBefore(element, previous);
-        }
-    });
+    // elements.forEach((element, index) => {
+    //     if (element.id === id && index > 0) {
+    //         const previous = elements[index - 1];
+    //         element.parentNode.insertBefore(element, previous);
+    //     }
+    // });
 }
 function moveDown(id){
     
