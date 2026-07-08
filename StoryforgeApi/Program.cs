@@ -82,7 +82,7 @@ app.MapGet("/story/{id:int}", (int id) =>
 
     return Results.NotFound();
 });
-app.Run();
+
 
 
 app.MapGet("/getFreeId", (int id) =>
@@ -94,6 +94,43 @@ app.MapGet("/getFreeId", (int id) =>
     }
     return max + 1;
 });
+
+app.MapPost("/submitStory", (string json) =>
+{
+    try
+    {
+        Story story = System.Text.Json.JsonSerializer.Deserialize<Story>(json, options);
+        if (story != null)
+        {
+            storys.Add(story.id, story);
+            string fileName = story.title;
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+              fileName = fileName.Replace(c, '_');
+            }
+            while (Directory.GetFiles("../Data/Storys/").Contains(fileName))
+            {
+                Random rng = new Random();
+                fileName += rng.Next().ToString()[0];
+            }
+            string path = "../Data/Storys/";
+            fileName += ".json";
+            File.WriteAllText(path + fileName, json);
+            return story.id;
+        }    
+        else
+        {
+            return -1;
+        }
+    }
+    catch (System.Exception err)
+    {
+        return -1;   
+    }
+    return -1;
+});
+
+
 app.Run();
 
 
