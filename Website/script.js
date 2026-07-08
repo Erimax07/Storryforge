@@ -34,8 +34,9 @@ async function loadData() {
             html +=
                 `
             <button onclick="loadStory(${element.id})" class="story">
-                <span>Title: ${element.title}     Author: ${element.author}</span><br>
-                Desctiption: ${element.description}
+                <h3>Title: ${element.title}</h3><br>
+                Author: ${element.author}<br>
+                Desctiption: ${element.description}<br>
                 Length: ${element.nodes}
             </button>
             `
