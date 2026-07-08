@@ -198,7 +198,7 @@ function addSelectionElement(elementIdCounter){
 
             <input type="text" class="display-text" placeholder="Choice text">
             <input type="text" class="next-element" placeholder="Next node ID">
-            <button type="button" onclick="removeSelection()" class="remove-selection">Remove</button>
+            <button type="button" onclick="removeSelection('${elementIdCounter}/${selectionId}')" class="remove-selection">Remove</button>
 
         </div>
     `
@@ -220,10 +220,14 @@ function moveUp(){
 function moveDown(){
 
 }
-function deleteStoryelement(){
-    
+function deleteStoryelement(id){
+    document.getElementById(id).outerHTML = '';
 }
 
+
+function removeSelection(id){
+    document.getElementById(id).outerHTML = '';
+}
 
 
 
