@@ -1,0 +1,626 @@
+﻿
+{
+  "id": 3,
+  "title": "Echoes of the Void",
+  "author": "Gemini Narrative Architect",
+  "genre": "Horror",
+  "cration": "2024-05-22",
+  "storyElements": {
+    "start": {
+      "content": "The air in the E-Rank Rift is thick with the scent of ozone and rotting meat. You are Kael, a 'Scavenger'—the lowest rung of the Hunter hierarchy. Your lungs burn. Your party is dead. Before you stands a Void Beast, its skin a shimmering, oily black. As its claws descend, a crystalline screen flickers into existence: [CRITICAL VITALITY DETECTED. INITIALIZING AETHER SYSTEM. DO YOU ACCEPT THE BURDEN OF THE VOID?]",
+      "options": [
+        {
+          "displayText": "[ACCEPT] - Surge with power.",
+          "storryLink": "a1_awakening_power"
+        },
+        {
+          "displayText": "[REJECT] - Die with your humanity.",
+          "storryLink": "a1_awakening_death"
+        }
+      ]
+    },
+    "a1_awakening_death": {
+      "content": "You close your eyes, refusing the alien tingle in your brain. The beast’s claws find your throat. Darkness claims you, but it is a natural darkness. You died a man, not a monster. [GAME OVER: HUMANITY PRESERVED]",
+      "options": [
+        {
+          "displayText": "Reboot System / Restart",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "a1_awakening_power": {
+      "content": "A searing heat tears through your veins. Your vision fractals. [SYSTEM INITIALIZED. CURRENT VOID STRAIN: 1%]. You feel the beast's movement slow to a crawl. A jagged blade of pure shadow manifests in your hand. You don't just kill the beast; you erase it. You have survived, but your reflection in the pooling blood looks... different.",
+      "options": [
+        {
+          "displayText": "Harvest the beast's Echo.",
+          "storryLink": "a1_s1_harvest"
+        },
+        {
+          "displayText": "Flee the Rift immediately.",
+          "storryLink": "a1_s1_flee"
+        }
+      ]
+    },
+    "a1_s1_harvest": {
+      "content": "You reach into the dissolving corpse. A wispy, screaming vapor clings to your hand. [ECHO ACQUIRED: RAVENER'S HASTE. VOID STRAIN: 5%]. The voices of the dead begin to whisper at the edge of your hearing. You feel stronger, faster—and lonelier.",
+      "options": [
+        {
+          "displayText": "Return to the Surface City.",
+          "storryLink": "a1_city_hub"
+        }
+      ]
+    },
+    "a1_s1_flee": {
+      "content": "You run, leaving the power behind. You escape the Rift, but the System remains etched into your retinas. [VOID STRAIN: 2%]. You are alive, but the hunger has begun.",
+      "options": [
+        {
+          "displayText": "Return to the Surface City.",
+          "storryLink": "a1_city_hub"
+        }
+      ]
+    },
+    "a1_city_hub": {
+      "content": "The Surface City of Oakhaven is a neon-drenched slum huddled under the protection of the Hunter Guilds. You are no longer just Kael; you are an Awakened. But the System is demanding. [NEW QUEST: COMPLETE 10 DRAINS OR FACE STASIS].",
+      "options": [
+        {
+          "displayText": "Join the Iron Fang Guild (Safety).",
+          "storryLink": "a2_guild_ironfang"
+        },
+        {
+          "displayText": "Remain a Solo Hunter (Power).",
+          "storryLink": "a2_solo_path"
+        }
+      ]
+    },
+    "a2_solo_path": {
+      "content": "Act II: The Hunter Hierarchy. You walk the path of the 'Solo Leveler.' Your power grows exponentially as you consume every Echo for yourself. However, the Void Strain is mounting. You start seeing Echoes of people who are still alive. [VOID STRAIN: 45%]. A high-ranking S-Rank Hunter, Marcus, intercepts you. 'You're becoming a Rift yourself, Kael.'",
+      "options": [
+        {
+          "displayText": "Attack Marcus to protect your secrets.",
+          "storryLink": "a2_fight_marcus"
+        },
+        {
+          "displayText": "Seek Marcus's help to stabilize.",
+          "storryLink": "a2_seek_stability"
+        }
+      ]
+    },
+    "a2_fight_marcus": {
+      "content": "The battle levels a city block. You kill Marcus, consuming his Echo. [VOID STRAIN: 75%]. You are now the most wanted 'Monster' in the world. The System congratulates you. [THE THRONE OF THE VOID AWAITS].",
+      "options": [
+        {
+          "displayText": "Enter the Final Rift.",
+          "storryLink": "a3_final_descent"
+        }
+      ]
+    },
+    "a3_final_descent": {
+      "content": "Act III: Confronting the Void. You stand at the heart of the Source. The Aether System reveals its true form—a cosmic parasite using you as a vessel to bridge the gap between dimensions. You are bloated with power, your body a patchwork of shadows. Three paths lie before you.",
+      "options": [
+        {
+          "displayText": "[THE TYRANT] - Subjugate the System.",
+          "storryLink": "ending_tyrant2"
+        },
+        {
+          "displayText": "[THE MARTYR] - Destroy the System.",
+          "storryLink": "ending_martyr2"
+        },
+        {
+          "displayText": "[THE ECHO] - Merge with the Void.",
+          "storryLink": "ending_echo2"
+        }
+      ]
+    },
+    "ending_tyrant2": {
+      "content": "You don't just use the System; you overwrite it. You crush the parasitic consciousness and take its place. The Rifts close, but only because you own them now. You sit upon a throne of obsidian, looking out over a world that fears you more than the monsters. You are God. You are Alone. You are the Apex Tyrant.",
+      "options": [
+        {
+          "displayText": "The End (Legacy of Power).",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "ending_martyr2": {
+      "content": "You turn the Echoes inward, detonating your own soul to shatter the Aether System's link to this world. The Rifts vanish. The System screams as it is deleted from existence. You die in the explosion, reduced to a memory. Humanity is free, and they will never even know your name. You died Kael, the Scavenger.",
+      "options": [
+        {
+          "displayText": "The End (Legacy of Freedom).",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "ending_echo2": {
+      "content": "You stop fighting. You open your mind and let the Void Strain reach 100%. Your physical body dissolves into a cloud of screaming psychic imprints. You are no longer Kael. You are the Void. You exist in every shadow, a collective consciousness of all you killed. It is a beautiful, eternal madness. You are the Echo.",
+      "options": [
+        {
+          "displayText": "The End (Legacy of Infinite Night).",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "a1_intro_hollows": {
+      "content": "You stand before the 'Slumbering Hollows'—a D-Rank Rift that looks like a weeping wound in the side of an old subway station. Your Aether System pings. [WARNING: VOID DENSITY INCREASING. STRAIN THRESHOLD: 5%]. Beside you is Elara, a veteran hunter who looks at you with pity. 'Don't get lost in the echoes, kid,' she warns.",
+      "options": [
+        {
+          "displayText": "Enter the tunnel cautiously.",
+          "storryLink": "a1_tunnel_stealth"
+        },
+        {
+          "displayText": "Charge in to prove your worth.",
+          "storryLink": "a1_tunnel_aggressive"
+        }
+      ]
+    },
+    "a1_tunnel_stealth": {
+      "content": "You stick to the shadows of the rusted train cars. The air tastes like copper. You hear a wet, rhythmic thumping above you. [PERCEPTION CHECK: SUCCESS]. A 'Creeper' hangs from the ceiling, its many eyes closed. You can bypass it, or take the initiative.",
+      "options": [
+        {
+          "displayText": "Assassinate the Creeper.",
+          "storryLink": "a1_creeper_kill"
+        },
+        {
+          "displayText": "Sneak past and conserve energy.",
+          "storryLink": "a1_subway_deeper"
+        }
+      ]
+    },
+    "a1_creeper_kill": {
+      "content": "You drive your shadow-blade through its central eye. It dissolves into black soot. [ECHO DETECTED: MINOR AGILITY]. The System prompts: [CONSUME FOR +1 SPEED / +2% VOID STRAIN].",
+      "options": [
+        {
+          "displayText": "Consume the Echo.",
+          "storryLink": "a1_echo_consume_1"
+        },
+        {
+          "displayText": "Purge the Echo (Gain nothing, stay sane).",
+          "storryLink": "a1_echo_purge_1"
+        }
+      ]
+    },
+    "a1_echo_consume_1": {
+      "content": "The soot enters your pores. Your legs feel light, twitchy—almost like they want to run without you. [VOID STRAIN: 7%]. You see a flicker of a dead man standing behind Elara in the corner of your eye. When you look, he’s gone.",
+      "options": [
+        {
+          "displayText": "Continue to the Platform.",
+          "storryLink": "a1_subway_platform"
+        }
+      ]
+    },
+    "a1_echo_purge_1": {
+      "content": "You let the energy dissipate into the air. Elara nods approvingly, though you feel a wave of physical exhaustion. [VOID STRAIN: 5%]. Your blade feels heavier now.",
+      "options": [
+        {
+          "displayText": "Continue to the Platform.",
+          "storryLink": "a1_subway_platform"
+        }
+      ]
+    },
+    "a1_subway_platform": {
+      "content": "The platform is a graveyard of old commuters, their bodies crystallized into blue salt. In the center sits a Void Chest, pulsing with a rhythmic violet light. It’s a trap, but the loot could be vital.",
+      "options": [
+        {
+          "displayText": "Open the Chest.",
+          "storryLink": "a1_trap_chest"
+        },
+        {
+          "displayText": "Search the bodies instead.",
+          "storryLink": "a1_loot_bodies"
+        }
+      ]
+    },
+    "a1_trap_chest": {
+      "content": "The chest unhinges like a jaw. Tentacles of 'Void Grime' lash out. [COMBAT INITIALIZED]. You’re being dragged into the dark! Elara screams for you to hold on.",
+      "options": [
+        {
+          "displayText": "Use 'Void Burst' (Requires 10% Strain).",
+          "storryLink": "a1_burst_success"
+        },
+        {
+          "displayText": "Struggle with physical strength.",
+          "storryLink": "a1_burst_fail"
+        }
+      ]
+    },
+    "a1_burst_success": {
+      "content": "You release a shockwave of dark energy. The chest shatters. [VOID STRAIN: 15%]. You found a 'Vial of Pure Aether,' but your hands won't stop shaking. You hear a whisper: 'More... we need more.'",
+      "options": [
+        {
+          "displayText": "Descend into the Reactor Core.",
+          "storryLink": "a1_reactor_entry"
+        }
+      ]
+    },
+    "a1_loot_bodies": {
+      "content": "You find a 'Hunter’s Identification Tag' and some old ammunition. No traps, but no real power either. You feel the gap between you and the monsters widening. You are weak.",
+      "options": [
+        {
+          "displayText": "Descend into the Reactor Core.",
+          "storryLink": "a1_reactor_entry"
+        }
+      ]
+    },
+    "a1_reactor_entry": {
+      "content": "The Reactor Core is the 'Boss Room.' A massive monstrosity—the Void Sentinel—is fused to the machinery. It feeds on the city's power. [OBJECTIVE: DEFEAT THE SENTINEL].",
+      "options": [
+        {
+          "displayText": "Strategy A: Target the power cables.",
+          "storryLink": "a1_boss_cables"
+        },
+        {
+          "displayText": "Strategy B: Direct frontal assault.",
+          "storryLink": "a1_boss_frontal"
+        }
+      ]
+    },
+    "a1_boss_cables": {
+      "content": "You sever the lines. The Sentinel roars, losing its shield. Elara moves in for the kill, but the beast swipes at her, pinning her down. You can save her, or finish the Boss and take the massive Echo for yourself.",
+      "options": [
+        {
+          "displayText": "Save Elara (Sacrifice the S-Rank Echo).",
+          "storryLink": "a1_save_elara"
+        },
+        {
+          "displayText": "Kill the Boss (Let Elara die).",
+          "storryLink": "a1_kill_boss_sacrifice"
+        }
+      ]
+    },
+    "a1_save_elara": {
+      "content": "You dive in front of the claw. You take the hit, but Elara escapes. The Sentinel flees into the deeper Rifts. You survived, but you gained no power. [VOID STRAIN: 15%]. Elara looks at you with newfound respect—and fear.",
+      "options": [
+        {
+          "displayText": "Return to Oakhaven City (Act II Start).",
+          "storryLink": "a2_city_entry_hero"
+        }
+      ]
+    },
+    "a1_kill_boss_sacrifice": {
+      "content": "You ignore her screams. Your blade pierces the Sentinel's core just as it crushes Elara’s ribs. You feel a massive surge of energy. [ECHO ACQUIRED: SENTINEL’S MIGHT]. [VOID STRAIN: 35%]. You are powerful. You are alone.",
+      "options": [
+        {
+          "displayText": "Return to Oakhaven City (Act II Start).",
+          "storryLink": "a2_city_entry_villain"
+        }
+      ]
+    },
+    "a2_city_entry_hero": {
+      "content": "Back in Oakhaven, you are known as the Hunter who saved a veteran. The Guilds offer you a position of leadership, but the voices in your head are getting louder. They don't like 'heroes.'",
+      "options": [
+        {
+          "displayText": "Continue with the Iron Fang Guild.",
+          "storryLink": "a2_guild_start"
+        }
+      ]
+    },
+    "a2_city_entry_villain": {
+      "content": "You return alone with the Sentinel's core. You lie about Elara's death, but the Aether System knows. It rewards your ruthlessness with a new Skill: 'Shadow Extraction.' You can now raise the dead.",
+      "options": [
+        {
+          "displayText": "Experiment on a fallen hunter.",
+          "storryLink": "a2_necromancy_start"
+        }
+      ]
+    },
+    "a2_necromancy_start": {
+      "content": "You stand in the morgue of the Hunter Bureau. The air is frigid. Before you lies the body of a C-Rank Scout who 'didn't make it.' The System pulses a violent violet. [NEW SKILL DETECTED: SHADOW EXTRACTION]. A prompt appears: [EXTRACT THE ECHO?].",
+      "options": [
+        {
+          "displayText": "'Arise.' (Extract the shadow).",
+          "storryLink": "a2_shadow_first_extraction"
+        },
+        {
+          "displayText": "Hesitate. This is desecration.",
+          "storryLink": "a2_morgue_hesitation"
+        }
+      ]
+    },
+    "a2_shadow_first_extraction": {
+      "content": "You reach into the corpse. Instead of blood, you pull out a silken, ink-black wraith. It has the face of the Scout, but its eyes are hollow pits. [VOID STRAIN: 40%]. The shadow kneels. 'Command me,' it whispers in a voice like grinding glass.",
+      "options": [
+        {
+          "displayText": "Test the Shadow in a Solo Rift.",
+          "storryLink": "a2_solo_rift_test"
+        },
+        {
+          "displayText": "Use the Shadow to spy on the Guilds.",
+          "storryLink": "a2_spy_guilds"
+        }
+      ]
+    },
+    "a2_morgue_hesitation": {
+      "content": "You pull your hand back, but the System won't let you leave. [PENALTY QUEST TRIGGERED: SURVIVE THE VOID FEVER]. Your vision blurs as the shadows in the room begin to peel off the walls and attack you.",
+      "options": [
+        {
+          "displayText": "Defend yourself with raw Aether.",
+          "storryLink": "a2_morgue_fight"
+        }
+      ]
+    },
+    "a2_solo_rift_test": {
+      "content": "In a C-Rank cavern, your new Shadow Soldier tears through Void Rats with terrifying efficiency. But with every kill, the Scout's Shadow grows more sentient. It turns to you: 'Why did you let me die, Kael?' It remembers the moment you failed to save the party.",
+      "options": [
+        {
+          "displayText": "Silence the Shadow (Reset its memory).",
+          "storryLink": "a2_shadow_silence"
+        },
+        {
+          "displayText": "Listen to its accusations.",
+          "storryLink": "a2_shadow_listen"
+        }
+      ]
+    },
+    "a2_shadow_silence": {
+      "content": "You crush the Shadow's 'will' with your own. [VOID STRAIN: 45%]. It becomes a mindless puppet again. You feel a piece of your own empathy wither away. You are becoming a commander of ghosts.",
+      "options": [
+        {
+          "displayText": "Accept a High-Rank Bounty.",
+          "storryLink": "a2_bounty_hunt"
+        }
+      ]
+    },
+    "a2_shadow_listen": {
+      "content": "The Shadow recounts your cowardice in Act I. The guilt manifests as a physical weight. [VOID STRAIN: 50% - THRESHOLD CROSSED]. You can no longer tell the difference between the Shadow's voice and your own thoughts.",
+      "options": [
+        {
+          "displayText": "Succumb to the guilt (Temporary Stasis).",
+          "storryLink": "a2_guilt_stasis"
+        },
+        {
+          "displayText": "Incorporate the truth into your power.",
+          "storryLink": "a2_truth_ascension"
+        }
+      ]
+    },
+    "a2_spy_guilds": {
+      "content": "You send the Shadow into the Iron Fang Guildhall. It slips through the vents. You see through its eyes: The Guild Master is conspiring with a Void Entity. They aren't closing Rifts; they're farming them for profit.",
+      "options": [
+        {
+          "displayText": "Blackmail the Guild Master.",
+          "storryLink": "a2_guild_blackmail"
+        },
+        {
+          "displayText": "Expose them to the public.",
+          "storryLink": "a2_guild_expose"
+        }
+      ]
+    },
+    "a2_guild_blackmail": {
+      "content": "You demand 'Aether Crystals' in exchange for silence. You get rich, but you've become exactly what you hated. [VOID STRAIN: 55%]. The System evolves your Shadow to 'Elite' status. You now have a personal army.",
+      "options": [
+        {
+          "displayText": "Prepare for the 'Red Gate' incident.",
+          "storryLink": "a2_red_gate_event"
+        }
+      ]
+    },
+    "a2_red_gate_event": {
+      "content": "A 'Red Gate'—a Rift that locks from the inside—swallows a bus of civilians. You are the only Hunter nearby. But your Void Strain is at a breaking point. If you use your full power to save them, you might lose your mind.",
+      "options": [
+        {
+          "displayText": "Sacrifice your sanity to save them.",
+          "storryLink": "a2_red_gate_save"
+        },
+        {
+          "displayText": "Use the civilians as bait to grow stronger.",
+          "storryLink": "a2_red_gate_harvest"
+        }
+      ]
+    },
+    "a2_red_gate_harvest": {
+      "content": "You watch as the monsters feast. Once the civilians are dead, you extract their Echoes. You now have fifty new shadows. [VOID STRAIN: 70%]. Your skin is turning a pale, translucent grey. You are more Echo than man.",
+      "options": [
+        {
+          "displayText": "March toward the Source (Act III).",
+          "storryLink": "a3_final_descent"
+        }
+      ]
+    },
+    "a2_red_gate_save": {
+      "content": "You burn through your Aether to create a protective barrier. The civilians live, but the strain causes a psychic snap. You wake up days later in a padded room, with a Bureau Agent staring at you. 'Kael, what are you?'",
+      "options": [
+        {
+          "displayText": "Kill the Agent and escape.",
+          "storryLink": "a2_bureau_escape"
+        },
+        {
+          "displayText": "Try to explain the System.",
+          "storryLink": "a2_bureau_explain"
+        }
+      ]
+    },
+    "a2_bureau_escape": {
+      "content": "Blood paints the walls. You walk out of the facility, leaving a trail of shadows. You are now the world's most dangerous 'Criminal Awakened.'",
+      "options": [
+        {
+          "displayText": "Hunt the S-Rankers (Final Boss Prep).",
+          "storryLink": "a3_final_descent"
+        }
+      ]
+    },
+    "a2_guild_summons": {
+      "content": "A golden-bordered notification interrupts your HUD. [URGENT: S-RANK JOINT RAID MANDATE]. The 'Heaven’s Reach' Guild—the world’s elite—has 'invited' you to clear a Triple-S Rift. Elara’s old mentor, Commander Vane, stands at the gate. 'We need your shadows, Kael. For the good of humanity.' His smile doesn't reach his eyes.",
+      "options": [
+        {
+          "displayText": "Accept. (Keep your friends close).",
+          "storryLink": "a2_raid_entry"
+        },
+        {
+          "displayText": "Refuse and go rogue.",
+          "storryLink": "a2_rogue_hunted"
+        }
+      ]
+    },
+    "a2_raid_entry": {
+      "content": "The Triple-S Rift is a nightmare of shifting geometry. As you reach the Inner Sanctum, the Heaven’s Reach Hunters stop. Vane turns, his blade glowing with anti-Aether light. 'The System told us, Kael. You are the final boss. If we kill you here, the Rifts close forever.' [WARNING: NEUTRALIZING FIELD ACTIVE. SHADOWS WEAKENED].",
+      "options": [
+        {
+          "displayText": "Force the Extraction. (Burn 20% Strain).",
+          "storryLink": "a2_betrayal_fight_shadows"
+        },
+        {
+          "displayText": "Fight with pure martial skill.",
+          "storryLink": "a2_betrayal_fight_physical"
+        }
+      ]
+    },
+    "a2_betrayal_fight_shadows": {
+      "content": "You scream as your shadows are ripped from your soul, forced to manifest despite the field. [VOID STRAIN: 90%]. Your vision turns blood-red. You don't just fight the Hunters; you begin to 'eat' their Aether directly from their bodies. Vane looks horrified. 'What... what are you?'",
+      "options": [
+        {
+          "displayText": "Consume Vane’s soul.",
+          "storryLink": "a2_vane_execution"
+        },
+        {
+          "displayText": "Leave him alive to spread the terror.",
+          "storryLink": "a2_vane_mercy"
+        }
+      ]
+    },
+    "a2_vane_execution": {
+      "content": "You plunge your hand into his chest. No heart, just Echoes. [NEW SHADOW ACQUIRED: COMMANDER VANE]. The remaining Hunters flee in terror. You stand alone in the collapsing Rift. The System pings: [CANDIDACY FOR VOID SOVEREIGN: CONFIRMED].",
+      "options": [
+        {
+          "displayText": "Follow the heartbeat to the Source.",
+          "storryLink": "a3_final_descent_intro"
+        }
+      ]
+    },
+    "a2_vane_mercy": {
+      "content": "'Tell them I'm coming,' you whisper. Vane scrambles away, his mind broken. You have maintained a shred of humanity, but the System punishes your weakness. [PENALTY: PERMANENT MAX HP REDUCTION]. The Void demands blood, not messages.",
+      "options": [
+        {
+          "displayText": "Limp toward the Source.",
+          "storryLink": "a3_final_descent_intro"
+        }
+      ]
+    },
+    "a2_rogue_hunted": {
+      "content": "You vanish into the Grey Zones. For weeks, you are hunted by 'Hunter-Killers.' You live like an animal, feeding on low-level Rifts. Your Void Strain stabilizes, but your equipment is rotting. You find an ancient altar deep in the wastes that predates the System.",
+      "options": [
+        {
+          "displayText": "Commune with the Ancient Altar.",
+          "storryLink": "a2_altar_truth"
+        }
+      ]
+    },
+    "a2_altar_truth": {
+      "content": "The Altar isn't magic; it's a terminal. It reveals the Aether System is a digital 'cull' designed by a dying civilization to find a successor. You aren't a hero or a monster. You are a file being compressed.",
+      "options": [
+        {
+          "displayText": "Delete the 'Successor' file (Self-sacrifice path).",
+          "storryLink": "a3_martyr_path_start"
+        },
+        {
+          "displayText": "Upload yourself to the Core.",
+          "storryLink": "a3_tyrant_path_start"
+        }
+      ]
+    },
+    "a3_final_descent_intro": {
+      "content": "ACT III: THE SOURCE. You stand before a massive, pulsating tear in reality—the 'Great Rift.' The laws of physics are suggestions here. The shadows you've collected are screaming, sensing their home. One way or another, the Echoes end here.",
+      "options": [
+        {
+          "displayText": "Step into the White Light.",
+          "storryLink": "a3_the_choice"
+        }
+      ]
+    },
+    "a3_the_choice": {
+      "content": "You stand at the center of the Great Rift. Reality has peeled away like burnt skin. The Aether System’s interface is no longer a screen; it is a voice inside your marrow. [CANDIDATE KAEL. THE CYCLE IS COMPLETE. CHOOSE YOUR LEGACY: ASCEND, DELETE, OR EVOLVE.] Three pedestals of shimmering data manifest. Your shadows are kneeling.",
+      "options": [
+        {
+          "displayText": "[ASCEND] - Claim the Throne of the Void.",
+          "storryLink": "a3_path_tyrant_start"
+        },
+        {
+          "displayText": "[DELETE] - Shatter the System forever.",
+          "storryLink": "a3_path_martyr_start"
+        },
+        {
+          "displayText": "[EVOLVE] - Become the Void itself.",
+          "storryLink": "a3_path_echo_start"
+        }
+      ]
+    },
+    "a3_path_tyrant_start": {
+      "content": "You reach for the pedestal of 'Dominion.' The System begins to upload your consciousness into the global Rift network. [WARNING: HUMAN IDENTITY DELETION IN PROGRESS]. You feel your memories of the Surface City—the smells, the faces, the warmth—being overwritten by raw power calculations.",
+      "options": [
+        {
+          "displayText": "Accept the overwrite. Power is everything.",
+          "storryLink": "ending_tyrant"
+        },
+        {
+          "displayText": "Fight the deletion. Keep one memory.",
+          "storryLink": "a3_tyrant_conflict"
+        }
+      ]
+    },
+    "a3_tyrant_conflict": {
+      "content": "You cling to the image of Elara’s smile. The System sparks. [ERROR: UNNECESSARY DATA DETECTED]. Your power fluctuates. You are a God, but a God with a 'glitch' of humanity. You will rule, but you will always feel the phantom pain of what you lost.",
+      "options": [
+        {
+          "displayText": "Ascend as the Flawed God.",
+          "storryLink": "ending_tyrant"
+        }
+      ]
+    },
+    "a3_path_martyr_start": {
+      "content": "You reach for the 'Terminal Command.' To delete the System, you must become the conduit for its destruction. Your body begins to incinerate as pure Aether backflows into your heart. [VOID STRAIN: 150% - CRITICAL FAILURE].",
+      "options": [
+        {
+          "displayText": "Direct the blast toward the Rifts.",
+          "storryLink": "a3_martyr_detonation"
+        },
+        {
+          "displayText": "Hesitate. (The Void offers a plea).",
+          "storryLink": "a3_martyr_hesitation"
+        }
+      ]
+    },
+    "a3_martyr_detonation": {
+      "content": "You become a sun. In one blinding flash, every Hunter, every Shadow, and every Rift in the world is erased. You feel your atoms scatter across the cosmos. It is a peaceful, final silence.",
+      "options": [
+        {
+          "displayText": "The End (Freedom).",
+          "storryLink": "ending_martyr"
+        }
+      ]
+    },
+    "a3_path_echo_start": {
+      "content": "You don't reach for a pedestal. You simply sit down and open your mind. You allow the Void Strain to flood you. [VOID STRAIN: 100%... 200%... 1000%]. Your skin turns to smoke. You see the past, present, and future as a single, screaming tapestry.",
+      "options": [
+        {
+          "displayText": "Merge with the collective 'Echoes'.",
+          "storryLink": "ending_echo"
+        }
+      ]
+    },
+    "ending_tyrant": {
+      "content": "The world wakes up to a purple sky. All Rifts are closed, but the 'Shadow Police'—your constructs—roam the streets. You watch from your obsidian tower in the Void, an eternal King of a graveyard. [ENDING: THE APEX TYRANT]",
+      "options": [
+        {
+          "displayText": "New Game + (The Cycle Continues).",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "ending_martyr": {
+      "content": "Centuries later, children play in fields where Dungeons once stood. They tell stories of a Scavenger who killed the 'Voice in the Sky.' There are no more Hunters. There is only humanity. [ENDING: THE BROKEN SURVIVOR]",
+      "options": [
+        {
+          "displayText": "New Game + (The Cycle Continues).",
+          "storryLink": "start"
+        }
+      ]
+    },
+    "ending_echo": {
+      "content": "You are the whisper in every dark alley. You are the shadow under every bed. You aren't dead, but you aren't Kael. You are the madness that waits at the edge of the world. [ENDING: THE NIHILISTIC EMBRACE]",
+      "options": [
+        {
+          "displayText": "New Game + (The Cycle Continues).",
+          "storryLink": "start"
+        }
+      ]
+    }
+  }
+}

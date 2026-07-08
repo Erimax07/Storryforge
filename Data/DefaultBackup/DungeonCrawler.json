@@ -1,0 +1,635 @@
+﻿
+{
+    "id": 2,
+    "title": "The Undermaw",
+    "description": "You wake in a dungeon with no memory. Somewhere above you, a kingdom has fallen. Somewhere below you, something is waiting.",
+    "author": "Claude",
+    "creation": "2026-04-02T12:00:00.0000000+02:00",
+    "genre": "Fantasy",
+    "storyElements": {
+        "start": {
+            "content": "You wake on cold stone. Your head pounds. The cell around you is narrow — iron door, a rusted bucket, a thin crack of torchlight under the door. Your hands are unbound. On the floor beside you, scratched into the stone by someone who was here before: 'Do not trust the dark. Do not trust the light. Trust nothing that speaks first.' You do not remember your name.",
+            "options": [
+                { "displayText": "Examine the cell", "storryLink": "cell_examine" },
+                { "displayText": "Listen at the door", "storryLink": "cell_listen" }
+            ]
+        },
+        "cell_examine": {
+            "content": "The cell is small but not empty. Beneath the straw you find a shard of iron — broken from a hinge, sharp on one end. The walls are covered in scratches. Most are tally marks. One inscription stands out: 'Sable knows the way. Cell seven.' The bucket is empty. The crack under the door leaks cold air and the distant sound of dripping water.",
+            "options": [
+                { "displayText": "Take the iron shard", "storryLink": "take_shard" },
+                { "displayText": "Call out for Sable", "storryLink": "call_sable" }
+            ]
+        },
+        "take_shard": {
+            "content": "You pocket the shard. It is not much. It is something. From the cell to your left a voice comes through the wall, low and unhurried: 'You are awake. Good. I was beginning to think they had sent me a corpse for company.' A pause. 'My name is Sable. Do not scream when I tell you where we are.'",
+            "options": [
+                { "displayText": "Ask where you are", "storryLink": "sable_intro" },
+                { "displayText": "Ask how to get out", "storryLink": "sable_escape_ask" }
+            ]
+        },
+        "call_sable": {
+            "content": "A voice answers immediately, as though she was already listening. 'Oh good, you can speak. I am Sable. Cell seven, your left. I have been here six days and I have spent most of them planning. The guard changes at what I think is midnight — one guard, half asleep, keys on his left hip. I need a distraction. You need a way out. This seems like the beginning of an arrangement.'",
+            "options": [
+                { "displayText": "Agree to the arrangement", "storryLink": "sable_plan" },
+                { "displayText": "Ask what she gets out of it", "storryLink": "sable_motive" }
+            ]
+        },
+        "cell_listen": {
+            "content": "You press your ear to the door. Footsteps — heavy, irregular, moving away. A guard, and not a careful one. Further off, water dripping in volume, like a flooded room. Further still, something you cannot name: a low vibration in the stone itself, rhythmic, almost like breathing. From the cell to your left: 'You are listening. Smart. My name is Sable.'",
+            "options": [
+                { "displayText": "Respond to Sable", "storryLink": "sable_intro" },
+                { "displayText": "Keep listening to the corridor", "storryLink": "corridor_listen" }
+            ]
+        },
+        "corridor_listen": {
+            "content": "The guard's footsteps stop. A door opens and closes. Silence. Then the breathing in the stone again — deep, slow, patient. Whatever it is, it is not in a hurry. Sable's voice comes again, lower now: 'I know you are still there. The guard is gone for at least ten minutes. This is the window. Are you in or not?'",
+            "options": [
+                { "displayText": "Talk to Sable", "storryLink": "sable_intro" }
+            ]
+        },
+        "sable_intro": {
+            "content": "'The Undermaw,' she says. 'A prison built under the old kingdom — before it fell. No one sends people here to be retrieved. They send them here to be forgotten.' A pause. 'The good news is that the kingdom has already fallen. The guards are running on habit and fear. The bad news is something else runs this place now, and it is not human.' She stops. 'Do you want to get out or not?'",
+            "options": [
+                { "displayText": "Yes. What is the plan?", "storryLink": "sable_plan" },
+                { "displayText": "Ask what runs the dungeon", "storryLink": "sable_voice" }
+            ]
+        },
+        "sable_voice": {
+            "content": "'They call it the Voice,' Sable says. 'It speaks through the walls. It offered me a deal on day two — I told it where it could put its deal. It has not spoken to me since.' She sounds almost proud of this. 'It will speak to you eventually. Everyone gets an offer. The ones who take it...' She trails off. 'They do not leave. But they stop being prisoners.'",
+            "options": [
+                { "displayText": "Ask about the plan to escape", "storryLink": "sable_plan" }
+            ]
+        },
+        "sable_escape_ask": {
+            "content": "'The plan,' she says, 'involves you making noise while I deal with the lock on my door — I have been working on it for three days with a piece of wire. Once I am out I can get you out. After that we move fast and we move quiet.' She pauses. 'Unless you would rather wait here and see what the Voice offers you. Your choice.'",
+            "options": [
+                { "displayText": "Make the distraction", "storryLink": "sable_plan" }
+            ]
+        },
+        "sable_motive": {
+            "content": "'Out,' she says flatly. 'That is what I get. Same as you.' A beat. 'I will not pretend I am a good person. I am a thief and I was caught stealing from someone who could afford to have me disappeared. But I am useful and I keep my word until keeping it stops being practical. That is the most honest thing anyone in this dungeon will ever tell you.'",
+            "options": [
+                { "displayText": "Accept the deal", "storryLink": "sable_plan" },
+                { "displayText": "Refuse and plan alone", "storryLink": "plan_alone" }
+            ]
+        },
+        "plan_alone": {
+            "content": "Sable goes quiet. Not offended — calculating. 'Suit yourself,' she says finally. 'The guard has a key ring on his left hip. He is right-handed and slow. If you get out first, the passage left of the cell block leads deeper. Right leads up. Up is not as good as it sounds.' She says nothing more. The offer remains open in the silence between you.",
+            "options": [
+                { "displayText": "Try the door alone", "storryLink": "door_alone" },
+                { "displayText": "Change your mind and work with Sable", "storryLink": "sable_plan" }
+            ]
+        },
+        "door_alone": {
+            "content": "You work at the door hinge with the iron shard for a long time. Your fingers bleed. The hinge does not move. The guard's footsteps return sooner than expected — you press back into the corner and hold your breath. He passes without stopping. When his steps fade you are no closer to free, but you have learned the rhythm of his patrol.",
+            "options": [
+                { "displayText": "Try a different approach", "storryLink": "sable_plan" },
+                { "displayText": "Wait for the guard to pass again and rush the door", "storryLink": "rush_door" }
+            ]
+        },
+        "rush_door": {
+            "content": "You hit the door with your shoulder at full force. It rattles but holds. The guard's footsteps stop. Then run. You back against the wall as the slot in the door slides open and a pair of eyes look in. 'Still alive,' the guard says, almost disappointed. He moves on. From the next cell: 'That was impressively stupid,' Sable says. 'Ready to try it my way?'",
+            "options": [
+                { "displayText": "Work with Sable", "storryLink": "sable_plan" }
+            ]
+        },
+        "sable_plan": {
+            "content": "The plan is simple. You bang on the door and shout — anything, it does not matter — until the guard comes. When he stops at your cell Sable works the lock on hers. You hear the faint click from seven cells down. Then silence. Then the guard's keys jingle and your door swings open. He grabs your collar. Behind him, something moves in the dark.",
+            "options": [
+                { "displayText": "Fight the guard", "storryLink": "guard_fight" },
+                { "displayText": "Let Sable handle it", "storryLink": "sable_handles_guard" }
+            ]
+        },
+        "guard_fight": {
+            "content": "You drive the iron shard into his forearm. He shouts and drops you. You take the keys from his hip as he staggers. Sable appears from the dark behind him and hits him with the cell door — once, efficiently. He goes down. She looks at the shard in your hand. 'Not bad,' she says. 'I would have gone for the throat but we got there.' She takes a key from the ring. 'Move.'",
+            "options": [
+                { "displayText": "Follow Sable into the corridor", "storryLink": "cell_block_escape" }
+            ]
+        },
+        "sable_handles_guard": {
+            "content": "Sable comes out of nowhere — she moves like she was made for dark places. One precise strike to the back of the guard's knee, one hand over his mouth, and he is on the floor breathing but unconscious. She takes his keys without looking at you. 'Keys, torch, and he had bread in his pocket. We are rich.' She actually smiles. 'Come on.'",
+            "options": [
+                { "displayText": "Follow her into the corridor", "storryLink": "cell_block_escape" }
+            ]
+        },
+        "cell_block_escape": {
+            "content": "The corridor outside the cell block is wide and unlit. Sable's stolen torch throws orange light on wet stone walls. The passage splits ahead — to the left the floor slopes down and the sound of water grows loud. To the right the air is drier, warmer, and smells of ash. Sable looks at both, then at you. 'I do not know what is down either one. I only got as far as this corridor before they caught me last time.' She pauses. 'Last time?'",
+            "options": [
+                { "displayText": "Go left toward the water", "storryLink": "crypts_entrance" },
+                { "displayText": "Go right toward the ash", "storryLink": "barracks_entrance" }
+            ]
+        },
+        "crypts_entrance": {
+            "content": "The floor tilts downward. The walls grow slick. Within fifty steps the torch reflects off standing water covering the passage floor — ankle deep, then knee deep, then you stop. The chamber ahead is vast and submerged to the waist. Stone sarcophagi line the walls, lids ajar. Something moves beneath the surface. Sable grabs your arm. 'Flooded crypts,' she says quietly. 'The drowned dead. They are slow but they do not stop.'",
+            "options": [
+                { "displayText": "Wade in carefully", "storryLink": "crypts_wade" },
+                { "displayText": "Look for another way through", "storryLink": "crypts_search" }
+            ]
+        },
+        "crypts_search": {
+            "content": "You search the entrance passage and find a narrow ledge above the waterline running along the left wall — barely wide enough for a person, but dry. It extends into the crypt chamber and disappears into the dark. Sable tests it with one foot. 'It holds. Probably.' She looks at the water, then the ledge. 'Your call. You are heavier than me.'",
+            "options": [
+                { "displayText": "Take the ledge", "storryLink": "crypts_ledge" },
+                { "displayText": "Wade through the water", "storryLink": "crypts_wade" }
+            ]
+        },
+        "crypts_ledge": {
+            "content": "The ledge holds. You move single file, backs to the wall, watching the water below. The drowned dead drift past beneath you — pale shapes, slow, trailing burial cloth. One stops directly below and tilts its head up. It does not reach for you. It just watches. Sable does not look down. At the far end of the ledge a door stands above the waterline. Locked.",
+            "options": [
+                { "displayText": "Let Sable pick the lock", "storryLink": "crypts_door_pick" },
+                { "displayText": "Try to force it", "storryLink": "crypts_door_force" }
+            ]
+        },
+        "crypts_door_pick": {
+            "content": "Sable works the lock in under a minute. 'Old mechanism,' she says. 'Easy.' The door opens onto a dry antechamber. Shelves of burial offerings line the walls — clay pots, corroded coins, a bronze knife still in its sheath. From the far end of the antechamber, behind a collapsed arch, a voice: 'Hello? Is someone there? Please — I cannot move the stone.'",
+            "options": [
+                { "displayText": "Call back", "storryLink": "mira_first_contact" },
+                { "displayText": "Ignore the voice and search the antechamber", "storryLink": "crypts_antechamber_search" }
+            ]
+        },
+        "crypts_door_force": {
+            "content": "You hit the door with your shoulder. The noise echoes off the water. Below the ledge, every drowned shape in the crypt turns at once. They begin moving toward the ledge — slowly, purposefully. The door splinters on the third hit. You fall through it and Sable pulls it shut behind her. Through the door: the sound of hands on stone. 'We are not going back that way,' she says.",
+            "options": [
+                { "displayText": "Move into the antechamber", "storryLink": "mira_first_contact" }
+            ]
+        },
+        "crypts_wade": {
+            "content": "The water is ice cold and black. You move slowly, watching the shapes beneath the surface. The first drowned reaches you mid-chamber — it rises without sound, arms extended. It is not fast. But there is a second behind it, and a third beyond that. Sable drives her elbow into the first one's skull and it sinks. 'Keep moving,' she says through her teeth.",
+            "options": [
+                { "displayText": "Fight through to the far door", "storryLink": "crypts_fight_through" },
+                { "displayText": "Try to go back to the ledge", "storryLink": "crypts_ledge" }
+            ]
+        },
+        "crypts_fight_through": {
+            "content": "You fight through three of them — brutal, exhausting, the iron shard doing little against dead flesh. Sable uses the torch to keep them back, burning hands and faces with a grimness that suggests this is not her first time fighting the dead. You reach the far door soaking and breathing hard. She forces it open. Behind you the drowned re-emerge from the water and stand still, watching you go.",
+            "options": [
+                { "displayText": "Enter the antechamber", "storryLink": "mira_first_contact" }
+            ]
+        },
+        "crypts_antechamber_search": {
+            "content": "You find the bronze knife — still good — and a small clay pot sealed with wax that sloshes when you shake it. Oil, maybe. The collapsed arch at the far end has a gap just large enough to squeeze through. The voice comes again, weaker: 'I can hear you moving. Please. I have been here for three days.' Sable looks at the gap, then at you.",
+            "options": [
+                { "displayText": "Squeeze through to help", "storryLink": "mira_first_contact" },
+                { "displayText": "Leave and find another route", "storryLink": "crypts_bypass" }
+            ]
+        },
+        "crypts_bypass": {
+            "content": "You find a maintenance passage behind one of the shelving units — a crawlspace for the tomb builders, dry and tight. It bypasses whatever is behind the arch. Sable goes first. As you crawl through you hear the voice behind you one last time: 'Please.' You keep moving. Sable says nothing. The crawlspace opens into a dry corridor beyond the crypts. You do not look back.",
+            "options": [
+                { "displayText": "Continue without Mira", "storryLink": "deep_passage_no_mira" }
+            ]
+        },
+        "mira_first_contact": {
+            "content": "Behind the arch, pinned under a fallen ceiling stone, is a young woman — robes that were once fine, now ruined. Her left arm is trapped. Her eyes when she sees you are not desperate. They are calculating. 'I am Mira,' she says. 'I was a water mage apprenticed to the Academy before the kingdom fell. I cannot lift the stone alone. I can, however, be extremely useful to someone who helps me.'",
+            "options": [
+                { "displayText": "Lift the stone", "storryLink": "mira_free" },
+                { "displayText": "Ask what she means by useful", "storryLink": "mira_negotiate" }
+            ]
+        },
+        "mira_negotiate": {
+            "content": "'The Undermaw is mostly water,' she says, completely calm for someone pinned under a stone. 'Flooded passages, submerged gates, the drowned dead. I can move water. Clear passages, hold the dead back, open the underwater gate to the upper tunnels.' She holds your gaze. 'I cannot do any of that with my arm crushed. So. Shall we?'",
+            "options": [
+                { "displayText": "Lift the stone", "storryLink": "mira_free" }
+            ]
+        },
+        "mira_free": {
+            "content": "It takes all three of you — you lift, Sable braces, Mira pulls herself free with a sound she immediately suppresses. Her left arm hangs wrong at the elbow. She looks at it for a moment, then straightens it herself with a sharp exhale. 'I will manage,' she says, before you can ask. 'Where are you trying to go?' She is already standing.",
+            "options": [
+                { "displayText": "Tell her you need to get out of the Undermaw", "storryLink": "mira_joins" }
+            ]
+        },
+        "mira_joins": {
+            "content": "Mira nods once. 'There is a gate below the deep crypts — submerged, but I can hold the water back long enough to pass through. It leads to the Warden's level.' She looks at Sable. 'I know what you are thinking. Yes, the Warden. But it is the only way up.' Sable turns to you. 'Your call.' Mira is already moving toward the deeper passage.",
+            "options": [
+                { "displayText": "Follow Mira to the deep crypts", "storryLink": "deep_crypts" },
+                { "displayText": "Ask Mira about the Voice first", "storryLink": "mira_voice_info" }
+            ]
+        },
+        "mira_voice_info": {
+            "content": "'The Voice built this place,' Mira says, stopping. 'Or it is what is left of the person who built it. The kingdom's court mage — he attempted a ritual to extend his life and instead anchored himself to the dungeon. He cannot leave. But nothing in the Undermaw happens without his knowledge.' She pauses. 'He will offer you something. He offered me my arm back. I said no.' She holds up her bent elbow as if that explains everything.",
+            "options": [
+                { "displayText": "Continue to the deep crypts", "storryLink": "deep_crypts" }
+            ]
+        },
+        "deep_crypts": {
+            "content": "The deep crypts are older — the architecture changes, becomes rougher, more desperate. The water here is still and black and very deep. Mira raises her good hand and the surface parts like a curtain, revealing a submerged iron gate ten feet down. 'I can hold it for two minutes,' she says. 'Maybe three. Go one at a time. I will go last.' Her face is very white.",
+            "options": [
+                { "displayText": "Go first", "storryLink": "gate_dive_first" },
+                { "displayText": "Send Sable first", "storryLink": "gate_dive_sable" }
+            ]
+        },
+        "gate_dive_first": {
+            "content": "The cold hits you like a wall. You pull yourself down hand over hand along the gate and through. The passage beyond slopes upward and you surface in a dry tunnel twenty feet further on, gasping. A moment later Sable surfaces beside you. You both turn back toward the gate. The water is moving. Mira is still there, arm raised, shaking.",
+            "options": [
+                { "displayText": "Wait for Mira", "storryLink": "mira_surfaces" }
+            ]
+        },
+        "gate_dive_sable": {
+            "content": "Sable goes through without hesitation. You follow. The water is brutal and the gate is stiff but it opens. The tunnel beyond is dry and slopes up. Sable hauls you out. You both look back at the gate. The water is still parted — Mira is still holding it, alone, her whole body shaking with the effort.",
+            "options": [
+                { "displayText": "Call for Mira to come through", "storryLink": "mira_surfaces" }
+            ]
+        },
+        "mira_surfaces": {
+            "content": "Mira releases the water and dives. She is slower than either of you — one arm, and you can tell from the way she moves it hurts badly. She surfaces and you pull her out. She lies on the tunnel floor for a moment breathing. Then she stands, straightens her robes, and says: 'The Warden's level is above us. He will hear us coming. He hears everything.' She begins to walk.",
+            "options": [
+                { "displayText": "Follow her toward the Warden", "storryLink": "warden_approach_crypts" }
+            ]
+        },
+        "deep_passage_no_mira": {
+            "content": "Without Mira the deep gate is impassable — the water does not move for you. You search for another route and find a maintenance shaft in the crypt wall, long forgotten. It is a hard climb — iron rungs corroded, the shaft narrow — but it bypasses the flooded gate entirely and opens into the Warden's level from below. You are alone. The shaft does not go back.",
+            "options": [
+                { "displayText": "Emerge into the Warden's level", "storryLink": "warden_approach_alone" }
+            ]
+        },
+        "barracks_entrance": {
+            "content": "The right passage rises slightly. The air is dry and warm and carries the smell of old fire. The walls here are scorched — the stone itself has blackened and cracked from some ancient heat. Ahead the passage opens into what was once a guard barracks: rows of iron bed frames, a collapsed weapons rack, a cold forge. Nothing moves. But the air is wrong — too still, too attentive.",
+            "options": [
+                { "displayText": "Move through the barracks quickly", "storryLink": "barracks_rush" },
+                { "displayText": "Search the barracks carefully", "storryLink": "barracks_search" }
+            ]
+        },
+        "barracks_search": {
+            "content": "You find a short sword under one of the bed frames — old but the edge holds. Sable finds a leather vest that fits her and puts it on without comment. The weapons rack yields a serviceable knife. Then the temperature drops by ten degrees in an instant and the ash on the floor rises in a column and becomes a shape — a soldier, transparent, scorched, standing at attention. It does not move. It simply is.",
+            "options": [
+                { "displayText": "Speak to it", "storryLink": "wraith_first" },
+                { "displayText": "Back away slowly", "storryLink": "barracks_retreat" }
+            ]
+        },
+        "barracks_rush": {
+            "content": "You move fast through the barracks. You are halfway through when the temperature drops and ash rises from every surface simultaneously — six shapes, seven, forming into figures that stand in your path. Soldiers. Or what soldiers become in a place like this. They do not reach for you. They simply block the way. Behind you, Sable has stopped moving.",
+            "options": [
+                { "displayText": "Try to talk your way through", "storryLink": "wraith_first" },
+                { "displayText": "Fight through them", "storryLink": "barracks_fight" }
+            ]
+        },
+        "wraith_first": {
+            "content": "The lead wraith tilts its head. When it speaks the sound comes from everywhere at once — from the walls, from the ash, from a place just behind your eyes. 'Prisoner. You carry a blade. State your purpose or be held.' It is giving an order. It expects to be obeyed. Sable looks at you sideways. She does not speak. This, apparently, is your problem.",
+            "options": [
+                { "displayText": "Tell it you are trying to escape", "storryLink": "wraith_truth" },
+                { "displayText": "Claim you are a guard", "storryLink": "wraith_lie" },
+                { "displayText": "Ask to speak to their commanding officer", "storryLink": "wraith_command" }
+            ]
+        },
+        "wraith_lie": {
+            "content": "The wraith is still for a long moment. 'You are not a guard,' it says finally. 'We know every face that has walked this barracks. We remember everything. We have had nothing to do but remember.' The temperature drops further. 'Try again.'",
+            "options": [
+                { "displayText": "Tell the truth", "storryLink": "wraith_truth" },
+                { "displayText": "Ask to speak to their commanding officer", "storryLink": "wraith_command" }
+            ]
+        },
+        "wraith_truth": {
+            "content": "'Escape.' The wraith repeats the word as though tasting it. 'We tried that. The Warden stopped us. The Voice stopped us. And so we stand here.' It looks down at its transparent hands. 'We were soldiers. We followed orders. The last order we were given was to guard this level. We are still following it.' A pause. 'We do not have to stop you. We chose to. There is a difference.'",
+            "options": [
+                { "displayText": "Ask what would make them stand aside", "storryLink": "wraith_condition" },
+                { "displayText": "Ask about the Warden", "storryLink": "wraith_warden_info" }
+            ]
+        },
+        "wraith_command": {
+            "content": "The wraiths go still. Then they part, creating a corridor. From the back of the barracks a figure forms — larger, older, the ash that makes up his shape darker and more dense. He moves like someone who was once important and has not forgotten it. 'I am General Aldous,' he says. 'Commander of the Third Undermaw garrison. What is your business in my barracks?'",
+            "options": [
+                { "displayText": "Explain you are trying to escape", "storryLink": "aldous_intro" },
+                { "displayText": "Ask what happened to him and his soldiers", "storryLink": "aldous_history" }
+            ]
+        },
+        "aldous_history": {
+            "content": "'We were ordered to put down a prisoner revolt,' Aldous says. 'We obeyed. The Voice ordered the barracks sealed afterward — said we had seen too much. The doors were locked from outside. The fire started an hour later.' His voice carries no particular emotion. 'We have been here since. The Voice thinks we serve it now. We do not. We wait.' He looks at you. 'For what, I had begun to wonder.'",
+            "options": [
+                { "displayText": "Ask what he needs", "storryLink": "aldous_intro" }
+            ]
+        },
+        "barracks_fight": {
+            "content": "The sword passes through the first wraith like smoke. It does not react. Physical force means nothing to ash and cold. Sable tries the torch — the wraith recoils from the flame, hissing. Fire. Fire works. But you have one torch and there are seven of them. 'This is not a fight we win,' Sable says. 'Talk to them.'",
+            "options": [
+                { "displayText": "Attempt to talk to the wraiths", "storryLink": "wraith_first" }
+            ]
+        },
+        "barracks_retreat": {
+            "content": "You back away. The wraith does not follow. It simply watches you retreat to the barracks entrance. After a long moment Sable says: 'We need to go through there. And I do not think we can fight them.' She looks at the wraith, which has not moved. 'Maybe we can talk to them.'",
+            "options": [
+                { "displayText": "Approach the wraith and speak", "storryLink": "wraith_first" }
+            ]
+        },
+        "wraith_condition": {
+            "content": "'Release us,' the wraith says simply. 'The Voice anchors us here. Kills the anchor and we are free to go wherever the dead go.' It looks toward the ceiling. 'We do not know how to kill the Voice. But the Warden does. The Warden was made from it — a piece of its will given flesh and armour. Destroy the Warden and the Voice is weakened. Weakened enough, perhaps, for us to leave.' It steps aside. 'Pass. And remember what we asked.'",
+            "options": [
+                { "displayText": "Promise to remember and continue", "storryLink": "aldous_intro" }
+            ]
+        },
+        "wraith_warden_info": {
+            "content": "'The Warden is not human,' the wraith says. 'It was shaped from stone and the Voice's will. It guards the upper gate. It cannot be reasoned with and it cannot be killed by ordinary means.' It pauses. 'But it has a command word — built into it by the Voice, a failsafe. We do not know the word. The general might.' It steps back. 'Speak to Aldous.'",
+            "options": [
+                { "displayText": "Ask to speak to Aldous", "storryLink": "wraith_command" }
+            ]
+        },
+        "aldous_intro": {
+            "content": "General Aldous looks at you for a long time. 'You want to pass through my barracks and face the Warden,' he says. It is not a question. 'I can tell you what I know about it. The Voice made the Warden as a final lock. It has a command word — a word that freezes it, built in as a failsafe in case the Voice needed to pass. I heard it once, through the walls, years ago.' He pauses. 'I will give it to you. In exchange for something.'",
+            "options": [
+                { "displayText": "Ask what he wants", "storryLink": "aldous_request" }
+            ]
+        },
+        "aldous_request": {
+            "content": "'Destroy the Voice,' Aldous says. 'Not weaken it. Destroy it. My soldiers have been held here for a generation. We deserve to rest.' He looks at his ash hands. 'I know that is a large thing to ask of someone who just woke up in a cell. But you are here and you are moving and that means something in a place where everything stopped.' He meets your eyes. 'The command word is Anathema. Use it wisely.'",
+            "options": [
+                { "displayText": "Promise to destroy the Voice", "storryLink": "aldous_joins" },
+                { "displayText": "Take the word without promising", "storryLink": "aldous_no_promise" }
+            ]
+        },
+        "aldous_no_promise": {
+            "content": "Aldous studies you. 'Honest,' he says. 'I can work with honest.' He steps aside. 'The word stands regardless. Do what you can.' As you pass he adds: 'The Voice will offer you something. Whatever it is — it is not worth it. Nothing it gives stays given.' The other wraiths part without a word. You move through the barracks into the passage beyond.",
+            "options": [
+                { "displayText": "Continue toward the Warden", "storryLink": "warden_approach_barracks" }
+            ]
+        },
+        "aldous_joins": {
+            "content": "Aldous nods once. Something shifts in the air — the wraiths around you straighten, as though standing at attention has meaning again. 'I cannot go with you,' Aldous says. 'We are bound to this level. But I can give you something.' He reaches into his chest — into the ash of himself — and draws out a cold blue flame that sits in his palm. 'Hold this. The drowned dead will not touch you while you carry it.' He places it in your hand. It weighs nothing.",
+            "options": [
+                { "displayText": "Continue toward the Warden", "storryLink": "warden_approach_barracks" }
+            ]
+        },
+        "warden_approach_crypts": {
+            "content": "The tunnel from the deep crypts opens onto a wide landing cut from solid rock. Ahead, a gate of black iron twenty feet high. Before it stands the Warden — eight feet of stone and dark metal, shaped like a man but wrong in every proportion. It does not breathe. Its head turns toward you with the sound of grinding rock. Mira touches your arm: 'I can hold the water passages open for a retreat. But I cannot fight that thing.'",
+            "options": [
+                { "displayText": "Attempt to use the command word if you have it", "storryLink": "warden_command_word" },
+                { "displayText": "Fight the Warden", "storryLink": "warden_fight" },
+                { "displayText": "Look for another way past", "storryLink": "warden_bypass" },
+                { "displayText": "Wait and watch the Warden's patrol", "storryLink": "warden_observe" }
+            ]
+        },
+        "warden_approach_barracks": {
+            "content": "The passage from the barracks opens onto a wide stone landing. The gate ahead is black iron, twenty feet high. The Warden stands before it — vast, stone-skinned, wrong. It turns toward you slowly. Sable takes one look and steps back. 'I am good at a lot of things,' she says quietly. 'That is not one of them.' She looks at you. 'Tell me you have a plan.'",
+            "options": [
+                { "displayText": "Use the command word Anathema", "storryLink": "warden_command_word" },
+                { "displayText": "Fight the Warden", "storryLink": "warden_fight" },
+                { "displayText": "Look for another way past", "storryLink": "warden_bypass" },
+                { "displayText": "Wait and watch", "storryLink": "warden_observe" }
+            ]
+        },
+        "warden_approach_alone": {
+            "content": "You emerge alone onto the stone landing. The gate ahead is vast and black. The Warden turns toward you — eight feet of wrong geometry and cold intent. There is no one beside you. The command word, if you learned it, sits in your memory. The iron shard is in your pocket. The gate beyond the Warden is the only way out.",
+            "options": [
+                { "displayText": "Use the command word if you know it", "storryLink": "warden_command_word" },
+                { "displayText": "Fight the Warden alone", "storryLink": "warden_fight_alone" },
+                { "displayText": "Look for another way", "storryLink": "warden_bypass" }
+            ]
+        },
+        "warden_observe": {
+            "content": "You watch. The Warden does not patrol — it stands. But every few minutes it turns its head, a slow scan of the landing from left to right. There is a gap: three seconds where it faces directly away from the gate controls on the right wall. Three seconds is not long. But the controls are only fifteen feet away.",
+            "options": [
+                { "displayText": "Run for the controls in the gap", "storryLink": "warden_controls_run" },
+                { "displayText": "Use the command word first", "storryLink": "warden_command_word" }
+            ]
+        },
+        "warden_controls_run": {
+            "content": "You run. Your footsteps echo despite everything. Twelve feet. Ten. You hit the controls as the Warden begins to turn back. Your hand finds a lever and pulls. The gate groans but does not open — wrong lever. The Warden turns fully. It is four steps away. Its hand closes around your arm like a vice.",
+            "options": [
+                { "displayText": "Shout the command word", "storryLink": "warden_command_word" },
+                { "displayText": "Struggle and fight", "storryLink": "warden_fight" }
+            ]
+        },
+        "warden_command_word": {
+            "content": "You say the word: Anathema. The effect is immediate — the Warden stops mid-motion as though the air has solidified around it. Every joint locks. Its head tilts at an angle that would break a human neck and stays there. The grinding of stone goes silent. It stands frozen, arm extended, face turned toward you, perfectly still. It will not stay that way forever. Sable is already at the gate controls.",
+            "options": [
+                { "displayText": "Help Sable open the gate", "storryLink": "gate_open" },
+                { "displayText": "Search the Warden while it is frozen", "storryLink": "warden_search" }
+            ]
+        },
+        "warden_search": {
+            "content": "At the Warden's belt — if you can call it that — hangs a key unlike any other in the dungeon. Black iron, double-headed, inscribed with a symbol you do not recognise. Sable glances over. 'That is not a gate key,' she says. 'That opens something else.' You take it. The Warden's fingers twitch. The command word is fading.",
+            "options": [
+                { "displayText": "Get to the gate controls now", "storryLink": "gate_open" }
+            ]
+        },
+        "warden_bypass": {
+            "content": "The landing has a drainage channel running along the left wall — wide enough to crawl through, running with a thin trickle of water. It passes under the gate. Mira could widen it if she is with you. Without her it is very tight. You could make it. Probably. If the Warden does not notice.",
+            "options": [
+                { "displayText": "Crawl through the drainage channel", "storryLink": "warden_crawl" },
+                { "displayText": "Try the command word instead", "storryLink": "warden_command_word" }
+            ]
+        },
+        "warden_crawl": {
+            "content": "You go flat and crawl. The channel is tight — stone pressing on your back, the trickle of water in your face. Halfway through the Warden's footsteps shake the floor directly above you. It has sensed something. It stands over the channel. You stop breathing. After what feels like a full minute it moves away. You crawl the rest of the way and emerge on the far side of the gate.",
+            "options": [
+                { "displayText": "Wait for the others to follow", "storryLink": "gate_far_side" }
+            ]
+        },
+        "warden_fight": {
+            "content": "The sword bends on its first strike. The iron shard does nothing. Sable throws the torch at its face and it does not react. Mira drives a column of pressurised water into it and it staggers one step. One step. It turns toward Mira and she backs against the wall, her good arm shaking. It raises its fist.",
+            "options": [
+                { "displayText": "Put yourself between Mira and the Warden", "storryLink": "warden_sacrifice" },
+                { "displayText": "Shout the command word", "storryLink": "warden_command_word" },
+                { "displayText": "Run for the drainage channel", "storryLink": "warden_crawl" }
+            ]
+        },
+        "warden_fight_alone": {
+            "content": "Without allies you have the iron shard and the short sword if you found it. Neither does anything meaningful against stone and iron. The Warden hits you once — you hit the far wall and stay there for a moment relearning how to breathe. It raises its foot to step on you. You roll. Barely.",
+            "options": [
+                { "displayText": "Use the command word if you know it", "storryLink": "warden_command_word" },
+                { "displayText": "Run for the drainage channel", "storryLink": "warden_crawl" },
+                { "displayText": "Keep fighting", "storryLink": "warden_fight_end" }
+            ]
+        },
+        "warden_fight_end": {
+            "content": "You fight until you cannot. The Warden is patient in a way only something without pain or exhaustion can be. It hits you again. The floor comes up to meet you and stays there. The last thing you see is the gate. Closed. Beyond it, somewhere, a way out. The Voice speaks from the walls, almost gently: 'You were very brave. Let me offer you something better than dying here.'",
+            "options": [
+                { "displayText": "Listen to the Voice's offer", "storryLink": "voice_offer" }
+            ]
+        },
+        "warden_sacrifice": {
+            "content": "The Warden's fist comes down on you instead of Mira. You hit the floor hard and something in your side cracks. But you are still conscious. Mira shouts something — a word in a language you do not know — and the water in the drainage channel explodes upward, driving into the Warden's joints, into every crack in its stone skin. It seizes. Mira collapses. The Warden stands frozen, water-locked. 'Gate,' Mira gasps. 'Now.'",
+            "options": [
+                { "displayText": "Get to the gate controls", "storryLink": "gate_open" }
+            ]
+        },
+        "gate_open": {
+            "content": "The gate controls are a wheel and two levers. The wheel takes both of you. The levers take all your remaining strength. But the gate moves — grinding, protesting, shedding rust — and opens onto a wide stone staircase leading up. Light comes from above. Real light. The Warden behind you cracks and shifts as the command word fades. You have minutes.",
+            "options": [
+                { "displayText": "Run up the stairs", "storryLink": "upper_level" }
+            ]
+        },
+        "gate_far_side": {
+            "content": "The others come through one at a time — Sable without hesitation, Mira more slowly, favouring her arm. When you are all through you find yourselves at the base of a wide stone staircase. Light filters down from above. The Warden on the far side of the gate turns its head toward the drainage channel. It knows. It begins to move toward the gate controls.",
+            "options": [
+                { "displayText": "Run up the stairs before the gate closes", "storryLink": "upper_level" }
+            ]
+        },
+        "upper_level": {
+            "content": "The upper level is different — wider, drier, with the remains of administrative function: a records room, a collapsed office, a locked door with light under it. At the far end of the corridor a circular chamber with no ceiling — open to the sky above, a hundred feet up, a rope hanging from somewhere near the top. And in the centre of the chamber, nothing. Just a cold spot in the air that speaks. 'You made it,' the Voice says. 'Remarkable. Most do not reach this room.'",
+            "options": [
+                { "displayText": "Tell it you are leaving", "storryLink": "voice_confrontation" },
+                { "displayText": "Ask what it wants", "storryLink": "voice_offer" },
+                { "displayText": "Ignore it and look for a way up", "storryLink": "upper_explore" }
+            ]
+        },
+        "upper_explore": {
+            "content": "You search the records room while the Voice watches. In the files you find your own name — a intake record, a charge, a sentence. Someone put you here deliberately and signed the order with a name you do not recognise. In the collapsed office you find a journal belonging to the Voice, from when it was a man. The last entry reads: 'I have made something I cannot unmake. I am so very tired.'",
+            "options": [
+                { "displayText": "Confront the Voice with what you found", "storryLink": "voice_confrontation" },
+                { "displayText": "Take the journal and ignore the Voice", "storryLink": "voice_offer" }
+            ]
+        },
+        "voice_confrontation": {
+            "content": "The Voice is quiet for a moment. 'Yes,' it says. 'I put you here. I put all of you here. It has been a long time since I had any choice about what I do.' The cold spot shifts. 'I am not what I was. I am the dungeon now. I think and the walls move. I hunger and the prisoners disappear. I have not been a person for forty years.' A pause. 'But I remember what it was like. That is the worst part.'",
+            "options": [
+                { "displayText": "Tell it you will destroy it", "storryLink": "voice_destroy_path" },
+                { "displayText": "Ask if it can be freed", "storryLink": "voice_free_ask" },
+                { "displayText": "Listen to its offer", "storryLink": "voice_offer" }
+            ]
+        },
+        "voice_free_ask": {
+            "content": "'Freed,' it repeats. 'An interesting word.' The cold deepens. 'My body is gone. The ritual consumed it. What is left is will and memory anchored to stone. To free me would be to end me.' It sounds almost surprised by the idea. 'No one has ever offered that before. They only ever want to use me or destroy me.' A long pause. 'What would you want in return?'",
+            "options": [
+                { "displayText": "Ask for nothing — just end its suffering", "storryLink": "voice_mercy_ending_path" },
+                { "displayText": "Ask for safe passage out", "storryLink": "voice_bargain" }
+            ]
+        },
+        "voice_offer": {
+            "content": "The Voice speaks carefully. 'I can give you anything you lost. Memory. Name. The life you had before someone signed an order to erase you.' The cold settles around you like a coat. 'Stay. Help me manage this place. Not as a prisoner — as a keeper. The dungeon needs a human will to moderate it. Someone who remembers what people are.' It waits. 'I am so tired of doing this alone.'",
+            "options": [
+                { "displayText": "Accept the offer", "storryLink": "voice_accept" },
+                { "displayText": "Refuse and fight", "storryLink": "voice_destroy_path" },
+                { "displayText": "Ask about freeing it instead", "storryLink": "voice_free_ask" }
+            ]
+        },
+        "voice_accept": {
+            "content": "Something shifts in the air. Sable grabs your arm — 'What are you doing?' — but you are already answering. The Voice wraps around you like water. Your memory returns: who you were, who sent you here, why. It does not feel like a gift. It feels like weight. But the dungeon stills around you. The Voice recedes slightly. You are not gone. But you are no longer only yourself.",
+            "options": [
+                { "displayText": "Tell Sable and Mira to go", "storryLink": "ending_bargain" }
+            ]
+        },
+        "voice_destroy_path": {
+            "content": "The Voice sighs — the whole dungeon exhales. 'Very well,' it says. 'Then let us see what you are made of.' The walls begin to move. The floor shifts. The corridor behind you seals. The cold in the chamber drops to something beyond temperature. Mira raises her hand. Aldous's cold blue flame — if you carry it — flares. Sable draws her knife. The chamber becomes a battlefield.",
+            "options": [
+                { "displayText": "Use Aldous's flame against the Voice", "storryLink": "voice_fight_flame" },
+                { "displayText": "Fight without the flame", "storryLink": "voice_fight_raw" }
+            ]
+        },
+        "voice_fight_flame": {
+            "content": "The cold flame finds the cold spot in the air and ignites it — not with heat but with something the opposite of cold, something like grief made visible. The Voice screams. Not in anger — in relief. The dungeon shakes. Cracks run through the ceiling. Mira pulls you back. 'The whole level is coming down,' she shouts. 'Go. Now. Up the rope.' Sable is already climbing.",
+            "options": [
+                { "displayText": "Climb the rope", "storryLink": "climb_escape" },
+                { "displayText": "Make sure Mira gets out first", "storryLink": "climb_mira_first" }
+            ]
+        },
+        "voice_fight_raw": {
+            "content": "Without the flame you fight the Voice with the only thing left — will. You refuse to move. You refuse to kneel. The cold presses down like a physical weight and you stand in it and you do not break. The Voice hesitates. In forty years nothing has simply stood in its presence and refused. The hesitation costs it. Mira drives water into the anchor point — the cold spot — and something cracks.",
+            "options": [
+                { "displayText": "Push through and reach the rope", "storryLink": "climb_escape" },
+                { "displayText": "Hold the Voice while Mira and Sable climb", "storryLink": "sacrifice_hold" }
+            ]
+        },
+        "voice_mercy_ending_path": {
+            "content": "The Voice goes very still. 'Nothing,' it says slowly. 'You want nothing.' The cold in the chamber changes — not warmer, but different. Softer. 'I do not know how to accept that.' A long pause. The dungeon trembles faintly. 'I will show you the way out. All of you. And then — I think I would like to stop.' The ceiling above you opens — not collapses, opens, stone moving aside to reveal a shaft of pale grey sky.",
+            "options": [
+                { "displayText": "Lead everyone up through the opening", "storryLink": "ending_mercy" }
+            ]
+        },
+        "voice_bargain": {
+            "content": "The Voice considers. 'Safe passage. All of you. In exchange for ending me.' The cold spot dims slightly. 'That is a better bargain than I have been offered in forty years.' The ceiling opens — stone parting smoothly, a shaft of grey sky above. 'Go. When you are clear, I will let go. The dungeon will collapse without me to hold it.' Sable looks up at the sky. Her face does something complicated.",
+            "options": [
+                { "displayText": "Take the passage and leave", "storryLink": "ending_mercy" },
+                { "displayText": "Stay until it is done", "storryLink": "ending_mercy" }
+            ]
+        },
+        "climb_escape": {
+            "content": "The rope is rough and the shaft is long and the dungeon shakes the whole way up. Stones fall past you. The Voice's scream fades into something quieter and then into silence. You climb until your arms give out and then you climb more. Light grows above you. Your hand finds the lip of the shaft and you pull yourself onto open ground — real ground, grass, cold air, a grey sky that has never looked so large.",
+            "options": [
+                { "displayText": "Wait for the others", "storryLink": "ending_escape" }
+            ]
+        },
+        "climb_mira_first": {
+            "content": "You put Mira on the rope first — she cannot climb well with one arm and you help her start. Sable goes next. The dungeon shakes harder. You go last. Halfway up the rope a section of the shaft wall collapses and the rope swings wildly. You hold on with everything you have. Above you, Sable's hand reaches down. You take it.",
+            "options": [
+                { "displayText": "Pull yourself out", "storryLink": "ending_escape" }
+            ]
+        },
+        "sacrifice_hold": {
+            "content": "You plant yourself between the Voice and the rope and you hold it — not with a weapon, not with magic, just with presence. The cold tries to move through you and you let it, staying still, staying present, an anchor point of your own. Sable gets up the rope. Mira gets up the rope. You can feel yourself fading at the edges. The Voice says, very quietly: 'Thank you.' Then the chamber falls.",
+            "options": [
+                { "displayText": "Accept what comes", "storryLink": "ending_sacrifice" }
+            ]
+        },
+        "voice_conquest_path": {
+            "content": "The black key from the Warden's belt — you hold it up. The Voice goes silent for a moment. 'Where did you get that,' it says, and for the first time it sounds afraid. The key fits a seam in the chamber wall you had not noticed — a door, thin as a crack, that opens onto a small room containing the anchor: a stone no larger than your fist, black, warm, thrumming. The Voice screams. 'Do not touch that.'",
+            "options": [
+                { "displayText": "Take the anchor stone", "storryLink": "conquest_take" },
+                { "displayText": "Destroy the anchor stone", "storryLink": "voice_destroy_path" }
+            ]
+        },
+        "conquest_take": {
+            "content": "The moment your hand closes on the anchor the Voice stops screaming. The dungeon goes still. The cold retreats. And then, slowly, carefully, the Voice speaks again — from the stone in your hand, small and contained and no longer filling the room. 'Oh,' it says. 'This is different.' You hold the dungeon in your palm. The Warden kneels in the corridor below. The drowned dead are still. The wraiths are watching.",
+            "options": [
+                { "displayText": "Claim the Undermaw", "storryLink": "ending_conquest" },
+                { "displayText": "Destroy the stone and end it", "storryLink": "ending_mercy" }
+            ]
+        },
+        "skittering_encounter": {
+            "content": "The tunnel ahead moves. Not the walls — the floor. A carpet of pale insectoid things, each the size of your fist, filling the passage from wall to wall. They have not noticed you yet. They move in patterns — feeding on something in the dark. Sable counts them under her breath and stops counting.",
+            "options": [
+                { "displayText": "Back away and find another route", "storryLink": "skittering_avoid" },
+                { "displayText": "Use the torch to drive them back", "storryLink": "skittering_torch" }
+            ]
+        },
+        "skittering_avoid": {
+            "content": "You back away silently. The skittering things do not follow — they are not interested in something that is not already dead or trapped. You find a parallel passage, narrower, that bypasses the swarm entirely. It adds time. It costs nothing else. Sable exhales when you are clear. 'Good call,' she says. 'Those things are not something you fight.'",
+            "options": [
+                { "displayText": "Continue on", "storryLink": "deep_crypts" }
+            ]
+        },
+        "skittering_torch": {
+            "content": "The torch drives them back — they recoil from heat, flowing away like water from a dropped stone. You move through the middle of the parting swarm, torch held ahead of you. They brush your boots but do not bite. On the far side you run and do not stop running until the sound of them fades. The torch is half burned down now.",
+            "options": [
+                { "displayText": "Continue forward", "storryLink": "deep_crypts" }
+            ]
+        },
+        "ending_escape": {
+            "content": "You sit on the grass above the Undermaw and breathe. Sable sits beside you and says nothing for a long time. Mira stands and looks at her broken arm as though seeing it for the first time. Below you, the dungeon shudders and is still. You do not remember your name yet. But you remember that someone put you there, and you know their name, and you are above ground, and it is morning. That is enough to start with.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "ending_bargain": {
+            "content": "Sable and Mira climb the rope without looking back. You watch them go. The dungeon settles around you like a house around its owner. You learn its rooms slowly — all of them, even the ones the Voice had forgotten. The prisoners that remain you release one by one. No new ones arrive. Whatever you are now, you have made one rule, and the dungeon obeys it. Outside, the world continues without you. You find, after a while, that you do not mind.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "ending_sacrifice": {
+            "content": "Above the shaft, Sable pulls Mira onto the grass and they both lie there breathing. After a minute Sable says: 'Where are they?' Mira does not answer. They wait a long time. The shaft goes dark and quiet. Below, the Undermaw is also quiet — for the first time in forty years, completely and finally quiet. What you held, you held long enough. The wraiths of the Ashen Barracks disperse like smoke on a morning wind. General Aldous is the last to go.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "ending_conquest": {
+            "content": "You walk out of the Undermaw through the front gate — the real one, the one that has not been opened in a generation — and the morning light hits you and the dungeon stays open behind you, empty, doors unlocked. The Voice in the stone in your pocket is quiet but present. Sable looks at you sideways. 'What are you going to do with it?' You look back at the dungeon. A prison built to be forgotten. You have not decided yet. But you are the one deciding. That is new.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "ending_mercy": {
+            "content": "The sky is pale grey and very wide. Behind you the ground subsides — gently, slowly, the Undermaw folding in on itself without violence. The Voice does not scream. It goes the way it wanted to go, which is quietly, which is completely, which is finally. Mira watches the subsidence with an expression you cannot read. Sable has already started walking. You stand a moment longer, then follow. The stone in your pocket, if you took it, is cold and inert. Whatever it held has gone.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "ending_lost": {
+            "content": "You come out of the Undermaw alone. You do not know when Sable left — somewhere in the deep crypts, when you were not watching. You do not know what happened to Mira. You do not know your name. The Voice made its offer and you refused it and destroyed the anchor and the dungeon collapsed and you walked out of the rubble and now you are standing in a field and the sky is very large and very empty and you are the only person in it. You start walking. You do not know in which direction.",
+            "options": [
+                { "displayText": "Play again", "storryLink": "start" }
+            ]
+        },
+        "abandon_sable": {
+            "content": "You run for the rope without waiting. Behind you Sable shouts something — you do not stop. You climb. At the top you pull yourself onto the grass and look down. The shaft is shaking. Sable does not appear. Mira does not appear. The Voice is silent. The sky is grey and enormous and you are alone in it and the dungeon is quiet and you are out and that was the only goal and you tell yourself that was the only goal.",
+            "options": [
+                { "displayText": "Walk away", "storryLink": "ending_lost" }
+            ]
+        },
+        "abandon_mira": {
+            "content": "You leave Mira at the gate. She cannot climb well. The dungeon is coming down. The calculation is fast and brutal and you make it and go. At the top of the rope you wait for Sable and she comes up and you both breathe and do not look at each other for a long time. Eventually Sable says: 'She might have found another way.' You both know she did not. You start walking anyway.",
+            "options": [
+                { "displayText": "Keep walking", "storryLink": "ending_lost" }
+            ]
+        }
+    }
+}

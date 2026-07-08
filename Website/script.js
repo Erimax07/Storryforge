@@ -10,9 +10,10 @@ let elementIdCounter = 0;
 let selectionIDCounter = [];
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadHome();
-});
+// document.addEventListener("DOMContentLoaded", loadHome);
+
+
+
 
 
 async function loadData() {
@@ -138,7 +139,7 @@ function createStory(){
     counter = 0;
     html = 
     `
-    <form>
+    <form id="storyForm">
     <h2>Create Your Story</h2>
         <h3>storyname</h3><input type="text" name="storyname" id="storyname" placeholder="myStory" required>
         <h3>describtion</h3><input type="text" name="describtion" id="describtion" placeholder="This is my story" required>
@@ -158,9 +159,9 @@ function createStory(){
         <div class="storyWrapper" id="storyWrapper">
         </div>
         <div class="storyButtonWropper">
-            <button class="storyButton" onclick="addStoryelement()">add storyelement</button>
-            <button class="storyButton" onclick="calcelStory()">cancel</button>
-            <button type="submit" class="storyButton" onclick="submitStory()">submit</button>
+            <button type="button" class="storyButton" onclick="addStoryelement()">add storyelement</button>
+            <button type="button" class="storyButton" onclick="calcelStory()">cancel</button>
+            <button type="submit" class="storyButton">submit</button>
         </div>
         </form>
     `
@@ -209,17 +210,18 @@ function addSelectionElement(elementIdCounter){
     document.getElementById(elementIdCounter).querySelector(".selection").insertAdjacentHTML("beforeend", html);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.addEventListener("submit", submitStory);
+document.addEventListener("submit", function(event) {
+    if (event.target.id === "storyForm") {
+        submitStory(event);
+    }
 });
 
-async function submitStory(){
 
-    event.preventDefault(); 
+async function submitStory(event){
+    event.preventDefault();
 
     const form = event.target;
 
-    // Browser validation still works
     if (!form.checkValidity()) {
         form.reportValidity();
         return;
@@ -255,16 +257,15 @@ async function submitStory(){
         storyElements[key] = el;
     })
     
-    const story = {
-        id: id,
-        title: title,
-        describtion: describtion,
-        author: author,
-        creation: creation,
-        genre: genre,
-        storyElements: storyElements
-    }
-
+const story = {
+    id: id,
+    title: title,
+    description: describtion,
+    author: author,
+    creation: creation,
+    genre: genre,
+    storyElements: storyElements
+}
     const json = JSON.stringify(story);
     console.log(json);
     const response = await fetch(api + "/submitStory", {
@@ -279,12 +280,13 @@ async function submitStory(){
         document.getElementById("content").innerHTML = "We had a Problem - story not added to server";
         return
     }
-    if(response.data == -1){
+    const result = await response.json();
+    if(result == -1){
         document.getElementById("content").innerHTML = "Data Invalid - story not added to server";
         return
     }
     else{
-        // loadStory(id);
+        loadStory(id);
     }
 }
 
@@ -293,6 +295,8 @@ function calcelStory(){
     elementIdCounter = 0;
     selectionIDCounter = [];
 }
+
+
 function moveUp(id) {
     // const elements = document.querySelectorAll(".storyElement");
 
