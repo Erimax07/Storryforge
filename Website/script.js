@@ -6,7 +6,9 @@ const api = "http://localhost:5124"
 let story;
 let currentElement;
 
-let counter = 0;
+let elementIdCounter = 0;
+let selectionIDCounter = [];
+
 
 document.addEventListener("DOMContentLoaded", () => {
     loadHome();
@@ -163,35 +165,36 @@ function createStory(){
 }
 
 function addStoryelement(){
-
+    selectionIDCounter[elementIdCounter] = 0;
     html = 
     `
-        <div class="storyElement">
+        <div class="storyElement" id="${elementIdCounter}">
 
-                <label for="story${counter}">Content:</label>
+                <label for="story">Content:</label>
                 <input type="text" class="story-content" placeholder="Enter content">
                 <div class="selection">
                     
                 </div>
 
                 <div class="storyActions">
-                    <button type="button" onclick="addSelectionElement()" class="add-selection">Add selection</button>
-                    <button type="button" onclick="moveUp()" class="move-up">Up</button>
-                    <button type="button" onclick="moveDown()" class="move-down">Down</button>
-                    <button type="button" onclick="deleteStoryelement()" class="delete">Delete</button>
+                    <button type="button" onclick="addSelectionElement(${elementIdCounter})" class="add-selection">Add selection</button>
+                    <button type="button" onclick="moveUp(${elementIdCounter})" class="move-up">Up</button>
+                    <button type="button" onclick="moveDown(${elementIdCounter})" class="move-down">Down</button>
+                    <button type="button" onclick="deleteStoryelement(${elementIdCounter})" class="delete">Delete</button>
                 </div>
 
             </div>
     `
-    counter++;
+    elementIdCounter++;
     document.getElementById("storyWrapper").innerHTML += html;
 }
 
 
-function addSelectionElement(){
+function addSelectionElement(elementIdCounter){
+    let selectionId = selectionIDCounter[elementIdCounter];
     html = 
     `
-        <div class="selectionElement">
+        <div class="selectionElement" id="${elementIdCounter}/${selectionId}">
 
             <input type="text" class="display-text" placeholder="Choice text">
             <input type="text" class="next-element" placeholder="Next node ID">
@@ -199,7 +202,8 @@ function addSelectionElement(){
 
         </div>
     `
-
+    selectionIDCounter[elementIdCounter]++;
+    document.getElementById(elementIdCounter).innerHTML += html;
 }
 
 function submitStory(){
