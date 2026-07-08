@@ -85,6 +85,18 @@ app.MapGet("/story/{id:int}", (int id) =>
 app.Run();
 
 
+app.MapGet("/getFreeId", (int id) =>
+{
+    int max = 0;
+    foreach (var story in storys)
+    {
+        if(story.Value.id > max) max = story.Value.id;
+    }
+    return max + 1;
+});
+app.Run();
+
+
 void calculateStorylist()
 {
     StoryInfoList content = new StoryInfoList();
@@ -192,6 +204,7 @@ class StoryNode
     }
 
 }
+
 class Selection
 {
     public string displayText { get; set; }

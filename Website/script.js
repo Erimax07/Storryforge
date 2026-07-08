@@ -207,8 +207,13 @@ function addSelectionElement(elementIdCounter){
     document.getElementById(elementIdCounter).querySelector(".selection").insertAdjacentHTML("beforeend", html);
 }
 
-function submitStory(){
-    // const id = await fetch(api + '/getFreeId');
+async function submitStory(){
+    try {
+        const id = await fetch(api + '/getFreeId');
+        
+    } catch (error) {
+        return
+    }
     const title = document.getElementById("storyname").value;
     const describtion = document.getElementById("describtion").value;
     const author = document.getElementById("author").value;
@@ -234,7 +239,7 @@ function submitStory(){
     })
     
     const story = {
-        id: 10,
+        id: id,
         title: title,
         describtion: describtion,
         author: author,
@@ -245,6 +250,8 @@ function submitStory(){
 
     const json = JSON.stringify(story);
     console.log(json);
+    postMessage(json, api + "/submitStory")
+
 }
 
 function calcelStory(){
