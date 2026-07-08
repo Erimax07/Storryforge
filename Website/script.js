@@ -67,13 +67,11 @@ async function loadStory(id){
         let html =  
             `
             <button onclick="updateStory(null)" class="story">
-                <p>${element.id}</p>
-                <p>${element.title}</p>
+                <h2>${element.title}</h2>
                 <p>${element.description}</p>
-                <p>${element.creation}</p>
-                <p>${element.author}</p>
-                <p>${element.genre}</p>
-                <p>${element.nodes}</p>
+                <p>Author: ${element.author}</p>
+                <p>Genre: ${genre(element.genre)}</p>
+                <p>Length: ${element.nodes}</p>
             </button>
             `
         document.getElementById("content").innerHTML = html;
@@ -82,6 +80,23 @@ async function loadStory(id){
          document.getElementById("content").innerHTML =
                     '<div class="error">Error: ' + error.message + "</div>";
     }
+}
+
+function genre(key){
+    let enumVal = 
+    [
+    "Horror",
+    "Fantasy",
+    "SciFi",
+    "Mystery",
+    "Romance",
+    "Thriller",
+    "Adventure",
+    "Drama",
+    "Comedy",
+    "Historical"
+    ]
+    return enumVal[key]
 }
 
 function updateStory(next){
