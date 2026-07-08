@@ -59,9 +59,6 @@ calculateStorylist();
 string storyListString = File.ReadAllText(storyListJsonPath);
 StoryInfoList storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoList>(storyListString, options);
 
-
-
-
 app.UseCors("AllowFrontend");
 
 app.MapGet("/storyList", () =>
@@ -100,7 +97,6 @@ app.MapPost("/submitStory", async (Story story) =>
         string json = System.Text.Json.JsonSerializer.Serialize<Story>(story, options);
         if (story != null)
         {
-            storys.Add(story.id, story);
             string fileName = story.title;
             foreach (char c in System.IO.Path.GetInvalidFileNameChars())
             {
@@ -116,11 +112,25 @@ app.MapPost("/submitStory", async (Story story) =>
 
             fileName += ".json";
 
-            await File.WriteAllTextAsync(path + fileName, json);
-            calculateStorylist();
-            storyListString = File.ReadAllText(storyListJsonPath);
-            storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoList>(storyListString, options);
-            return story.id;
+            int nodes = story.storyElements.Count();
+            story.nodes = nodes;
+
+
+            if (!isRecivedStoryGood(story))
+            {
+                return(-2);
+            }
+            else
+            {
+                
+                storys.Add(story.id, story);
+                await File.WriteAllTextAsync(path + fileName, json);
+                calculateStorylist();
+                storyListString = File.ReadAllText(storyListJsonPath);
+                storyList = System.Text.Json.JsonSerializer.Deserialize<StoryInfoList>(storyListString, options);
+                return story.id;
+            }
+
         }    
         else
         {
@@ -149,9 +159,9 @@ void calculateStorylist()
     storyListString = json;
 }
 
-bool checkRecivedStory(Story story)
+bool isRecivedStoryGood(Story story)
 {
-    bool check = false;
+    bool check = true;
 
 
     // check for start
@@ -161,10 +171,12 @@ bool checkRecivedStory(Story story)
         if(element.Key == "start") startExists = true;
     }
 
+
     // final check
-    if (startExists)
+    if (!startExists)
     {
-        check = true;
+        check = false;
+        Console.WriteLine(">Story invalid no start");
     }
     return check;
 }
