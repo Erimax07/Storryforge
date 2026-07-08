@@ -202,7 +202,7 @@ function addSelectionElement(elementIdCounter){
         </div>
     `
     selectionIDCounter[elementIdCounter]++;
-    document.getElementById(elementIdCounter).innerHTML += html;
+    document.getElementById(elementIdCounter).insertAdjacentHTML("beforeend", html);
 }
 
 function submitStory(){
