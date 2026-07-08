@@ -1,7 +1,9 @@
 @StoryforgeApi_HostAddress = http://localhost:5124
 
 GET {{StoryforgeApi_HostAddress}}/storyList
-Get {{StoryforgeApi_HostAddress}}/story/{id}
+GET {{StoryforgeApi_HostAddress}}/story/{id}
+GET {{StoryforgeApi_HostAddress}}/getFreeId
+POST {{StoryforgeApi_HostAddress}}/submitStory
 
 Accept: application/json
 

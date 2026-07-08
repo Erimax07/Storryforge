@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadData() {
     try {
+        console.log(await fetch(api + '/getFreeId'));
+        
         const response = await fetch(api + "/storyList");
         if(!response.ok){
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -207,13 +209,28 @@ function addSelectionElement(elementIdCounter){
     document.getElementById(elementIdCounter).querySelector(".selection").insertAdjacentHTML("beforeend", html);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("submit", submitStory);
+});
+
 async function submitStory(){
-    try {
-        const id = await fetch(api + '/getFreeId');
-        
-    } catch (error) {
-        return
+
+    event.preventDefault(); 
+
+    const form = event.target;
+
+    // Browser validation still works
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
     }
+
+    const idResponse = await fetch(api + "/getFreeId");
+    const id = await idResponse.json();
+        
+    
+
+
     const title = document.getElementById("storyname").value;
     const describtion = document.getElementById("describtion").value;
     const author = document.getElementById("author").value;
@@ -244,14 +261,31 @@ async function submitStory(){
         describtion: describtion,
         author: author,
         creation: creation,
-        genre, genre,
+        genre: genre,
         storyElements: storyElements
     }
 
     const json = JSON.stringify(story);
     console.log(json);
-    postMessage(json, api + "/submitStory")
+    const response = await fetch(api + "/submitStory", {
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: json
+    });
 
+    if(!response.ok){
+        document.getElementById("content").innerHTML = "We had a Problem - story not added to server";
+        return
+    }
+    if(response.data == -1){
+        document.getElementById("content").innerHTML = "Data Invalid - story not added to server";
+        return
+    }
+    else{
+        // loadStory(id);
+    }
 }
 
 function calcelStory(){

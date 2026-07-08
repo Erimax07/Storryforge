@@ -10,6 +10,11 @@ var options = new JsonSerializerOptions
     Converters = { new JsonStringEnumConverter() }
 };
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
 
 
 
@@ -85,8 +90,9 @@ app.MapGet("/story/{id:int}", (int id) =>
 
 
 
-app.MapGet("/getFreeId", (int id) =>
+app.MapGet("/getFreeId", () =>
 {
+    Console.WriteLine("called");
     int max = 0;
     foreach (var story in storys)
     {
@@ -95,11 +101,11 @@ app.MapGet("/getFreeId", (int id) =>
     return max + 1;
 });
 
-app.MapPost("/submitStory", (string json) =>
+app.MapPost("/submitStory", async (Story story) =>
 {
     try
     {
-        Story story = System.Text.Json.JsonSerializer.Deserialize<Story>(json, options);
+        string json = System.Text.Json.JsonSerializer.Serialize<Story>(story, options);
         if (story != null)
         {
             storys.Add(story.id, story);
@@ -108,14 +114,18 @@ app.MapPost("/submitStory", (string json) =>
             {
               fileName = fileName.Replace(c, '_');
             }
-            while (Directory.GetFiles("../Data/Storys/").Contains(fileName))
+            string path = "../Data/Storys/";
+
+            while (File.Exists(path + fileName + ".json"))
             {
                 Random rng = new Random();
-                fileName += rng.Next().ToString()[0];
+                fileName += rng.Next(0, 10).ToString();
             }
-            string path = "../Data/Storys/";
+
             fileName += ".json";
-            File.WriteAllText(path + fileName, json);
+
+            await File.WriteAllTextAsync(path + fileName, json);
+            Console.WriteLine("new Story");
             return story.id;
         }    
         else
@@ -125,6 +135,7 @@ app.MapPost("/submitStory", (string json) =>
     }
     catch (System.Exception err)
     {
+        throw err;
         return -1;   
     }
     return -1;
