@@ -153,12 +153,11 @@ function createStory(){
             <option value="9">Historical</option>
         </select>
         <div class="storyWrapper" id="storyWrapper">
-            
-            <div class="storyButtonWropper">
-                <button class="storyButton" onclick="addStoryelement()">add storyelement</button>
-                <button class="storyButton" onclick="calcelStory()">cancel</button>
-                <button class="storyButton" onclick="submitStory()">submit</button>
-            </div>
+        </div>
+        <div class="storyButtonWropper">
+            <button class="storyButton" onclick="addStoryelement()">add storyelement</button>
+            <button class="storyButton" onclick="calcelStory()">cancel</button>
+            <button class="storyButton" onclick="submitStory()">submit</button>
         </div>
     `
     document.getElementById("content").innerHTML = html;
@@ -186,7 +185,7 @@ function addStoryelement(){
             </div>
     `
     elementIdCounter++;
-    document.getElementById("storyWrapper").innerHTML += html;
+    document.getElementById("storyWrapper").insertAdjacentHTML("beforeend", html);
 }
 
 
@@ -211,14 +210,22 @@ function submitStory(){
 }
 
 function calcelStory(){
-
+    loadHome();
+    elementIdCounter = 0;
+    selectionIDCounter = [];
 }
+function moveUp(id) {
+    const elements = document.querySelectorAll(".storyElement");
 
-function moveUp(){
-
+    elements.forEach((element, index) => {
+        if (element.id === id && index > 0) {
+            const previous = elements[index - 1];
+            element.parentNode.insertBefore(element, previous);
+        }
+    });
 }
-function moveDown(){
-
+function moveDown(id){
+    
 }
 function deleteStoryelement(id){
     document.getElementById(id).outerHTML = '';
