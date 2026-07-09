@@ -97,7 +97,6 @@ function updateStory(next) {
     if (next == null) next = "start";
 
     try {
-        console.log(story)
         currentElement = story.storyElements[next]
         let options = "";
         currentElement.options.forEach(element => {
