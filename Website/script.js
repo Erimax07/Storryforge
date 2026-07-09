@@ -154,6 +154,9 @@ function createStory() {
     `
     document.getElementById("content").innerHTML = html;
 
+    addStoryelement();
+    document.querySelector("story-name").value = "start";
+
     const form = document.getElementById("storyForm");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -165,6 +168,8 @@ function createStory() {
             );
         });
     });
+
+
 }
 
 function addStoryelement() {
