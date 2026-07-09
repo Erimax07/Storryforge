@@ -1,6 +1,6 @@
 
 //api Endpoint CHANGE!
-const api = "http://localhost:5124"
+const api = "https://storyforge.erik-matschke.de"
 
 // variables
 let story;
@@ -155,7 +155,7 @@ function createStory() {
     document.getElementById("content").innerHTML = html;
 
     addStoryelement();
-    document.querySelector("story-name").value = "start";
+    document.querySelector(".story-name").value = "start";
 
     const form = document.getElementById("storyForm");
     form.addEventListener("submit", function (event) {
