@@ -54,9 +54,19 @@ async function loadData() {
 function loadHome() {
     let html =
         `
-    <div class="home">
-    <p>Storyforge is a dynamic Story Engine developed by Erik Matschke wich allows you to create dynamic storys. The unser can choose the paph.</p>
-    </div>
+        <div class="home">
+            <h2>Welcone to Storyforge</h2>
+            <p>Storyforge is a dynamic Story Engine developed by Erik Matschke wich allows you to create and play dynamic storys. The main idea is to give a simmilar feel to old Storytelling games like Monkey Island but with only text-elements. To accieve that the user is presented with a explanaition and different options what to do next. The user can then choose one of these options and is presented by the next part of the story taking into acount his decition.</p>
+            <hr>
+            <h2>How to play</h2>
+            <p>You want to try out the storys click on the sotries tab on the top and choose one story.</p>
+            <hr>
+            <h2>How to create a story</h2>
+            <p>Id you want to create your own story you can clixk on the createstroy button on the top. <b>IMPORTANT: your story is stores on my server and can be seen by anybody opening this wepsite. If you dont want that you canot create a story here!</b><br>The storys are made out of nodes wich each have a name wich is only for routing purpuses, a content this is what the user sees as the story and it has one or more options where the user can select the next node. For the story to work you need a start node wich is named 'start'. also each storylink needs to point to a different node.</p>
+            <hr>
+            <h2>Feedback</h2>
+            <p>If you encounter any bugs, have questions or feature requesets you can sent me a email <a class="email" href="mailto:gawerimax@gmail.com">gawerimax@gmail.com</a>. your feedfack is highly anticipated</p>
+        </div>
     `
 
     document.getElementById("content").innerHTML = html;
@@ -124,6 +134,13 @@ function updateStory(next) {
 
 function createStory() {
     counter = 0;
+    if(loadStory()){
+        document.querySelectorAll("storyElement").forEach((el)=>{
+            if(el.id > counter) counter = el.id;
+        })
+        return
+    }
+
     html =
         `
     <form id="storyForm">
@@ -148,6 +165,9 @@ function createStory() {
         <div class="storyButtonWropper">
             <button type="button" class="storyButton" onclick="addStoryelement()">add storyelement</button>
             <button type="button" class="storyButton" onclick="calcelStory()">cancel</button>
+            <button type="button" class="storyButton" onclick="saveStory()">saveStory</button>
+            <button type="button" class="storyButton" onclick="loadStory()">loadStory</button>
+            <button type="button" class="storyButton" onclick="clearLocalStorage()">clearStory</button>
             <button type="submit" class="storyButton">submit</button>
         </div>
         </form>
@@ -197,6 +217,7 @@ function addStoryelement() {
     `
     elementIdCounter++;
     document.getElementById("storyWrapper").insertAdjacentHTML("beforeend", html);
+    saveStory();
 }
 
 
@@ -315,10 +336,13 @@ async function submitStory(event) {
         return
     }
     else {
+        localStorage.removeItem("story");
         loadStory(id);
         return
     }
 }
+
+
 
 function calcelStory() {
     loadHome();
@@ -358,6 +382,24 @@ function convertGenre(key) {
         ]
     return enumVal[key]
 }
+
+function saveStory(){
+    const html = document.getElementById("content").innerHTML
+    localStorage.setItem("story", html)
+}
+
+function loadStory(){
+    const html = localStorage.getItem("story");
+    if(html == null) return false
+    document.getElementById("content").innerHTML = html;
+    document.querySelector(".story-name").value = "start";
+    return true
+}
+
+function clearLocalStorage(){
+    localStorage.clear();
+}
+
 
 
 
