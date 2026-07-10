@@ -116,9 +116,7 @@ app.MapPost("/submitStory", async (Story story) =>
             fileName += ".json";
 
 
-
-
-            if (!isRecivedStoryGood(story))
+            if (!checkForErrors(story).Equals("Story OK"))
             {
                 return(-2);
             }
@@ -166,50 +164,6 @@ void calculateStorylist()
     storyListString = json;
 }
 
-bool isRecivedStoryGood(Story story)
-{
-    bool check = true;
-
-
-    // check for start
-    bool startExists = false;
-    foreach (var element in story.storyElements)
-    {
-        if(element.Key == "start") startExists = true;
-    }
-
-    //check for invalid links
-    bool isInvalidLink = false;
-    string invalidLinks = "";
-    foreach (var element in story.storyElements)
-    {
-        foreach (var option in element.Value.options)
-        {
-            if (!story.storyElements.ContainsKey(option.storryLink))
-            {
-                isInvalidLink = true;
-                invalidLinks += ", " + option.storryLink;
-            }
-        }
-    }
-    
-
-
-    // final check
-    if (!startExists)
-    {
-        check = false;
-        Console.WriteLine(">Story invalid no 'start'");
-    }
-    else if (!isInvalidLink)
-    {
-        check = false;
-        Console.WriteLine($">Story invalid - invalid Storylink(s) {invalidLinks} lead nowhere you need to define the destination");
-    }
-    return check;
-}
-
-
 string checkForErrors(Story story)
 {
     bool check = true;
@@ -236,8 +190,53 @@ string checkForErrors(Story story)
             }
         }
     }
-    
 
+    // check for long content
+    bool isTooLong = false;
+    string longElement = "";
+    if(story.title.Length > 100)
+    {
+        longElement = story.title;
+        isTooLong = true;
+    }  
+    if(story.description.Length > 300)
+    {
+        longElement = story.description;
+        isTooLong = true;
+    } 
+    if(story.author.Length > 100)
+    {
+        longElement = story.author;
+        isTooLong = true;
+    } 
+
+    foreach (var element in story.storyElements)
+    {
+        if(element.Key.Length > 25)
+        {
+            longElement = element.Key;
+            isTooLong = true;
+        }   
+        if(element.Value.content.Length > 1000)
+        {
+            longElement = element.Value.content;
+            isTooLong = true;
+        }  
+        foreach (var option in element.Value.options)
+        {
+            if(option.displayText.Length > 100)
+            {
+                longElement = option.displayText;
+                isTooLong = true;
+            } 
+            if(option.storryLink.Length > 25)
+            {
+                longElement = option.storryLink;
+                isTooLong = true;
+            } 
+        }
+    }
+    
 
     // final check
     if (!startExists)
@@ -250,10 +249,16 @@ string checkForErrors(Story story)
         check = false;
         message = $">Story invalid - invalid Storylink(s) {invalidLinks} lead nowhere you need to define the destination";
     }
-
+    else if (isTooLong)
+    {
+        check = false;
+        message = $">Story invalid - storyelement too Long {longElement}";
+    }
 
     return message;
 }
+
+
 
 
 
