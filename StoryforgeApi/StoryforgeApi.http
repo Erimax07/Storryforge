@@ -4,6 +4,7 @@ GET {{StoryforgeApi_HostAddress}}/storyList
 GET {{StoryforgeApi_HostAddress}}/story/{id}
 GET {{StoryforgeApi_HostAddress}}/getFreeId
 POST {{StoryforgeApi_HostAddress}}/submitStory
+POST {{StoryforgeApi_HostAddress}}/validateStory
 
 Accept: application/json
 

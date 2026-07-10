@@ -1,6 +1,6 @@
 
 //api Endpoint CHANGE!
-const api = "https://storyforge.erik-matschke.de"
+const api = "http://localhost:5124"
 
 // variables
 let story;
@@ -269,7 +269,28 @@ async function submitStory(event) {
     }
 
     const json = JSON.stringify(story);
-    console.log(json);
+    
+    const storyStatusResponse = await fetch(api + "/validateStory", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: json
+    });
+
+    
+
+    if (!storyStatusResponse.ok) {
+        document.getElementById("content").innerHTML = "We had a Problem - story not added to server";
+        return
+    }
+
+    const storyStatus = await storyStatusResponse.text()
+    console.log(storyStatus);
+
+    if(storyStatus != "Story OK"){
+        return
+    }
 
     const response = await fetch(api + "/submitStory", {
         method: "POST",

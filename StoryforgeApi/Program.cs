@@ -145,6 +145,11 @@ app.MapPost("/submitStory", async (Story story) =>
     }
 });
 
+app.MapPost("/validateStory", (Story story) =>
+{
+    return checkForErrors(story);
+});
+
 
 app.Run();
 
@@ -173,15 +178,84 @@ bool isRecivedStoryGood(Story story)
         if(element.Key == "start") startExists = true;
     }
 
+    //check for invalid links
+    bool isInvalidLink = false;
+    string invalidLinks = "";
+    foreach (var element in story.storyElements)
+    {
+        foreach (var option in element.Value.options)
+        {
+            if (!story.storyElements.ContainsKey(option.storryLink))
+            {
+                isInvalidLink = true;
+                invalidLinks += ", " + option.storryLink;
+            }
+        }
+    }
+    
+
 
     // final check
     if (!startExists)
     {
         check = false;
-        Console.WriteLine(">Story invalid no start");
+        Console.WriteLine(">Story invalid no 'start'");
+    }
+    else if (!isInvalidLink)
+    {
+        check = false;
+        Console.WriteLine($">Story invalid - invalid Storylink(s) {invalidLinks} lead nowhere you need to define the destination");
     }
     return check;
 }
+
+
+string checkForErrors(Story story)
+{
+    bool check = true;
+    string message = "Story OK";
+
+    // check for start
+    bool startExists = false;
+    foreach (var element in story.storyElements)
+    {
+        if(element.Key == "start") startExists = true;
+    }
+
+    //check for invalid links
+    bool isInvalidLink = false;
+    string invalidLinks = "";
+    foreach (var element in story.storyElements)
+    {
+        foreach (var option in element.Value.options)
+        {
+            if (!story.storyElements.ContainsKey(option.storryLink))
+            {
+                isInvalidLink = true;
+                invalidLinks += ", " + option.storryLink;
+            }
+        }
+    }
+    
+
+
+    // final check
+    if (!startExists)
+    {
+        check = false;
+        message = ">Story invalid no 'start'";
+    }
+    else if (isInvalidLink)
+    {
+        check = false;
+        message = $">Story invalid - invalid Storylink(s) {invalidLinks} lead nowhere you need to define the destination";
+    }
+
+
+    return message;
+}
+
+
 
 //----------Classes---------
 
