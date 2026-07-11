@@ -136,10 +136,10 @@ function createStory(blockStoryLoad) {
     elementIdCounter = 0;
     selectionIDCounter = [];
     counter = 0;
-    if(blockStoryLoad == false){
-        if(loadStoryfromStorage()){
-            document.querySelectorAll("storyElement").forEach((el)=>{
-                if(el.id > counter) counter = el.id;
+    if (blockStoryLoad == false) {
+        if (loadStoryfromStorage()) {
+            document.querySelectorAll("storyElement").forEach((el) => {
+                if (el.id > counter) counter = el.id;
             })
             return
         }
@@ -178,7 +178,7 @@ function createStory(blockStoryLoad) {
     `
     document.getElementById("content").innerHTML = html;
 
-    if(!blockStoryLoad){
+    if (!blockStoryLoad) {
         addStoryelement();
         document.querySelector(".story-name").value = "start";
     }
@@ -255,11 +255,11 @@ async function submitStory(event) {
 
     const json = await storyToJson();
 
-    if(json == null){
+    if (json == null) {
         console.log("Json is null");
         return;
     }
-    
+
     const storyStatusResponse = await fetch(api + "/validateStory", {
         method: "POST",
         headers: {
@@ -268,7 +268,7 @@ async function submitStory(event) {
         body: json
     });
 
-    
+
 
     if (!storyStatusResponse.ok) {
         document.getElementById("content").innerHTML = "We had a Problem - story not added to server";
@@ -278,7 +278,7 @@ async function submitStory(event) {
     const storyStatus = await storyStatusResponse.text()
     console.log(storyStatus);
 
-    if(storyStatus != "Story OK"){
+    if (storyStatus != "Story OK") {
         return
     }
 
@@ -300,7 +300,7 @@ async function submitStory(event) {
         document.getElementById("content").innerHTML = "Data Invalid - story not added to server";
         return
     }
-    else if(result == -2){
+    else if (result == -2) {
         document.getElementById("content").innerHTML = "Story Invalid - story not added to server";
         return
     }
@@ -312,8 +312,8 @@ async function submitStory(event) {
 }
 
 
-async function storyToJson(){
-    
+async function storyToJson() {
+
     const idResponse = await fetch(api + "/getFreeId");
     const id = await idResponse.json();
     const title = document.getElementById("storyname").value;
@@ -355,7 +355,7 @@ async function storyToJson(){
         storyElements: storyElements
     }
     console.log(story);
-    
+
     const json = await JSON.stringify(story);
 
     console.log(json);
@@ -363,34 +363,45 @@ async function storyToJson(){
     return json;
 }
 
-function loadStoryFromJson(json){
+function loadStoryFromJson(json) {
     try {
         console.log(json);
-        
+
         const story = JSON.parse(json);
         createStory(true);
         document.getElementById("storyname").value = story.title;
         document.getElementById("describtion").value = story.describtion;
         document.getElementById("author").value = story.author;
         document.getElementById('genre').value = convertGenreToInt(story.genre);
-        Object.values(story.storyElements).forEach((element, index) => {
-            addStoryelement()
+        Object.entries(story.storyElements).forEach(([key, element], index) => {
+            addStoryelement();
+
             const storyElementc = document.querySelectorAll(".storyElement")[index];
-            storyElementc.querySelector(".story-name").value = element.key;
+
+            // The object's key
+            storyElementc.querySelector(".story-name").value = key;
+
+            // The object's value
             storyElementc.querySelector(".story-content").value = element.content;
-            Object.values(element.options).forEach((selection, selectionIndex)=>{
-                addSelectionElement(index)
-                const selectionElement = storyElementc.querySelectorAll(".selectionElement")[selectionIndex]
+
+            Object.entries(element.options).forEach(([optionKey, selection], selectionIndex) => {
+                addSelectionElement(index);
+
+                const selectionElement = storyElementc.querySelectorAll(".selectionElement")[selectionIndex];
+
                 selectionElement.querySelector(".display-text").value = selection.displayText;
                 selectionElement.querySelector(".next-element").value = selection.storryLink;
-            })
+
+                // If you need the option key:
+                // console.log(optionKey);
+            });
         });
         document.querySelector(".story-name").value = "start";
-        
+
     } catch (error) {
         console.log(error);
         createStory(true);
-        
+
     }
 }
 
@@ -450,20 +461,20 @@ function convertGenreToInt(val) {
     return enumVal.indexOf(val)
 }
 
-async function saveStory(){
+async function saveStory() {
     const json = await storyToJson();
     localStorage.setItem("storyJson", json)
 }
 
 
-function loadStoryfromStorage(){
+function loadStoryfromStorage() {
     const json = localStorage.getItem("storyJson");
-    if(json == null) return false;
+    if (json == null) return false;
     loadStoryFromJson(json);
     return true
 }
 
-function clearLocalStorage(){
+function clearLocalStorage() {
     localStorage.clear();
     createStory();
 }
