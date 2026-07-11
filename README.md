@@ -1,2 +1,24 @@
-# Storryforge
-I am building a new Storryengine named "Storryforge". It allows you to create and play fun storrys with multiple storry paphs. 
+# Welcone to Storyforge
+
+Storyforge is a dynamic Story Engine developed by Erik Matschke wich allows you to create and play dynamic storys.
+The main idea is to give a simmilar feel to old Storytelling games like Monkey Island but with only text-elements. 
+To accieve that the user is presented with a explanaition and different options what to do next. 
+The user can then choose one of these options and is presented by the next part of the story taking into acount his decition.
+
+# How to play
+
+You want to try out the storys click on the sotries tab on the top and choose one story.
+
+
+# How to create a story
+
+Id you want to create your own story you can clixk on the createstroy button on the top. 
+IMPORTANT: your story is stores on my server and can be seen by anybody opening this wepsite. If you dont want that you canot create a story here!
+The storys are made out of nodes wich each have a name wich is only for routing purpuses, 
+a content this is what the user sees as the story and it has one or more options where the user can select the next node. 
+For the story to work you need a start node wich is named 'start'. 
+Also each storylink needs to point to a different node.
+
+# Feedback
+
+If you encounter any bugs, have questions or feature requesets you can sent me a email gawerimax@gmail.com. your feedfack is highly anticipated
