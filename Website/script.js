@@ -253,7 +253,7 @@ async function submitStory(event) {
         return;
     }
 
-    const json = storyToJson();
+    const json = await storyToJson();
 
     if(json == null){
         console.log("Json is null");

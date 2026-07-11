@@ -145,7 +145,15 @@ app.MapPost("/submitStory", async (Story story) =>
 
 app.MapPost("/validateStory", (Story story) =>
 {
-    return checkForErrors(story);
+    try
+    {
+        return checkForErrors(story);
+    }
+    catch (System.Exception)
+    {
+        return "something went wrong";
+        
+    }
 });
 
 
