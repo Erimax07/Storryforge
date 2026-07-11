@@ -19,6 +19,11 @@ a content this is what the user sees as the story and it has one or more options
 For the story to work you need a start node wich is named 'start'. 
 Also each storylink needs to point to a different node.
 
+# Use of AI
+I used AI to help me debug and deploy the project. 
+I used ai to fully generate the css style for my project because it can do that way better than me and i wanted the Wepsite to look decent.
+The rest of the code id drafted to 100% by me and might be corrected sometimes by AI. So that the total persentage of code id written 90% by me.
+
 # Feedback
 
 If you encounter any bugs, have questions or feature requesets you can sent me a email gawerimax@gmail.com. your feedfack is highly anticipated
