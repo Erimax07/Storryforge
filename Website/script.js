@@ -9,6 +9,8 @@ let currentElement;
 let elementIdCounter = 0;
 let selectionIDCounter = [];
 
+let storyId = 0;
+
 
 // document.addEventListener("submit", function (event) {
 //     if (event.target.id === "storyForm") {
@@ -306,7 +308,7 @@ async function submitStory(event) {
     }
     else {
         localStorage.removeItem("story");
-        loadStory(id);
+        loadStory(storyId);
         return
     }
 }
@@ -316,6 +318,7 @@ async function storyToJson() {
 
     const idResponse = await fetch(api + "/getFreeId");
     const id = await idResponse.json();
+    storyId = id;
     const title = document.getElementById("storyname").value;
     const describtion = document.getElementById("describtion").value;
     const author = document.getElementById("author").value;
