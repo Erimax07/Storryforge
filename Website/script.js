@@ -132,13 +132,17 @@ function updateStory(next) {
     }
 }
 
-function createStory() {
+function createStory(blockStoryLoad) {
+    elementIdCounter = 0;
+    selectionIDCounter = [];
     counter = 0;
-    if(loadStory()){
-        document.querySelectorAll("storyElement").forEach((el)=>{
-            if(el.id > counter) counter = el.id;
-        })
-        return
+    if(blockStoryLoad == false){
+        if(loadStoryfromStorage()){
+            document.querySelectorAll("storyElement").forEach((el)=>{
+                if(el.id > counter) counter = el.id;
+            })
+            return
+        }
     }
 
     html =
@@ -166,7 +170,7 @@ function createStory() {
             <button type="button" class="storyButton" onclick="addStoryelement()">add storyelement</button>
             <button type="button" class="storyButton" onclick="calcelStory()">cancel</button>
             <button type="button" class="storyButton" onclick="saveStory()">saveStory</button>
-            <button type="button" class="storyButton" onclick="loadStory()">loadStory</button>
+            <button type="button" class="storyButton" onclick="loadStoryfromStorage()">loadStory</button>
             <button type="button" class="storyButton" onclick="clearLocalStorage()">clearStory</button>
             <button type="submit" class="storyButton">submit</button>
         </div>
@@ -174,8 +178,10 @@ function createStory() {
     `
     document.getElementById("content").innerHTML = html;
 
-    addStoryelement();
-    document.querySelector(".story-name").value = "start";
+    if(!blockStoryLoad){
+        addStoryelement();
+        document.querySelector(".story-name").value = "start";
+    }
 
     const form = document.getElementById("storyForm");
     form.addEventListener("submit", function (event) {
@@ -217,7 +223,6 @@ function addStoryelement() {
     `
     elementIdCounter++;
     document.getElementById("storyWrapper").insertAdjacentHTML("beforeend", html);
-    saveStory();
 }
 
 
@@ -248,48 +253,12 @@ async function submitStory(event) {
         return;
     }
 
-    const idResponse = await fetch(api + "/getFreeId");
-    const id = await idResponse.json();
-    const title = document.getElementById("storyname").value;
-    const describtion = document.getElementById("describtion").value;
-    const author = document.getElementById("author").value;
-    const creation = new Date().toISOString();
-    const genre = convertGenre(document.getElementById('genre').value);
-    let storyElements = {};
+    const json = storyToJson();
 
-    document.querySelectorAll(".storyElement").forEach((element) => {
-        let options = []
-
-        element.querySelectorAll(".selectionElement").forEach((selection) => {
-
-            const op = {
-                displayText: selection.querySelector(".display-text").value,
-                storryLink: selection.querySelector(".next-element").value
-            }
-            options.push(op);
-        })
-
-        const key = element.querySelector(".story-name").value;
-        const el = {
-            content: element.querySelector(".story-content").value,
-            options: options
-        }
-
-        storyElements[key] = el;
-    })
-
-
-    const story = {
-        id: id,
-        title: title,
-        description: describtion,
-        author: author,
-        creation: creation,
-        genre: genre,
-        storyElements: storyElements
+    if(json == null){
+        console.log("Json is null");
+        return;
     }
-
-    const json = JSON.stringify(story);
     
     const storyStatusResponse = await fetch(api + "/validateStory", {
         method: "POST",
@@ -343,6 +312,87 @@ async function submitStory(event) {
 }
 
 
+async function storyToJson(){
+    
+    const idResponse = await fetch(api + "/getFreeId");
+    const id = await idResponse.json();
+    const title = document.getElementById("storyname").value;
+    const describtion = document.getElementById("describtion").value;
+    const author = document.getElementById("author").value;
+    const creation = new Date().toISOString();
+    const genre = convertGenre(document.getElementById('genre').value);
+    let storyElements = {};
+
+    document.querySelectorAll(".storyElement").forEach((element) => {
+        let options = []
+
+        element.querySelectorAll(".selectionElement").forEach((selection) => {
+
+            const op = {
+                displayText: selection.querySelector(".display-text").value,
+                storryLink: selection.querySelector(".next-element").value
+            }
+            options.push(op);
+        })
+
+        const key = element.querySelector(".story-name").value;
+        const el = {
+            content: element.querySelector(".story-content").value,
+            options: options
+        }
+
+        storyElements[key] = el;
+    })
+
+
+    const story = {
+        id: id,
+        title: title,
+        description: describtion,
+        author: author,
+        creation: creation,
+        genre: genre,
+        storyElements: storyElements
+    }
+    console.log(story);
+    
+    const json = await JSON.stringify(story);
+
+    console.log(json);
+
+    return json;
+}
+
+function loadStoryFromJson(json){
+    try {
+        console.log(json);
+        
+        const story = JSON.parse(json);
+        createStory(true);
+        document.getElementById("storyname").value = story.title;
+        document.getElementById("describtion").value = story.describtion;
+        document.getElementById("author").value = story.author;
+        document.getElementById('genre').value = convertGenreToInt(story.genre);
+        Object.values(story.storyElements).forEach((element, index) => {
+            addStoryelement()
+            const storyElementc = document.querySelectorAll(".storyElement")[index];
+            storyElementc.querySelector(".story-name").value = element.key;
+            storyElementc.querySelector(".story-content").value = element.content;
+            Object.values(element.options).forEach((selection, selectionIndex)=>{
+                addSelectionElement(index)
+                const selectionElement = storyElementc.querySelectorAll(".selectionElement")[selectionIndex]
+                selectionElement.querySelector(".display-text").value = selection.displayText;
+                selectionElement.querySelector(".next-element").value = selection.storryLink;
+            })
+        });
+        document.querySelector(".story-name").value = "start";
+        
+    } catch (error) {
+        console.log(error);
+        createStory(true);
+        
+    }
+}
 
 function calcelStory() {
     loadHome();
@@ -383,21 +433,39 @@ function convertGenre(key) {
     return enumVal[key]
 }
 
-function saveStory(){
-    const html = document.getElementById("content").innerHTML
-    localStorage.setItem("story", html)
+function convertGenreToInt(val) {
+    let enumVal =
+        [
+            "Horror",
+            "Fantasy",
+            "SciFi",
+            "Mystery",
+            "Romance",
+            "Thriller",
+            "Adventure",
+            "Drama",
+            "Comedy",
+            "Historical"
+        ]
+    return enumVal.indexOf(val)
 }
 
-function loadStory(){
-    const html = localStorage.getItem("story");
-    if(html == null) return false
-    document.getElementById("content").innerHTML = html;
-    document.querySelector(".story-name").value = "start";
+async function saveStory(){
+    const json = await storyToJson();
+    localStorage.setItem("storyJson", json)
+}
+
+
+function loadStoryfromStorage(){
+    const json = localStorage.getItem("storyJson");
+    if(json == null) return false;
+    loadStoryFromJson(json);
     return true
 }
 
 function clearLocalStorage(){
     localStorage.clear();
+    createStory();
 }
 
 
